@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{% url 'home'%}">Album reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Concert Reviews</a>
+                        <a class="nav-link" href="{% url 'concert_reviews'%}">Concert Reviews</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
