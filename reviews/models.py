@@ -14,7 +14,10 @@ class Category(models.Model):
     def __str__(self):
             return self.name
 
-
+CATEGORY_CHOICES = Category.objects.all().values_list('name', 'name')
+choice_list = []
+for item in CATEGORY_CHOICES:
+    choice_list.append(item)
 
 class Post(models.Model):
     title = models.CharField(max_length=255, unique=True)
@@ -26,7 +29,7 @@ class Post(models.Model):
     fragment = models.TextField(blank=True)
     body = models.TextField()
     likes = models.ManyToManyField(User, related_name='review_likes', blank=True)
-    category = models.CharField(max_length=255, default='Uncategorized')
+    category = models.CharField(max_length=255, default='Uncategorized', choices=choice_list)
     status = models.IntegerField(choices=STATUS, default=0)
     date_created_on = models.DateTimeField(auto_now_add=True)
     date_updated_on = models.DateTimeField(auto_now=True)
