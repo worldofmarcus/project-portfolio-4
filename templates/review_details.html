@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+<br>
+<small>By: {{ post.author }}</small>
+<br>
+<small>Category: {{ post.category }}</small>
+
+{% if 'Album' in post.category %}
+<br>
+{{ post.record_label }}
+
+{% else %}
+<br>
+{{ post.venue }}
+<br>
+
+{% endif %}
+{{ post.body | safe }}
+
+<br>
+<br>
+
+{% for comment in comments %}
+<br>
+{{ comment.name}}
+<br>
+{{ comment.date_created_on }}
+<br>
+{{ comment.body | linebreaks }}
+{% endfor %}
+
+
+{% endblock %}

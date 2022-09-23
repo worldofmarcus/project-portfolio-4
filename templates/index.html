@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <a href="#" class="post-link">
-                                <h2 class="card-title"><a href="#">
+                                <h2 class="card-title"><a href="{% url 'review_details' post.slug %}">
                                         {{ post.title }}</a></h2>
                                 <p class=" card-text">{{ post.fragment }}</p>
                             </a>
