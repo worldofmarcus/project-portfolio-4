@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{% url 'home'%}">Album reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'concert_reviews' %}">Concert Reviews</a>
+                        <a class="nav-link" href="#">Concert Reviews</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
@@ -42,14 +42,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Create New Review</a></li>
-                            <li><a class="dropdown-item" href="{% url 'member_reviews' %}">View My Reviews</a></li>
+                            <li><a class="dropdown-item" href="#">View My Reviews</a></li>
                             <div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="#">Show Profile Page</a></li>
                             <li><a class="dropdown-item" href="#">Edit Profile Page</a></li>
                             <div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                            <li><a class="dropdown-item" href="#">Log Out</a></li>
                             {% else %}
-                            <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
+                            <li><a class="nav-link" href="#">Log In / Sign Up</a></li>
                         </ul>
 
                     </li>
