@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 RATING_CHOICES = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
+GENRE = ((0, 'Electronic'), (2, 'Folk/Country'), (3, 'Jazz'), (4, 'Pop/R&B'), (5, 'Rock'), (6, 'Experimental'), (7, 'Global'), (8, 'Metal'), (9, 'Rap/Hip-Hop'), (10, 'Uncategorized'))
 
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -36,7 +37,7 @@ class Post(models.Model):
     release_date = models.IntegerField()
     record_label = models.CharField(max_length=255)
     venue = models.CharField(max_length=255)
-    genre = models.CharField(max_length=255)
+    genre = models.IntegerField(choices=GENRE, default=10)
     rating = models.IntegerField(choices=RATING_CHOICES, default=3)
 
     class Meta:

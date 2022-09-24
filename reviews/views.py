@@ -17,6 +17,15 @@ class ConcertView(generic.ListView):
     template_name = ('concert_reviews.html')
     paginate_by = 6
 
+class MemberReviewView(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-date_created_on')
+    template_name = ('member_reviews.html')
+
+    def get_queryset(self):
+        return Post.objects.filter(author=self.request.user.id)
+
+
 
 def about(request):
     return render(request, 'about.html')
