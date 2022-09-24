@@ -31,6 +31,15 @@
 <br>
 {{ comment.date_created_on }}
 <br>
+{% if user.is_authenticated %}
+
+{% if user.id == comment.author.id %}
+
+<a href="#">Edit Post</a>
+{% endif %}
+{% endif %}
+
+<br>
 {{ comment.body | linebreaks }}
 {% endfor %}
 
