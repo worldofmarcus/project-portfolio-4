@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load crispy_forms_tags %}
+
 
 <h1>{{ post.title }}</h1>
 <br>
@@ -32,5 +34,20 @@
 {{ comment.body | linebreaks }}
 {% endfor %}
 
+{% if commented %}
 
-{% endblock %}
+<h1>Your comment is awaiting approval</h1>
+
+{% else %}
+{% if user.is_authenticated %}
+
+<h3>Leave a comment:</h3>
+<p>Posting as: {{ user.username }}</p>
+<form method="post" style="margin-top: 1.3em;">
+    {{ comment_form | crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+</form>
+{% endif %}
+{% endif %}
+{% endblock content %}
