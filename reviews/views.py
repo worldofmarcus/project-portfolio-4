@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views import generic, View
-from .models import Post
-from .forms import CommentForm
+from django.utils.text import slugify
+from .models import Post, Comment
+from .forms import CommentForm, CreateReviewForm
 
 
 class HomeView(generic.ListView):
@@ -17,14 +18,26 @@ class ConcertView(generic.ListView):
     template_name = ('concert_reviews.html')
     paginate_by = 6
 
+
 class MemberReviewView(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-date_created_on')
     template_name = ('member_reviews.html')
+    paginate_by = 6
 
     def get_queryset(self):
-        return Post.objects.filter(author=self.request.user.id)
+        return Post.objects.filter(status=1, author=self.request.user.id).order_by('-date_created_on')
 
+
+def CreateReviewView(request):
+    if request.POST:
+        review_form = CreateReviewForm(request.POST, request.FILES)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.slug = slugify(review.title)
+            review.author = request.user
+            review.save()
+        return redirect('home')
+    return render(request, 'create_review.html', {'form': CreateReviewForm})
 
 
 def about(request):

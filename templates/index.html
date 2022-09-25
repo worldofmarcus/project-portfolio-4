@@ -20,7 +20,7 @@
                                 <img class="card-img-top rounded-circle"
                                     src="https://res.cloudinary.com/worldofmarcus/image/upload/v1663746472/r3sih6tngw95qupbkzrj.jpg">
                                 {% else %}
-                                <img class="card-img-top rounded-circle" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top rounded-circle" src="{{ post.featured_image.url }}">
                                 {% endif %}
                             </div>
                             <a href="#" class="post-link">

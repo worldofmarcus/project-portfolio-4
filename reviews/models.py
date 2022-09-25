@@ -4,7 +4,10 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 RATING_CHOICES = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
-GENRE = ((0, 'Electronic'), (2, 'Folk/Country'), (3, 'Jazz'), (4, 'Pop/R&B'), (5, 'Rock'), (6, 'Experimental'), (7, 'Global'), (8, 'Metal'), (9, 'Rap/Hip-Hop'), (10, 'Uncategorized'))
+GENRE = ((0, 'Electronic'), (2, 'Folk/Country'), (3, 'Jazz'), (4, 'Pop/R&B'),
+         (5, 'Rock'), (6, 'Experimental'), (7, 'Global'), (8, 'Metal'),
+         (9, 'Rap/Hip-Hop'), (10, 'Uncategorized'))
+
 
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -13,12 +16,14 @@ class Category(models.Model):
         ordering = ['name']
 
     def __str__(self):
-            return self.name
+        return str(self.name)
+
 
 CATEGORY_CHOICES = Category.objects.all().values_list('name', 'name')
 choice_list = []
 for item in CATEGORY_CHOICES:
     choice_list.append(item)
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255, unique=True)
