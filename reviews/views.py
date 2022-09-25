@@ -28,7 +28,7 @@ class MemberReviewView(generic.ListView):
         return Post.objects.filter(status=1, author=self.request.user.id).order_by('-date_created_on')
 
 
-def CreateReviewView(request):
+def create_review_view(request):
     if request.POST:
         review_form = CreateReviewForm(request.POST, request.FILES)
         if review_form.is_valid():
