@@ -6,7 +6,11 @@
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h3>Update Review:</h3>
+    <h3>Update Review | {{ post.title }}</h3>
+    <a href="{% url 'delete_review' post.slug %}">
+        Delete Review</a></h2>
+
+    <!-- {% url 'review_details' post.slug %} -->
     <p>Posting as: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
         {{ form | crispy }}

@@ -82,6 +82,7 @@ class DetailView(generic.DetailView):
             },
         )
 
+
 def create_review_view(request):
     if request.POST:
         review_form = CreateReviewForm(request.POST, request.FILES)
@@ -93,14 +94,12 @@ def create_review_view(request):
         return redirect('home')
     return render(request, 'create_review.html', {'form': CreateReviewForm})
 
+
 class UpdateReview(generic.UpdateView):
     model = Post
     form_class = CreateReviewForm
     template_name = 'update_review.html'
     success_url = '/member-reviews/'
-
-
-
 
 
 class UpdateComment(generic.UpdateView):
@@ -120,3 +119,9 @@ class ReviewLike(generic.DetailView):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('review_details', args=[slug]))
+
+
+class DeleteReview(generic.DeleteView):
+    model = Post
+    template_name = 'delete_review.html'
+    success_url = '/member-reviews/'

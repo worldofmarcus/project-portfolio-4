@@ -13,7 +13,6 @@ class CommentForm(forms.ModelForm):
 class CreateReviewForm(forms.ModelForm):
     class Meta:
         model = Post
-        Post.approved = False
         fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category',
                   'release_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
 

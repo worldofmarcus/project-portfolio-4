@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <h3>Delete {{ post.title }}</h3>
+
+    <p>Posting as: {{ user.username }}</p>
+    <form method="post" style="margin-top: 1.3em;">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <strong>Are you sure about deleting the post?</strong>
+        <button type="submit" class="btn btn-signup btn-lg">Delete Post</button>
+    </form>
+    {% endif %}
+</div>
+
+{% endblock content %}
