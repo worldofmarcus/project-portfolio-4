@@ -103,6 +103,7 @@ class UpdateReview(generic.UpdateView):
 
     def form_valid(self, form):
         form.instance.approved = False
+        form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
 
