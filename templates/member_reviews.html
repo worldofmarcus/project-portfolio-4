@@ -38,11 +38,12 @@
 
                                 <br>Your review is awaiting approval
 
-
+                                {% elif post.status == 0 and post.approved %}
+                                <br>Your review is in draft mode but is approved.
 
                                 {% elif post.status == 0 %}
-
                                 <br>Your review is in draft mode
+
 
                                 {% endif %}
 
