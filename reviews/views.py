@@ -83,16 +83,16 @@ class DetailView(generic.DetailView):
         )
 
 
-def create_review_view(request):
-    if request.POST:
-        review_form = CreateReviewForm(request.POST, request.FILES)
-        if review_form.is_valid():
-            review = review_form.save(commit=False)
-            review.slug = slugify(review.title)
-            review.author = request.user
-            review.save()
-        return redirect('home')
-    return render(request, 'create_review.html', {'form': CreateReviewForm})
+class CreateReview(generic.CreateView):
+    model = Post
+    form_class = CreateReviewForm
+    template_name = 'create_review.html'
+    success_url = '/member-reviews/'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
 
 
 class UpdateReview(generic.UpdateView):
