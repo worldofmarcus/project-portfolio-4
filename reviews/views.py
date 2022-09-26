@@ -105,10 +105,6 @@ class UpdateComment(generic.UpdateView):
     template_name = 'update_comment.html'
     success_url = '/'
 
-# def like_review(request, pk):
-#     post = get_object_or_404(Post, id=request.get('post_id'))
-#     post.likes.add(request.user)
-#     return HttpResponseRedirect(reverse('review_details', args=[str(pk)]))
 
 class ReviewLike(generic.DetailView):
 
