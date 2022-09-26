@@ -25,17 +25,45 @@
 <br>
 <br>
 
+<strong>
+    {% if user.is_authenticated %}
+    <form class="d-inline" action="{% url 'like_review' post.slug %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
+        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                class="fas fa-heart"></i></button>
+        {% else %}
+        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                class="far fa-heart"></i></button>
+        {% endif %}
+    </form>
+    {% else %}
+    <span class="text-secondary"><i class="far fa-heart"></i></span>
+    {% endif %}
+    <!-- The number of likes goes before the closing strong tag -->
+    <span class="text-secondary">{{ post.number_of_likes }} </span>
+</strong>
+
+
+
 {% for comment in comments %}
 <br>
 {{ comment.name}}
 <br>
 {{ comment.date_created_on }}
 <br>
+
+
 {% if user.is_authenticated %}
 
 {% if user.id == comment.author.id %}
 
-<a href="#">Update Comment</a>
+<a href="{% url 'update_comment' comment.pk %}">Update Comment</a>
+
+<br>
+<hr>
+<br>
+
 
 {% endif %}
 {% endif %}

@@ -1,6 +1,6 @@
-from django.shortcuts import redirect, render, get_object_or_404
-
+from django.shortcuts import redirect, render, get_object_or_404, reverse
 from django.views import generic
+from django.http import HttpResponseRedirect
 from django.utils.text import slugify
 from .models import Post, Comment
 from .forms import CommentForm, CreateReviewForm
@@ -94,3 +94,25 @@ class UpdateReview(generic.UpdateView):
     form_class = CreateReviewForm
     template_name = 'update_review.html'
     success_url = '/member-reviews/'
+
+class UpdateComment(generic.UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'update_comment.html'
+    success_url = '/'
+
+# def like_review(request, pk):
+#     post = get_object_or_404(Post, id=request.get('post_id'))
+#     post.likes.add(request.user)
+#     return HttpResponseRedirect(reverse('review_details', args=[str(pk)]))
+
+class ReviewLike(generic.DetailView):
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('review_details', args=[slug]))
