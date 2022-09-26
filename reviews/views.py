@@ -9,14 +9,14 @@ from .forms import CommentForm, CreateReviewForm
 
 class HomeView(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1, category='Album').order_by('-date_created_on')
+    queryset = Post.objects.filter(status=1, approved=True, category='Album').order_by('-date_created_on')
     template_name = ('index.html')
     paginate_by = 6
 
 
 class ConcertView(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1, category='Concert').order_by('-date_created_on')
+    queryset = Post.objects.filter(status=1, approved=True, category='Concert').order_by('-date_created_on')
     template_name = ('concert_reviews.html')
     paginate_by = 6
 
@@ -78,7 +78,6 @@ class DetailView(generic.DetailView):
 
             },
         )
-
 
 def create_review_view(request):
     if request.POST:
