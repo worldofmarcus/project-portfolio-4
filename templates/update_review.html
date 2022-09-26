@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <h3>Update Review:</h3>
+    <p>Posting as: {{ user.username }}</p>
+    <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+    </form>
+    {% endif %}
+</div>
+
+{% endblock content %}

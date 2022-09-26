@@ -8,4 +8,5 @@ urlpatterns = [
     path('create-review/', views.create_review_view, name='create_review'),
     path('about/', views.about, name='about'),
     path('<slug:slug>/', views.DetailView.as_view(), name='review_details'),
+    path('<slug:slug>/edit/', views.UpdateReview.as_view(), name='update_review'),
 ]

@@ -6,7 +6,6 @@ from .models import Post, Comment
 from .forms import CommentForm, CreateReviewForm
 
 
-
 class HomeView(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1, approved=True, category='Album').order_by('-date_created_on')
@@ -89,3 +88,9 @@ def create_review_view(request):
             review.save()
         return redirect('home')
     return render(request, 'create_review.html', {'form': CreateReviewForm})
+
+class UpdateReview(generic.UpdateView):
+    model = Post
+    form_class = CreateReviewForm
+    template_name = 'update_review.html'
+    success_url = '/member-reviews/'
