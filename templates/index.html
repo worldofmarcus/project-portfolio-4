@@ -26,7 +26,7 @@
                             <a href="#" class="post-link">
                                 <h2 class="card-title"><a href="{% url 'review_details' post.slug %}">
                                         {{ post.title }}</a></h2>
-                                <p class=" card-text">{{ post.fragment }}</p>
+                                <p class=" card-text">{{ post.fragment | slice:80 }}</p>
                                 <p class=" card-text"><a href="{% url 'review_details' post.slug %}">Read More</a></p>
                             </a>
                             <hr />

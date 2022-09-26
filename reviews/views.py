@@ -99,6 +99,10 @@ class UpdateReview(generic.UpdateView):
     template_name = 'update_review.html'
     success_url = '/member-reviews/'
 
+
+
+
+
 class UpdateComment(generic.UpdateView):
     model = Comment
     form_class = CommentForm
