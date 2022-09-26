@@ -26,7 +26,7 @@ class MemberReviewView(generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        return Post.objects.filter(status=1, author=self.request.user.id).order_by('-date_created_on')
+        return Post.objects.filter(author=self.request.user.id).order_by('-date_created_on')
 
 
 def about(request):

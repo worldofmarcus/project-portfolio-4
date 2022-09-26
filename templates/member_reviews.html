@@ -40,6 +40,12 @@
 
                                 {% endif %}
 
+                                {% if post.status == 0 %}
+
+                                <br>Your review is in draft mode
+
+                                {% endif %}
+
                                 {% if user.id == post.author.id %}
 
                                 <a href="{% url 'update_review' post.slug %}">Update Review</a>
