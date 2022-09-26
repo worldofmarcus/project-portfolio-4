@@ -44,6 +44,7 @@ class Post(models.Model):
     venue = models.CharField(max_length=255)
     genre = models.IntegerField(choices=GENRE, default=10)
     rating = models.IntegerField(choices=RATING_CHOICES, default=3)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-date_created_on']

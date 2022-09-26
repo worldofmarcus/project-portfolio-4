@@ -48,11 +48,17 @@
                             <li><a class="dropdown-item" href="#">Edit Profile Page</a></li>
                             <div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+
                             {% else %}
                             <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
+                            <div class="dropdown-divider"></div>
+
                         </ul>
 
                     </li>
+
+
+
                     {% endif %}
                 </ul>
             </div>

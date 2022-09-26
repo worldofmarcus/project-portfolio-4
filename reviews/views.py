@@ -1,8 +1,10 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from django.views import generic, View
+
+from django.views import generic
 from django.utils.text import slugify
 from .models import Post, Comment
 from .forms import CommentForm, CreateReviewForm
+
 
 
 class HomeView(generic.ListView):
@@ -28,23 +30,11 @@ class MemberReviewView(generic.ListView):
         return Post.objects.filter(status=1, author=self.request.user.id).order_by('-date_created_on')
 
 
-def create_review_view(request):
-    if request.POST:
-        review_form = CreateReviewForm(request.POST, request.FILES)
-        if review_form.is_valid():
-            review = review_form.save(commit=False)
-            review.slug = slugify(review.title)
-            review.author = request.user
-            review.save()
-        return redirect('home')
-    return render(request, 'create_review.html', {'form': CreateReviewForm})
-
-
 def about(request):
     return render(request, 'about.html')
 
 
-class DetailView(View):
+class DetailView(generic.DetailView):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -88,3 +78,15 @@ class DetailView(View):
 
             },
         )
+
+
+def create_review_view(request):
+    if request.POST:
+        review_form = CreateReviewForm(request.POST, request.FILES)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.slug = slugify(review.title)
+            review.author = request.user
+            review.save()
+        return redirect('home')
+    return render(request, 'create_review.html', {'form': CreateReviewForm})
