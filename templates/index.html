@@ -33,6 +33,12 @@
                             <p class="card-text text-muted h6">By: {{ post.author }} | {{ post.date_created_on }} <i
                                     class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
+
+                            {% if user.id == post.author.id %}
+
+                            <a href="#">Update Review</a>
+
+                            {% endif %}
                         </div>
                     </div>
                 </div>
