@@ -34,13 +34,13 @@
                                     class="far fa-heart"></i>
                                 {{ post.number_of_likes }}
 
-                                {% if not post.approved %}
+                                {% if post.status == 1 and not post.approved  %}
 
                                 <br>Your review is awaiting approval
 
-                                {% endif %}
 
-                                {% if post.status == 0 %}
+
+                                {% elif post.status == 0 %}
 
                                 <br>Your review is in draft mode
 
