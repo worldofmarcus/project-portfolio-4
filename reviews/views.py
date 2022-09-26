@@ -101,12 +101,20 @@ class UpdateReview(generic.UpdateView):
     template_name = 'update_review.html'
     success_url = '/member-reviews/'
 
+    def form_valid(self, form):
+        form.instance.approved = False
+        return super().form_valid(form)
+
 
 class UpdateComment(generic.UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = 'update_comment.html'
     success_url = '/'
+
+    def form_valid(self, form):
+        form.instance.approved = False
+        return super().form_valid(form)
 
 
 class ReviewLike(generic.DetailView):
