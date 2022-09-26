@@ -15,7 +15,7 @@ class CreateReviewForm(forms.ModelForm):
         model = Post
         Post.approved = False
         fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category',
-                  'release_date', 'record_label', 'venue', 'genre', 'rating',)
+                  'release_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
 
         widgets = {
                         'body': SummernoteWidget(),
