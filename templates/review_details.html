@@ -48,59 +48,45 @@
                 <h6>Label: {{ post.record_label }}</h6>
             </p>
             <p>
-                <h6>Reviewed: {{ post.date_created_on | date:"Y-m-d"}}</h6>
+                <h6>Reviewed by {{ post.author.first_name }}: {{ post.date_created_on | date:"Y-m-d"}}</h6>
             </p>
+            {% if user.is_authenticated %}
+            <form class="review-detail-heart-comments" action="{% url 'like_review' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                        class="fas fa-heart"></i></button>
+                {% else %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                        class="far fa-heart"></i></button>
+                {% endif %}
+            </form>
+            {% if user.id == post.author.id %}
+            <div class="review-detail-buttons mt-4">
+                <a href=" {% url 'update_review' post.slug %}" class="btn btn-outline-secondary btn-sm">Update</a>
+                <a href="{% url 'delete_review' post.slug %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="review-detail-heart-comments mt-2">
+                <i class="far fa-heart p-2"></i>
+                {{ post.number_of_likes }}
+                {% with comments.count as total_comments %}
 
+                <i class="far fa-comments p-2"></i>
+                {{ total_comments }}
+                {% endwith %}
+            </div>
         </div>
         <div class="col"><img class="card-img-top" src="{{ post.featured_image.url }}">
         </div>
-
         <div class="review-detail-body mt-4">{{ post.body|safe }}</div>
-
-
-
-
     </div>
 </div>
 
-<small>By: {{ post.author }}</small>
-<br>
-<small>Category: {{ post.category }}</small>
 
-{% if 'Album' in post.category %}
-<br>
-{{ post.record_label }}
 
-{% else %}
-<br>
-{{ post.venue }}
-<br>
 
-{% endif %}
-
-<strong>
-    {% if user.is_authenticated %}
-    <form class="d-inline" action="{% url 'like_review' post.slug %}" method="POST">
-        {% csrf_token %}
-        {% if liked %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                class="fas fa-heart"></i></button>
-        {% else %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                class="far fa-heart"></i></button>
-        {% endif %}
-    </form>
-    {% else %}
-    <span class="text-secondary"><i class="far fa-heart"></i></span>
-    {% endif %}
-    <!-- The number of likes goes before the closing strong tag -->
-    <span class="text-secondary">{{ post.number_of_likes }} </span>
-</strong>
-{% with comments.count as total_comments %}
-<strong class="text-secondary"><i class="far fa-comments"></i>
-    <!-- Our total_comments variable goes before the closing strong tag -->
-    {{ total_comments }}</strong>
-{% endwith %}
 
 
 
