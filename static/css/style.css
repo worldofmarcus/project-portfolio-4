@@ -34,6 +34,8 @@ a {
 
 }
 
+
+
 .navbar-brand {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -52,11 +54,15 @@ a {
 
 }
 
+.intro-text {
+    font-size: 1em;
+}
+
 
 
 .card-text {
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: center;
 
 }
@@ -74,14 +80,18 @@ a {
 
 }
 
+.author {
+    color: rgb(255, 0, 0)
+}
+
 .checked {
     text-align: center;
-    color: orange;
+    color: rgb(255, 0, 0)
 }
 
 hr {
     margin: 30px 0;
     height: 1px;
     border: none;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, black));
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, rgb(0, 0, 0)));
 }
