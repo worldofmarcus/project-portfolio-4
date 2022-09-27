@@ -107,3 +107,16 @@ hr {
 .review-detail-heart-comments {
     text-align: center;
 }
+
+.test {
+
+    transition: transform .2s;
+    /* Animation */
+    ;
+    margin: 0 auto;
+}
+
+.test:hover {
+    transform: scale(2.0);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
