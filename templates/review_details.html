@@ -4,40 +4,45 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-    <h1 class="headline mt-4">{{ post.artist }} | {{ post.title }}</h1>
+    <div class="row align-items-center mt-4">
+        <div class="col-lg-6 col-md-6 align-items-center">
+            {% if 'default_image' in post.featured_image.url %}
+            <img class="card-img-top"
+                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
+            {% else %}
+            <img class="card-img-top" src="{{ post.featured_image.url }}">
+            {% endif %}
 
-    <hr />
-
-    <div class="row align-items-center">
-        <div class="col">
+        </div>
+        <div class="col align-items-center">
             <p>
                 <h6>{{ post.category }}</h6>
             </p>
             {% if 'Album' in post.category %}
             <p>
-                <h2>{{ post.title }}</h2>
+                <h3>{{ post.title }}</h3>
             </p>
             <p>
-                <h2>By</h2>
+                <h3>By</h3>
             </p>
             <p>
-                <h2>{{ post.artist }}</h2>
+                <h3>{{ post.artist }}</h3>
             </p>
             <p>
-                <h2>{{ post.release_date }}</h2>
+                <h3>{{ post.release_date }}</h3>
             </p>
             {% else %}
             <p>
-                <h2>{{ post.artist }}</h2>
+                <h3>{{ post.artist }}</h3>
             </p>
             <p>
-                <h2>@</h2>
+                <h3>@</h3>
             </p>
             <p>
-                <h2>{{ post.venue }}</h2>
+                <h3>{{ post.venue }}</h3>
             </p>
             <p>
-                <h2>Datum för spelning</h2>
+                <h3>Datum för spelning</h3>
             </p>
             {% endif %}
             <hr />
@@ -78,16 +83,7 @@
                 {% endwith %}
             </div>
         </div>
-        <div class="col">
-            {% if 'default_image' in post.featured_image.url %}
-            <img class="card-img-top"
-                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
-            {% else %}
-            <img class="card-img-top" src="{{ post.featured_image.url }}">
-            {% endif %}
-
-        </div>
-        <div class="review-detail-body mt-4">{{ post.body|safe }}
+        <div class="review-detail-body mt-4 align-items-center">{{ post.body|safe }}
 
             <hr />
         </div>
