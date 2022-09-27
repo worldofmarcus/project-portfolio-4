@@ -60,6 +60,12 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+SUMMERNOTE_CONFIG = {
+    'width': '100%',
+
+
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

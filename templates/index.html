@@ -37,9 +37,9 @@
                                 | <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}
                             </p>
-                            <p class=" card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
-                            <p class=" card-text mb-3 fragment">{{ post.fragment | truncatechars:100 }}</p>
-                            <p class=" card-text">
+                            <p class="card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
+                            <p class="card-text mb-3 fragment">{{ post.fragment|truncatechars:100 }}</p>
+                            <p class="card-text">
                                 <a href="{% url 'review_details' post.slug %}"
                                     class="btn btn-outline-secondary btn-sm">Read
                                     More</a>
@@ -53,8 +53,7 @@
                             <hr />
                             <p class="card-text text-muted h6 card-text-footer">
                                 By <span class="author">{{ post.author.first_name }}</span> |
-                                {{ post.date_created_on | date:"Y-m-d" }}
-
+                                {{ post.date_created_on|date:"Y-m-d" }}
                         </div>
                     </div>
                 </div>
@@ -64,7 +63,6 @@
                 <hr />
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>

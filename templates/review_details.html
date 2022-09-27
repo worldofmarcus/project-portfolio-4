@@ -3,9 +3,51 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<div class="container">
+    <h1 class="headline mt-4">{{ post.artist }} | {{ post.title }}</h1>
 
-<h1>{{ post.title }}</h1>
-<br>
+    <hr />
+
+    <div class="row align-items-center">
+        <div class="col">
+            <p>
+                <h6>{{ post.category }}</h6>
+            </p>
+            <p>
+                <h2>{{ post.title }}</h2>
+            </p>
+            <p>
+                <h2>By</h2>
+            </p>
+            <p>
+                <h2>{{ post.artist }}</h2>
+            </p>
+            <p>
+                <h2>{{ post.release_date }}</h2>
+            </p>
+            <hr />
+            <p>
+                <h6>Genre: {{ post.genre }}</h6>
+            </p>
+            <p>
+                <h6>Label: {{ post.record_label }}</h6>
+            </p>
+            <p>
+                <h6>Reviewed: {{ post.date_created_on | date:"Y-m-d"}}</h6>
+            </p>
+
+        </div>
+        <div class="col"><img class="card-img-top" src="{{ post.featured_image.url }}">
+        </div>
+
+        <div> class="review-detail-body mt-4">{{ post.body|safe }}</div>
+
+
+
+
+    </div>
+</div>
+
 <small>By: {{ post.author }}</small>
 <br>
 <small>Category: {{ post.category }}</small>
@@ -20,10 +62,6 @@
 <br>
 
 {% endif %}
-{{ post.body | safe }}
-
-<br>
-<br>
 
 <strong>
     {% if user.is_authenticated %}

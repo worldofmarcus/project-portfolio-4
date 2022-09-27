@@ -4,14 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Tinos&display=swap');
 
-* {}
-
-html {}
-
-body {}
-
-
-
 
 /* ==============
    typography
@@ -19,22 +11,22 @@ body {}
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    color: #7d8285;
+    color: rgb(133, 125, 125);
     letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
+
 }
 
 a {
     text-decoration: none;
-
-
 }
-
-
 
 .navbar-brand {
     font-family: 'Roboto', sans-serif;
@@ -58,8 +50,6 @@ a {
     font-size: 1em;
 }
 
-
-
 .card-text {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -76,7 +66,7 @@ a {
 }
 
 .fragment {
-    font-family: 'Tinos', sans-serif;
+    font-family: 'Tinos', serif;
 
 }
 
@@ -87,6 +77,12 @@ a {
 .checked {
     text-align: center;
     color: rgb(255, 0, 0)
+}
+
+.review-detail-body {
+    font-family: 'Tinos', serif;
+    font-size: 1em;
+    color: rgb(158, 24, 24);
 }
 
 hr {
