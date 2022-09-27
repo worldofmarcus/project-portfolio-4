@@ -9,10 +9,13 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'date_created_on')
-    actions = ['approve_review']
+    actions = ['approve_review', 'publish']
 
     def approve_review(self, request, queryset):
         queryset.update(approved=True)
+
+    def publish(self, request, queryset):
+        queryset.update(status=1)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
