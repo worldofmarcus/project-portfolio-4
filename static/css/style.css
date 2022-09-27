@@ -80,9 +80,10 @@ a {
 }
 
 .review-detail-body {
-    font-family: 'Tinos', serif;
+    font-family: 'Tinos', serif !important;
     font-size: 1em;
-    color: rgb(158, 24, 24);
+
+
 }
 
 hr {

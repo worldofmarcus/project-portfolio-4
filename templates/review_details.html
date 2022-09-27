@@ -13,6 +13,7 @@
             <p>
                 <h6>{{ post.category }}</h6>
             </p>
+            {% if 'Album' in post.category %}
             <p>
                 <h2>{{ post.title }}</h2>
             </p>
@@ -25,6 +26,20 @@
             <p>
                 <h2>{{ post.release_date }}</h2>
             </p>
+            {% else %}
+            <p>
+                <h2>{{ post.artist }}</h2>
+            </p>
+            <p>
+                <h2>@</h2>
+            </p>
+            <p>
+                <h2>{{ post.venue }}</h2>
+            </p>
+            <p>
+                <h2>Datum för spelning</h2>
+            </p>
+            {% endif %}
             <hr />
             <p>
                 <h6>Genre: {{ post.genre }}</h6>
@@ -40,7 +55,7 @@
         <div class="col"><img class="card-img-top" src="{{ post.featured_image.url }}">
         </div>
 
-        <div> class="review-detail-body mt-4">{{ post.body|safe }}</div>
+        <div class="review-detail-body mt-4">{{ post.body|safe }}</div>
 
 
 
