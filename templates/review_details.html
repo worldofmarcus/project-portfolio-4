@@ -78,56 +78,62 @@
                 {% endwith %}
             </div>
         </div>
-        <div class="col"><img class="card-img-top" src="{{ post.featured_image.url }}">
+        <div class="col">
+            {% if 'default_image' in post.featured_image.url %}
+            <img class="card-img-top"
+                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
+            {% else %}
+            <img class="card-img-top" src="{{ post.featured_image.url }}">
+            {% endif %}
+
         </div>
         <div class="review-detail-body mt-4">{{ post.body|safe }}
+
             <hr />
         </div>
 
         <div>
             <h3>Comment Section</h3>
-
             {% for comment in comments %}
-
             {{ comment.date_created_on }} by {{ comment.name}}
 
 
+
+
+            {% if user.is_authenticated %}
+
+            {% if user.id == comment.author.id %}
+
+            <a href="{% url 'update_comment' comment.pk %}">Update Comment</a>
+
+
+
+            {% endif %}
+            {% endif %}
+
+            <br>
+            {{ comment.body | linebreaks }}
+            {% endfor %}
+            {% if commented %}
+
+            <h1>Your comment is awaiting approval</h1>
+
+            {% else %}
+            {% if user.is_authenticated %}
+
+            <h5>Leave a comment:</h5>
+            <p>Posting as: {{ user.username }}</p>
+            <form method="post" style="margin-top: 1.3em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+            </form>
+            {% endif %}
+            {% endif %}
+
+
         </div>
-
-        {% if user.is_authenticated %}
-
-        {% if user.id == comment.author.id %}
-
-        <a href="{% url 'update_comment' comment.pk %}">Update Comment</a>
-
-
-
-        {% endif %}
-        {% endif %}
-
-        <br>
-        {{ comment.body | linebreaks }}
-        {% endfor %}
-        {% if commented %}
-
-        <h1>Your comment is awaiting approval</h1>
-
-        {% else %}
-        {% if user.is_authenticated %}
-
-        <h5>Leave a comment:</h5>
-        <p>Posting as: {{ user.username }}</p>
-        <form method="post" style="margin-top: 1.3em;">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% endif %}
-        {% endif %}
-
-
     </div>
-</div>
 
 
 
@@ -143,4 +149,4 @@
 
 
 
-{% endblock content %}
+    {% endblock content %}
