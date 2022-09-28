@@ -14,7 +14,7 @@ class CommentForm(forms.ModelForm):
 class CreateReviewForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category', 'release_date',
+        fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category',
                   'release_live_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
 
         widgets = {

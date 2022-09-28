@@ -39,7 +39,6 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     date_created_on = models.DateTimeField(auto_now_add=True)
     date_updated_on = models.DateTimeField(auto_now=True)
-    release_date = models.IntegerField()
     release_live_date = models.DateTimeField()
     record_label = models.CharField(max_length=255)
     venue = models.CharField(max_length=255)
