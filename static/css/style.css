@@ -133,11 +133,14 @@ hr {
 .card-awaiting-approval,
 .card-draft {
     font-size: 0.8em;
+    font-weight: 700;
     color: rgb(255, 0, 0);
+
 }
 
 .card-published-approved,
 .card-draft-approved {
     font-size: 0.8em;
+    font-weight: 700;
     color: rgb(0, 128, 0);
 }

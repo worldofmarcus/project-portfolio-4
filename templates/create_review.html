@@ -6,12 +6,24 @@
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h3>Create New Review:</h3>
+    <div>
+        <h1 class="headline mt-4">Create Review</h1>
+        <p>
+            <h2 class="intro-text">Please use the form below to create you review.</h2>
+        </p>
+        <hr />
+    </div>
+
+
+    <p>If you are reviewing a concert,
+        please leave N/A in the Record Company Field. If you are reviewing an Album please leave N/A in the
+        Venue Field</p>
+
     <p>Posting as: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Submit</button>
     </form>
     {% endif %}
 </div>

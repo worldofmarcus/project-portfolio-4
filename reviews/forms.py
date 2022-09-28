@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Comment, Post
+from datetime import datetime
 from django_summernote.widgets import SummernoteWidget
 
 
@@ -13,10 +14,12 @@ class CommentForm(forms.ModelForm):
 class CreateReviewForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category',
-                  'release_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
+        fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category', 'release_date',
+                  'release_live_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
 
         widgets = {
                         'body': SummernoteWidget(),
+                        'release_live_date': forms.DateInput(attrs={'type': 'date', 'max': datetime.now().date()})
                         }
+
 
