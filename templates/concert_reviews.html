@@ -4,50 +4,72 @@
 
 <div class="container">
     <div>
-        <h1 class="headline">Latest Concert Reviews</h1>
-        <hr>
+        <h1 class="headline mt-4">Latest Concert Reviews</h1>
+        <p>
+            <h2 class="intro-text">Reviews of the latest concerts
+                written by our top critics! Enjoy!</h2>
+        </p>
+        <hr />
     </div>
     <div class="row">
-        <!-- Reviews -->
+        <!-- Concert Reviews -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in object_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4 border-0 shadow p-3 mb-5 bg-white rounded">
+                <div class="col-lg-4 col-md-12">
+                    <div class="card mb-4 border-0 shadow p-3 bg-white rounded">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if 'default_image' in post.featured_image.url %}
-                                <img class="card-img-top rounded-circle"
-                                    src="https://res.cloudinary.com/worldofmarcus/image/upload/v1663746472/r3sih6tngw95qupbkzrj.jpg">
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
                                 {% else %}
-                                <img class="card-img-top rounded-circle" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
                             </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title"><a href="{% url 'review_details' post.slug %}">
-                                        {{ post.title }}</a></h2>
-                                <p class=" card-text">{{ post.fragment | slice:80}}</p>
-                                <p class=" card-text"><a href="{% url 'review_details' post.slug %}">Read More</a></p>
-                            </a>
+                            <p class="card-text mt-2 mb-2">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}
+
+
+                            </p>
+                            <p class="card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
+                            <p class="card-text mb-3 fragment">{{ post.fragment|truncatechars:100 }}</p>
+                            <p class="card-text">
+                                <a href="{% url 'review_details' post.slug %}"
+                                    class="btn btn-outline-secondary btn-sm">Read
+                                    More</a>
+                                {% if user.id == post.author.id %}
+                                <a href="{% url 'update_review' post.slug %}"
+                                    class="btn btn-outline-secondary btn-sm">Update</a>
+                                <a href="{% url 'delete_review' post.slug %}" class="btn btn-danger btn-sm">Delete</a>
+                                {% endif %}
+
+                            </p>
                             <hr />
-                            <p class="card-text text-muted h6">By: {{ post.author }} | {{ post.date_created_on }} <i
-                                    class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                            <p class="card-text text-muted h6 card-text-footer">
+                                By <span class="author">{{ post.author.first_name }}</span> |
+                                {{ post.date_created_on|date:"Y-m-d" }}
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
+                <hr />
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
+        <ul class="pagination pagination-sm justify-content-center">
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
@@ -59,4 +81,5 @@
     </nav>
     {% endif %}
 </div>
+<hr>
 {% endblock content %}
