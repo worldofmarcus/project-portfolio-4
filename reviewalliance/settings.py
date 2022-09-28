@@ -66,6 +66,7 @@ SUMMERNOTE_CONFIG = {
         'addDefaultFonts': False,
         'fontNames': ['Tinos'],
         'fontNamesIgnoreCheck': ['Tinos'],
+        'width': '100%',
     },
     }
 
