@@ -22,7 +22,7 @@
     <form method="post" class="form-text" enctype="multipart/form-data" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
-        <p>Posting as: {{ user.username }}</p>
+        <p class="mt-4">Posting as: {{ user.first_name }}</p>
         <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Submit</button>
     </form>
     {% endif %}
