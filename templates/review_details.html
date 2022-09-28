@@ -96,7 +96,7 @@
             <h3>Comment Section</h3>
             <div class="mt-5">
                 {% for comment in comments %}
-                <p class="comment-date-name">{{ comment.date_created_on }} by {{ comment.name}}</p>
+                <p class="comment-date-name">{{ comment.date_created_on }} by {{ user.first_name}}</p>
                 <p class="comment-body">{{ comment.body }}</p>
                 {% if user.is_authenticated %}
                 {% if user.id == comment.author.id %}

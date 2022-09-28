@@ -6,16 +6,24 @@
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h3>Update Review | {{ post.title }}</h3>
-    <a href="{% url 'delete_review' post.slug %}">
-        Delete Review</a></h2>
+    <div>
+        <h1 class="headline mt-4">Update Review</h1>
+        <p>
+            <h2 class="intro-text">Please use the form below to update your review.</h2>
+        </p>
+        <hr />
+    </div>
 
-    <!-- {% url 'review_details' post.slug %} -->
-    <p>Posting as: {{ user.username }}</p>
-    <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
+    <p class="form-text">If you are reviewing a concert,
+        please leave N/A in the Record Company Field. If you are reviewing an Album please leave N/A in the
+        Venue Field</p>
+
+
+    <form method="post" class="form-text" enctype="multipart/form-data" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        <p class="mt-4">Posting as: {{ user.first_name }}</p>
+        <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Update</button>
     </form>
     {% endif %}
 </div>
