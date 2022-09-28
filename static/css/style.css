@@ -164,3 +164,16 @@ hr {
     font-family: 'Roboto', sans-serif;
     color: rgb(133, 125, 125);
     font-size: 1em;
+}
+
+.about {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: rgb(133, 125, 125);
+}
+
+.address {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: rgb(133, 125, 125);
+}

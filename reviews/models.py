@@ -4,12 +4,17 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 RATING_CHOICES = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
-GENRE = ((0, 'Electronic'), (2, 'Folk/Country'), (3, 'Jazz'), (4, 'Pop/R&B'),
-         (5, 'Rock'), (6, 'Experimental'), (7, 'Global'), (8, 'Metal'),
-         (9, 'Rap/Hip-Hop'), (10, 'Uncategorized'))
-
 
 class Category(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return str(self.name)
+
+class Genre(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     class Meta:
@@ -23,6 +28,11 @@ CATEGORY_CHOICES = Category.objects.all().values_list('name', 'name')
 choice_list = []
 for item in CATEGORY_CHOICES:
     choice_list.append(item)
+
+GENRE_CHOICES = Genre.objects.all().values_list('name', 'name')
+genre_list = []
+for item in GENRE_CHOICES:
+    genre_list.append(item)
 
 
 class Post(models.Model):
@@ -42,7 +52,7 @@ class Post(models.Model):
     release_live_date = models.DateTimeField()
     record_label = models.CharField(max_length=255, blank=True)
     venue = models.CharField(max_length=255, blank=True)
-    genre = models.IntegerField(choices=GENRE, default=10)
+    genre = models.CharField(max_length=255, default='Uncategorized', choices=genre_list)
     rating = models.IntegerField(choices=RATING_CHOICES, default=3)
     approved = models.BooleanField(default=False)
 
