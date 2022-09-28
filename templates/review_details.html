@@ -3,7 +3,9 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+
 <div class="container">
+
     <div class="row align-items-center mt-4">
         <div class="col-lg-6 col-md-12 align-items-center">
             {% if 'default_image' in post.featured_image.url %}
@@ -29,8 +31,14 @@
                 <h3>{{ post.artist }}</h3>
             </p>
             <p>
-                <h3>{{ post.release_live_date|date:"Y"  }}</h3>
+                <h3>{{ post.release_live_date|date:"Y" }}</h3>
             </p>
+
+            <p class="number-circle">{{ post.rating }}
+
+            </p>
+
+
             {% else %}
             <p>
                 <h3>{{ post.artist }}</h3>
@@ -42,7 +50,10 @@
                 <h3>{{ post.venue }}</h3>
             </p>
             <p>
-                <h3>{{ post.release_live_date }}</h3>
+                <h3>{{ post.release_live_date|date:"Y-m-d" }}</h3>
+            </p>
+            <p class="number-circle">{{ post.rating }}
+
             </p>
             {% endif %}
             <hr />
@@ -50,7 +61,7 @@
                 <h6>Genre: {{ post.genre }}</h6>
             </p>
             <p>
-                <h6>Release Date: {{ post.release_live_date|date:"Y-m-d"  }}</h6>
+                <h6>Release Date: {{ post.release_live_date|date:"Y-m-d" }}</h6>
             </p>
             <p>
                 <h6>Label: {{ post.record_label }}</h6>

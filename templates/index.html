@@ -27,19 +27,8 @@
                                 <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
                             </div>
-                            <p class="card-text mt-2 mb-2">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}
-
-
-
-                            </p>
-                            <p class="card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
+                            <p class="card-text bold-text mt-1 mb-1">{{ post.artist }} | {{ post.title }}</p>
+                            <p class="card-text bold-text mb-1">{{ post.genre }}</p>
                             <p class="card-text mb-3 fragment">{{ post.fragment|truncatechars:100 }}</p>
                             <p class="card-text">
                                 <a href="{% url 'review_details' post.slug %}"

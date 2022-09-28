@@ -177,3 +177,22 @@ hr {
     font-size: 1em;
     color: rgb(133, 125, 125);
 }
+
+.number-circle {
+
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    margin: auto;
+    text-align: center;
+
+}
+
+.bold-text {
+    font-weight: 700;
+}
