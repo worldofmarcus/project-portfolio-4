@@ -122,14 +122,22 @@ hr {
 }
 
 
-
-
 @media screen and (max-width: 375px) {
 
     .navbar-brand {
         font-size: 1.5em;
-
     }
+}
 
 
+.card-awaiting-approval,
+.card-draft {
+    font-size: 0.8em;
+    color: rgb(255, 0, 0);
+}
+
+.card-published-approved,
+.card-draft-approved {
+    font-size: 0.8em;
+    color: rgb(0, 128, 0);
 }
