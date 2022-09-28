@@ -94,35 +94,25 @@
 
         <div>
             <h3>Comment Section</h3>
-            {% for comment in comments %}
-            {{ comment.date_created_on }} by {{ comment.name}}
-
-
-
-
-            {% if user.is_authenticated %}
-
-            {% if user.id == comment.author.id %}
-
-            <a href="{% url 'update_comment' comment.pk %}">Update Comment</a>
-
-
-
-            {% endif %}
-            {% endif %}
-
-            <br>
-            {{ comment.body | linebreaks }}
-            {% endfor %}
+            <div class="mt-5">
+                {% for comment in comments %}
+                <p class="comment-date-name">{{ comment.date_created_on }} by {{ comment.name}}</p>
+                <p class="comment-body">{{ comment.body }}</p>
+                {% if user.is_authenticated %}
+                {% if user.id == comment.author.id %}
+                <a href="{% url 'update_comment' comment.pk %}" class="btn btn-outline-secondary btn-sm">Update</a></p>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
             {% if commented %}
 
             <h1>Your comment is awaiting approval</h1>
-
             {% else %}
             {% if user.is_authenticated %}
 
             <h5>Leave a comment:</h5>
-            <p>Posting as: {{ user.username }}</p>
+            <p>Posting as: {{ user.first_name }}</p>
             <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}

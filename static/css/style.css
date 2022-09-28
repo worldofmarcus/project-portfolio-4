@@ -151,3 +151,16 @@ hr {
     font-weight: 700;
     color: rgb(0, 128, 0);
 }
+
+
+.comment-date-name {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(133, 125, 125);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.comment-body {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(133, 125, 125);
+    font-size: 1em;
