@@ -12,21 +12,21 @@
     <div class="col-md-8 mt-3 offset-md-2">
 
 
-      <h1>{% trans "Sign In" %}</h1>
+      <h1>{% trans "Sign In To Review | Alliance" %}</h1>
 
 
-      <p>{% blocktrans %}If you have not created an account yet, then please
+      <p class="card-text">{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
 
-      <form class="login" method="POST" action="{% url 'account_login' %}">
+      <form class="login card-text" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
 
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+        <button class="primaryAction btn btn-secondary btn-sm mt-3 mb-3" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>
