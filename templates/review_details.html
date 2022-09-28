@@ -81,17 +81,14 @@
                 <i class="far fa-heart p-2"></i>
                 {{ post.number_of_likes }}
                 {% with comments.count as total_comments %}
-
                 <i class="far fa-comments p-2"></i>
                 {{ total_comments }}
                 {% endwith %}
             </div>
         </div>
         <div class="review-detail-body mt-4 align-items-center">{{ post.body|safe }}
-
             <hr />
         </div>
-
         <div>
             <h3>Comment Section</h3>
             <div class="mt-5">
@@ -108,22 +105,19 @@
                 {% endfor %}
             </div>
             {% if commented %}
-
-            <h1>Your comment is awaiting approval</h1>
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting approval
+            </div>
             {% else %}
             {% if user.is_authenticated %}
-
+            <hr />
             <h5>Leave a comment:</h5>
-
             <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
                 <p class="mt-3">Posting as: {{ user.first_name }}</p>
                 <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Submit</button>
-
             </form>
-
-
             {% endif %}
             {% endif %}
         </div>
