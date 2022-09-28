@@ -40,9 +40,6 @@
                             <p class="card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
                             <p class="card-text mb-3 fragment">{{ post.fragment|truncatechars:100 }}</p>
                             <p class="card-text">
-                                <a href="{% url 'review_details' post.slug %}"
-                                    class="btn btn-outline-secondary btn-sm">Read
-                                    More</a>
                                 {% if user.id == post.author.id %}
                                 <a href="{% url 'update_review' post.slug %}"
                                     class="btn btn-outline-secondary btn-sm">Update</a>
