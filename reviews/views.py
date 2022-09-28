@@ -126,7 +126,6 @@ class ReviewLike(generic.DetailView):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-
         return HttpResponseRedirect(reverse('review_details', args=[slug]))
 
 
@@ -134,3 +133,9 @@ class DeleteReview(generic.DeleteView):
     model = Post
     template_name = 'delete_review.html'
     success_url = '/member-reviews/'
+
+
+class DeleteComment(generic.DeleteView):
+    model = Comment
+    template_name = 'delete_comment.html'
+    success_url = '/'

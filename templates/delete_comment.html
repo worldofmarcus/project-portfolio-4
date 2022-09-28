@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="card-text col-md-8 mt-3 offset-md-2">
+            <h3>Delete Comment</h3>
+            <form method="post" style="margin-top: 1.3em;">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <strong>Are you sure about deleting the comment:<br>
+                    "{{ comment.body }}"
+                    <br>This action cannot be undone!</strong>
+                <br>
+                <button type="submit" class="btn btn-danger btn-sm mt-3 mb-3">Delete Post</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
