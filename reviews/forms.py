@@ -1,21 +1,42 @@
-from django import forms
-from django.contrib.auth.models import User
-from .models import Comment, Post
+"""Import relevant modules for the application"""
+
 from datetime import datetime
+from django import forms
 from django_summernote.widgets import SummernoteWidget
+from .models import Comment, Post
 
 
 class CommentForm(forms.ModelForm):
+    """
+    This class creates the comment form.
+    """
+
     class Meta:
+        """
+        This meta class adds the body field to the form
+        based on the comment model.
+        """
+
         model = Comment
         fields = ('body',)
 
 
 class CreateReviewForm(forms.ModelForm):
+    """
+    This class creates the review form.
+    """
     class Meta:
+        """
+        This meta class adds the fields to the form
+        based on the post model. It also adds a number
+        of widgets to customize and add functionality
+        to the form.
+        """
+
         model = Post
-        fields = ('title', 'artist', 'featured_image', 'fragment', 'body', 'category',
-                  'release_live_date', 'record_label', 'venue', 'genre', 'rating', 'status',)
+        fields = ('title', 'artist', 'featured_image', 'fragment', 'body',
+                  'category', 'release_live_date', 'record_label', 'venue',
+                  'genre', 'rating', 'status',)
 
         widgets = {
                         'body': SummernoteWidget(),
@@ -30,4 +51,3 @@ class CreateReviewForm(forms.ModelForm):
         labels = {
             'release_live_date': 'Release Date / Live Date',
         }
-
