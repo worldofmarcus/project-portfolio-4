@@ -1,21 +1,14 @@
-{% extends "base.html" %} {% block content %} {% include "navbar_2.html" %} {% load crispy_forms_tags %}
+{% extends 'base.html' %}
 
-<!-- 500 Error Page Content -->
+{% block content %}
+
+<!-- 404 Error Page Content -->
 <div class="container page-space">
     <div class="row">
         <div class="col-12 text-center">
-            <div>
-                <p class="error-title">500</p>
-            </div>
-            <div><i class="fas fa-bug error-title"></i></div>
-            <div>
-                <p class="mt-5">Error</p>
-            </div>
-            <form action="/">
-                <button class="black-button mt-4" type="submit">Home</button>
-            </form>
+            500
         </div>
     </div>
 </div>
 
-{% include "footer.html" %} {% endblock %}
+{% endblock content %}
