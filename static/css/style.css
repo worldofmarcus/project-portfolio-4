@@ -24,6 +24,10 @@ h6 {
 
 }
 
+body {
+    background-color: #F1F1F1
+}
+
 a {
     text-decoration: none;
     color: rgb(133, 125, 125);
@@ -34,6 +38,8 @@ a {
     font-weight: 700;
     font-size: 2.5em;
     text-transform: uppercase;
+    letter-spacing: 7px;
+    color: #F1F1F1
 }
 
 .navbar-nav {
