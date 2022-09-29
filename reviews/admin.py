@@ -19,21 +19,35 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'date_created_on')
-    actions = ['approve_review', 'publish']
+    actions = ['approve_review', 'unapprove', 'publish', 'unpublish']
 
-    def approve_review(self, queryset):
+    def approve_review(self, request, queryset):
         """
         This help method updates the approved field to True
         """
 
         queryset.update(approved=True)
 
-    def publish(self, queryset):
+    def publish(self, request, queryset):
         """
         This help method updates the status field to 1
         """
 
         queryset.update(status=1)
+
+    def unpublish(self, request, queryset):
+        """
+        This help method updates the status field to 0
+        """
+
+        queryset.update(status=0)
+
+    def unapprove(self, request, queryset):
+        """
+        This help method updates the status field to 0
+        """
+
+        queryset.update(approved=False)
 
 
 @admin.register(Category)
@@ -61,7 +75,7 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ['name', 'email', 'body']
     actions = ['approve_comments']
 
-    def approve_comments(self, queryset):
+    def approve_comments(self, request, queryset):
         """
         This help method updates the approved field to True
         """
