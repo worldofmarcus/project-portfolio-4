@@ -33,12 +33,8 @@
             <p>
                 <h3>{{ post.release_live_date|date:"Y" }}</h3>
             </p>
-
             <p class="number-circle">{{ post.rating }}
-
             </p>
-
-
             {% else %}
             <p>
                 <h3>{{ post.artist }}</h3>
@@ -63,9 +59,11 @@
             <p>
                 <h6>Release Date: {{ post.release_live_date|date:"Y-m-d" }}</h6>
             </p>
+            {% if 'Album' in post.category %}
             <p>
                 <h6>Label: {{ post.record_label }}</h6>
             </p>
+            {% endif %}
 
             <p>
                 <h6>Reviewed by {{ post.author.first_name }}: {{ post.date_created_on | date:"Y-m-d"}}</h6>
