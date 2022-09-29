@@ -8,8 +8,15 @@ from .forms import CommentForm, CreateReviewForm
 
 class HomeView(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1, approved=True, category='Album').order_by('-date_created_on')
+    queryset = Post.objects.filter(status=1, approved=True).order_by('-date_created_on')
     template_name = ('index.html')
+    paginate_by = 6
+
+
+class AlbumView(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1, approved=True, category='Album').order_by('-date_created_on')
+    template_name = ('album_reviews.html')
     paginate_by = 6
 
 
