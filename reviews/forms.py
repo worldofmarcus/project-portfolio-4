@@ -50,4 +50,5 @@ class CreateReviewForm(forms.ModelForm):
                         }
         labels = {
             'release_live_date': 'Release Date / Live Date',
+            'featured_image': 'Image [600x600 pixels 1:1]'
         }
