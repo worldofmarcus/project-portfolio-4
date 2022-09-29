@@ -75,10 +75,10 @@
                 {% csrf_token %}
                 {% if liked %}
                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                        class="fas fa-heart test"></i></button>
+                        class="fas fa-heart heart-like"></i></button>
                 {% else %}
                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                        class="far fa-heart test"></i></button>
+                        class="far fa-heart heart-like"></i></button>
                 {% endif %}
             </form>
             {% if user.id == post.author.id %}

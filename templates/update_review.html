@@ -23,7 +23,7 @@
         {{ form | crispy }}
         {% csrf_token %}
         <p class="mt-4">Posting as: {{ user.first_name }}</p>
-        <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Update</button>
+        <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Update</button>
     </form>
     {% endif %}
 </div>

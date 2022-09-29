@@ -27,11 +27,8 @@
                                 {% endif %}
                             </div>
                             <p class="card-text mt-2 mb-2">
-
                                 <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}
-
-
                             </p>
                             <p class="card-text mb-1">{{ post.artist }} | {{ post.title }}</p>
                             <p class="card-text mb-3 fragment">{{ post.fragment|truncatechars:100 }}</p>
@@ -45,7 +42,6 @@
                             <p class="card-text">
                                 {% if post.status == 1 and not post.approved  %}
                                 <span class="card-awaiting-approval">Your review is awaiting approval</span>
-
                                 {% elif post.status == 0 and post.approved %}
                                 <span class="card-draft-approved">Your review is in draft status but is
                                     approved</span>
