@@ -18,7 +18,8 @@
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home'%}">Review | Alliance</a>
+            <a class="navbar-brand" href="{% url 'home'%}">Review |
+                Alliance</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,13 +30,13 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home'%}">All Reviews</a>
+                        <a class="nav-link" href="{% url 'home'%}">All</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'album_reviews'%}">Album Reviews</a>
+                        <a class="nav-link" href="{% url 'album_reviews'%}">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'concert_reviews'%}">Concert Reviews</a>
+                        <a class="nav-link" href="{% url 'concert_reviews'%}">Concerts</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
