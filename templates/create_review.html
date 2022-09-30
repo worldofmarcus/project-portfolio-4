@@ -3,6 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+
 {% if user.is_authenticated %}
 
 <div class="container">
@@ -13,12 +14,6 @@
         </p>
         <hr />
     </div>
-
-    <p class="form-text">If you are reviewing a concert,
-        please leave N/A in the Record Company Field. If you are reviewing an Album please leave N/A in the
-        Venue Field</p>
-
-
     <form method="post" class="form-text" enctype="multipart/form-data" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
@@ -26,6 +21,7 @@
         <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Submit</button>
     </form>
     {% endif %}
+
 </div>
 
 {% endblock content %}

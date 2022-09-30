@@ -81,6 +81,14 @@ def about(request):
 
     return render(request, 'about.html')
 
+
+def review_submitted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'review_submitted.html')
+
 class AdminArea(generic.ListView):
     model = Comment
     template_name = ('admin_area.html')
@@ -96,8 +104,6 @@ class AdminArea(generic.ListView):
         # filter by a variable captured from url, for example
         print(qs)
         return qs.filter()
-
-
 
 
 class DetailView(generic.DetailView):
@@ -180,12 +186,13 @@ class CreateReview(generic.CreateView):
     model = Post
     form_class = CreateReviewForm
     template_name = 'create_review.html'
-    success_url = '/member-reviews/'
+    success_url = '/review/submit-success/'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
+
 
 
 class UpdateReview(generic.UpdateView):
@@ -261,28 +268,6 @@ class DeleteReview(generic.DeleteView):
     model = Post
     template_name = 'delete_review.html'
     success_url = '/member-reviews/'
-
-    # Needs to be fixed
-    # def get_context_data(self, **kwargs):
-    #     # Call the base implementation first to get the context
-    #     context = super(DeleteReview, self).get_context_data(**kwargs)
-    #     # Create any data and add it to the context
-    #     context['deleted'] = 1
-    #     return context
-
-#     Till member_reviews.html
-#  {% if deleted == 1 %}
-#         <div class="alert alert-success text-center" role="alert">
-#             Your review has succesfully been updated and needs a re-approval from site admin.
-#             <br>
-#             <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my
-#                 reviews</a>
-#         </div>
-
-#         {% else %}
-    # {% endif %}
-
-
 
 class DeleteComment(generic.DeleteView):
     """
