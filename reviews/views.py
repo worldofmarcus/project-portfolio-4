@@ -3,6 +3,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 from django.utils.text import slugify
 from .models import Post, Comment
 from .forms import CommentForm, CreateReviewForm
@@ -80,12 +81,23 @@ def about(request):
 
     return render(request, 'about.html')
 
-def admin_area(request):
-    """
-    A basic function that just returns admin_area.html to be rendered.
-    """
+class AdminArea(generic.ListView):
+    model = Comment
+    template_name = ('admin_area.html')
 
-    return render(request, 'admin_area.html')
+    # def get_context_data(self, **kwargs):
+    #     data = super().get_context_data(**kwargs)
+    #     return data
+
+
+    def get_queryset(self):
+        # original qs
+        qs = super().get_queryset()
+        # filter by a variable captured from url, for example
+        print(qs)
+        return qs.filter()
+
+
 
 
 class DetailView(generic.DetailView):

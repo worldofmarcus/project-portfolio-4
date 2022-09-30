@@ -25,9 +25,18 @@
                                 </p>
                                 <p class="card-text mt-1 mb-1">
                                     <i class="fa-solid fa-users fa-2xl"></i><br>Total registered users:
+
+
+                                    {% for comment.count in comment_list %}
+                                    {{ comment.count }}
+                                    {% endfor %}
+
+
+
+
                                 </p>
                                 <p class="card-text mt-1 mb-1">
-                                    <i class="fa-solid fa-comment-dots fa-2xl"></i><br>Total comments:
+                                    <i class="fa-solid fa-comment-dots fa-2xl"></i><br>Total comments on site:
 
                                 </p>
                                 <p class="card-text mt-1 mb-1">
