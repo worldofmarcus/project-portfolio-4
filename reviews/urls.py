@@ -16,7 +16,11 @@ urlpatterns = [
      path('review/submit-success/', views.review_submitted,
           name='review_submit_success/'),
      path('review/update-success/', views.review_updated,
-     name='review_update_success/'),
+          name='review_update_success/'),
+     path('review/delete-success/', views.review_deleted,
+          name='review_delete_success/'),
+     path('comment/delete-success/', views.comment_deleted,
+          name='comment_delete_success/'),
      path('about/', views.about, name='about'),
      path('admin-area/', views.AdminArea.as_view(), name='admin_area'),
      path('<slug:slug>/', views.DetailView.as_view(),
@@ -32,3 +36,11 @@ urlpatterns = [
      path('like/<slug:slug>', views.ReviewLike.as_view(),
           name='like_review'),
 ]
+
+
+def review_deleted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'review_deleted.html')

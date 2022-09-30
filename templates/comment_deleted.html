@@ -4,10 +4,10 @@
 
 {% if user.is_authenticated %}
 <div class="alert alert-success text-center" role="alert">
-    Your review has succesfully been deleted! <br>
+    Your comment has succesfully been deleted! <br>
 
     <br>
-    <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my reviews</a>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to home</a>
 </div>
 {% endif %}
 

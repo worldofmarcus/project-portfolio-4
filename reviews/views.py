@@ -89,12 +89,30 @@ def review_submitted(request):
 
     return render(request, 'review_submitted.html')
 
+
 def review_updated(request):
     """
     A basic function that just returns about.html to be rendered.
     """
 
     return render(request, 'review_updated.html')
+
+
+def review_deleted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'review_deleted.html')
+
+
+def comment_deleted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'comment_deleted.html')
+
 
 class AdminArea(generic.ListView):
     model = Comment
@@ -269,14 +287,17 @@ class DeleteReview(generic.DeleteView):
     """
     This class handles the deletion of a review.
     """
+
     model = Post
     template_name = 'delete_review.html'
-    success_url = '/member-reviews/'
+    success_url = '/review/delete-success/'
+
 
 class DeleteComment(generic.DeleteView):
     """
     This class handles the deletion of a comment.
     """
+
     model = Comment
     template_name = 'delete_comment.html'
-    success_url = '/'
+    success_url = '/comment/delete-success/'
