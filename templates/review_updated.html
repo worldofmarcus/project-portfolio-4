@@ -1,29 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% load crispy_forms_tags %}
 
+{% if user.is_authenticated %}
+<div class="alert alert-success text-center" role="alert">
+    Your review has succesfully been updated! <br>
+    You can find it in your reviews section (follow link below).<br>
 
-{% if user.is_authenticated and user.id == post.author.id %}
-
-<div class="container">
-    <div>
-        <h1 class="headline mt-4">Update Review</h1>
-        <p>
-            <h2 class="intro-text">Please use the form below to update your review.</h2>
-        </p>
-        <hr />
-    </div>
-
-    <form method="post" class="form-text" enctype="multipart/form-data" style="margin-top: 1.3em;">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <p class="mt-4">Posting as: {{ user.first_name }}</p>
-        <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Update</button>
-    </form>
-    {% else %}
-    <p class="author card-text">You are not allowed here!</p>
-    {% endif %}
+    <br>
+    <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my reviews</a>
 </div>
+{% endif %}
+
+
 
 {% endblock content %}

@@ -89,6 +89,13 @@ def review_submitted(request):
 
     return render(request, 'review_submitted.html')
 
+def review_updated(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'review_updated.html')
+
 class AdminArea(generic.ListView):
     model = Comment
     template_name = ('admin_area.html')
@@ -208,10 +215,7 @@ class UpdateReview(generic.UpdateView):
     model = Post
     form_class = CreateReviewForm
     template_name = 'update_review.html'
-
-    def get_success_url(self, *args):
-        return (self.request.path)
-
+    success_url = '/review/update-success/'
 
     def form_valid(self, form):
         form.instance.approved = False

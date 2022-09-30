@@ -2,14 +2,15 @@
 
 {% block content %}
 
-
+{% if user.is_authenticated %}
 <div class="alert alert-success text-center" role="alert">
-    Your review has succesfully been updated! <br>
-    Review | Alliance will approve it shortly!
+    Your review has succesfully been created! <br>
+    You can find it in your reviews section (follow link below).<br>
+
     <br>
     <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my reviews</a>
 </div>
-
+{% endif %}
 
 
 
