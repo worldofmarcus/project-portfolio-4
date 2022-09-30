@@ -262,6 +262,27 @@ class DeleteReview(generic.DeleteView):
     template_name = 'delete_review.html'
     success_url = '/member-reviews/'
 
+    # Needs to be fixed
+    # def get_context_data(self, **kwargs):
+    #     # Call the base implementation first to get the context
+    #     context = super(DeleteReview, self).get_context_data(**kwargs)
+    #     # Create any data and add it to the context
+    #     context['deleted'] = 1
+    #     return context
+
+#     Till member_reviews.html
+#  {% if deleted == 1 %}
+#         <div class="alert alert-success text-center" role="alert">
+#             Your review has succesfully been updated and needs a re-approval from site admin.
+#             <br>
+#             <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my
+#                 reviews</a>
+#         </div>
+
+#         {% else %}
+    # {% endif %}
+
+
 
 class DeleteComment(generic.DeleteView):
     """

@@ -1,0 +1,8 @@
+{% if form.instance.deleted == True %}
+<div class="alert alert-success text-center" role="alert">
+    Your comment has successfully been deleted.
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to home</a>
+</div>
+
+{% endif %}
