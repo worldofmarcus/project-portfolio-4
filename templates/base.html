@@ -49,8 +49,10 @@
                             <li><a class="dropdown-item" href="{% url 'member_reviews' %}">View My Reviews</a></li>
                             <div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="#">Show Profile Page</a></li>
-                            <li><a class="dropdown-item" href="#">Edit Profile Page</a></li>
                             <div class="dropdown-divider"></div>
+                            {% if request.user.is_superuser %}
+                            <li><a class="dropdown-item" href="#">Admin Area</a></li>
+                            {% endif %}
                             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
 
                             {% else %}

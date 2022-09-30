@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{% if user.id == post.author.id %}
+
+{% endif %}
+{% endif %}
+
+
+{% endblock content %}
