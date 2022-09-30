@@ -20,7 +20,7 @@ class HomeView(generic.ListView):
     queryset = Post.objects.filter(status=1, approved=True).order_by(
                                    '-date_created_on')
     template_name = ('index.html')
-    paginate_by = 6
+    paginate_by = 9
 
 
 class AlbumView(generic.ListView):
@@ -217,7 +217,6 @@ class CreateReview(generic.CreateView):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
-
 
 
 class UpdateReview(generic.UpdateView):

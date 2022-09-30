@@ -12,10 +12,8 @@
                 <br>
                 <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to home</a>
             </div>
-
             {% else %}
             {% if user.is_authenticated and user.id == comment.author.id %}
-
             <h3>Update your comment:</h3>
             <form method="post" style="margin-top: 1.3em;">
                 {{ form | crispy }}
