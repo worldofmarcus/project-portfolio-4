@@ -5,10 +5,10 @@
 
 {% if form.instance.approved == False %}
 <div class="alert alert-success text-center" role="alert">
-    Your comment is awaiting approval
+    Your comment has successfully been updated and needs a re-approval from site admin.
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to home</a>
 </div>
-
-<h1>Your comment is awaiting approval</h1>
 
 {% else %}
 {% if user.is_authenticated and user.id == comment.author.id %}

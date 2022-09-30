@@ -3,6 +3,14 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+{% if form.instance.approved == False %}
+<div class="alert alert-success text-center" role="alert">
+    Your review has succesfully been updated and needs a re-approval from site admin.
+    <br>
+    <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my reviews</a>
+</div>
+
+{% else %}
 {% if user.is_authenticated and user.id == post.author.id %}
 
 <div class="container">
@@ -24,5 +32,5 @@
     <p class="author card-text">You are not allowed here!</p>
     {% endif %}
 </div>
-
+{% endif %}
 {% endblock content %}

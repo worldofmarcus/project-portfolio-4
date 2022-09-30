@@ -201,7 +201,10 @@ class UpdateReview(generic.UpdateView):
     model = Post
     form_class = CreateReviewForm
     template_name = 'update_review.html'
-    success_url = '/member-reviews/'
+
+    def get_success_url(self, *args):
+        return (self.request.path)
+
 
     def form_valid(self, form):
         form.instance.approved = False
