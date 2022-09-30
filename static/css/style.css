@@ -24,6 +24,17 @@ h6 {
 
 }
 
+.error-404 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 300px;
+    font-weight: 700;
+}
+
+.error-title {
+    color: #9c8300;
+    font-size: 120px;
+}
+
 body {
     background-color: #F1F1F1
 }
@@ -49,7 +60,6 @@ a {
 
 .headline {
     font-size: 1.5em;
-
 }
 
 .intro-text {
@@ -60,14 +70,11 @@ a {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     text-align: center;
-
 }
 
 .form-text {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
-
-
 }
 
 .btn-danger {
@@ -95,13 +102,10 @@ a {
 .review-detail-body {
     font-family: 'Tinos', serif !important;
     font-size: 1em;
-
-
 }
 
 .review-detail-buttons {
     text-align: center;
-
 }
 
 hr {
@@ -132,11 +136,10 @@ hr {
     margin: 0 auto;
 }
 
-.heart-likeygen {
+.heart-like:hover {
     -webkit-transform: scale(2.0);
     -ms-transform: scale(2.0);
     transform: scale(2.0);
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .card-awaiting-approval,
@@ -196,6 +199,8 @@ hr {
 .bold-text {
     font-weight: 700;
 }
+
+
 
 @media screen and (max-width: 375px) {
 

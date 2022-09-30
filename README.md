@@ -1,7 +1,7 @@
 # **Review | Alliance**
 Review | Alliance is a resource for finding more about albums and concerts by the artists that you love! The site offers top reviews of albums and concerts by both *Review | Alliance approved staff* and *Review | Alliance users*.
 
-This fictional site was created for Portfolio Project #4 (Full-Stack Tolkin) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
+This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
 [View live website here](https://project-portfolio-4.herokuapp.com/)
 
