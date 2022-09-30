@@ -221,7 +221,10 @@ class UpdateComment(generic.UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = 'update_comment.html'
-    success_url = '/'
+
+    def get_success_url(self, *args):
+        return (self.request.path)
+
 
     def form_valid(self, form):
         form.instance.approved = False

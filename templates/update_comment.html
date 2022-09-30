@@ -3,7 +3,10 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{% if commented %}
+{% if form.instance.approved == False %}
+<div class="alert alert-success text-center" role="alert">
+    Your comment is awaiting approval
+</div>
 
 <h1>Your comment is awaiting approval</h1>
 
