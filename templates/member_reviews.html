@@ -4,6 +4,7 @@
 
 <div class="container">
     <div>
+        {% if user.is_authenticated %}
         <h1 class="headline mt-4">My Reviews</h1>
         <p>
             <h2 class="intro-text">Here you can find all the reviews you have written!</h2>
@@ -11,7 +12,7 @@
         <hr />
     </div>
     <div class="row">
-        <!-- Album Reviews -->
+        <!-- Member Reviews -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in object_list %}
@@ -49,9 +50,6 @@
                                 <span class="card-published-approved">Your review is published and approved</span>
                                 {% elif post.status == 0 %}
                                 <span class="card-draft">Your review is in draft status</span>
-
-
-
                                 {% endif %}
 
                             </p>
@@ -86,4 +84,11 @@
     {% endif %}
 </div>
 <hr>
+
+
+{% else %}
+<p class="author card-text">You are not allowed here!</p>
+{% endif %}
+
+
 {% endblock content %}
