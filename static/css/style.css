@@ -21,17 +21,10 @@ h6 {
     letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
-
-}
-
-.error-404 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 300px;
-    font-weight: 700;
 }
 
 .error-title {
-    color: #9c8300;
+    color: rgb(34, 37, 41);
     font-size: 120px;
 }
 
