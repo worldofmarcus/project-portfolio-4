@@ -80,6 +80,13 @@ def about(request):
 
     return render(request, 'about.html')
 
+def admin_area(request):
+    """
+    A basic function that just returns admin_area.html to be rendered.
+    """
+
+    return render(request, 'admin_area.html')
+
 
 class DetailView(generic.DetailView):
     """

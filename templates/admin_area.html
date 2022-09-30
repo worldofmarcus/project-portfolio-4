@@ -2,12 +2,17 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is.authenticated and request.user.is_superuser %}
 
-{% if user.id == post.author.id %}
+<h1>Admin area</h1>
+
+
+{% else%}
+You are not welcome!!
 
 {% endif %}
-{% endif %}
+
+
 
 
 {% endblock content %}

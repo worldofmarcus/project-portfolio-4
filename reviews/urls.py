@@ -14,6 +14,7 @@ urlpatterns = [
     path('create-review/', views.CreateReview.as_view(),
          name='create_review'),
     path('about/', views.about, name='about'),
+    path('admin-area/', views.admin_area, name='admin_area'),
     path('<slug:slug>/', views.DetailView.as_view(),
          name='review_details'),
     path('<slug:slug>/edit/', views.UpdateReview.as_view(),
