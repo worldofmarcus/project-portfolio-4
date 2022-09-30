@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{% if user.is_authenticated and user.id == comment.author.id %}
+{% if user.is_authenticated and user.id == post.author.id %}
 
 <div class="container">
     <div>
