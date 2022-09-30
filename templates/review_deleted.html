@@ -3,14 +3,19 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<div class="alert alert-success text-center" role="alert">
-    Your review has succesfully been deleted! <br>
-
-    <br>
-    <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my reviews</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="alert alert-success text-center" role="alert">
+                Your review has succesfully been deleted! <br>
+                <br>
+                <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Back to my
+                    reviews</a>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endif %}
-
-
 
 {% endblock content %}
