@@ -2,11 +2,17 @@
 
 {% block content %}
 
-<!-- 404 Error Page Content -->
-<div class="container page-space">
+<!-- 500 Error Page Content -->
+
+<div class="container">
     <div class="row">
-        <div class="col-12 text-center">
-            500
+        <div class="col-12 card-text">
+            <div>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <p class="card-text">Error 500! It seems that things are a little unstable here! Please come back later.
+                </p>
+                <a href="{% url 'home'%}">Back to home</a>
+            </div>
         </div>
     </div>
 </div>
