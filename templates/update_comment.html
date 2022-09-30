@@ -3,14 +3,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-
-
 {% if commented %}
 
 <h1>Your comment is awaiting approval</h1>
 
 {% else %}
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == comment.author.id %}
 
 <h3>Leave a comment:</h3>
 <form method="post" style="margin-top: 1.3em;">
@@ -19,6 +17,8 @@
     <button type="submit" class="btn btn-outline-secondary btn-sm">Update</button>
     <p>Posting as: {{ user.username }}</p>
 </form>
+{% else %}
+<p class="author card-text">You are not allowed here!</p>
 {% endif %}
 {% endif %}
 {% endblock content %}

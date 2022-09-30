@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == comment.author.id %}
 
 <div class="container">
     <div>
@@ -25,6 +25,8 @@
         <p class="mt-4">Posting as: {{ user.first_name }}</p>
         <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Update</button>
     </form>
+    {% else %}
+    <p class="author card-text">You are not allowed here!</p>
     {% endif %}
 </div>
 
