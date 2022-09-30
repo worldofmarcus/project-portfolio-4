@@ -17,15 +17,10 @@ h5,
 h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    color: rgb(133, 125, 125);
+    color: rgb(128, 125, 133);
     letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
-}
-
-.error-title {
-    color: rgb(34, 37, 41);
-    font-size: 120px;
 }
 
 body {

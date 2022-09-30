@@ -1,6 +1,7 @@
 """Import relevant modules for the application"""
 
 from datetime import datetime
+from allauth.account.forms import SignupForm
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Post
