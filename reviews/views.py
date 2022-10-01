@@ -19,7 +19,7 @@ class HomeView(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1, approved=True).order_by(
                                    '-date_created_on')
-    template_name = ('index.html')
+    template_name = 'index.html'
     paginate_by = 6
 
 
@@ -35,7 +35,7 @@ class AlbumView(generic.ListView):
     queryset = Post.objects.filter(status=1, approved=True,
                                    category='Album').order_by(
                                    '-date_created_on')
-    template_name = ('album_reviews.html')
+    template_name = 'album_reviews.html'
     paginate_by = 6
 
 
@@ -48,9 +48,10 @@ class ConcertView(generic.ListView):
     """
 
     model = Post
-    queryset = Post.objects.filter().order_by(
+    queryset = Post.objects.filter(status=1, approved=True,
+                                   category='Concert').order_by(
                                    '-date_created_on')
-    template_name = ('concert_reviews.html')
+    template_name = 'concert_reviews.html'
 
 
 class MemberReviewView(generic.ListView):
@@ -64,7 +65,7 @@ class MemberReviewView(generic.ListView):
     """
 
     model = Post
-    template_name = ('member_reviews.html')
+    template_name = 'member_reviews.html'
     paginate_by = 6
 
     def get_queryset(self):
@@ -112,14 +113,21 @@ def comment_deleted(request):
     return render(request, 'comment_deleted.html')
 
 
-class AdminArea(generic.ListView):
-    model = Post
-    template_name = ('admin_area.html')
-    queryset = Post.objects.filter(status=1, approved=True,
-                                category='Concert').order_by(
-                                '-date_created_on')
-    template_name = ('admin_area.html')
+class AdminArea(generic.TemplateView):
+    # model = Post
+    # template_name = ('admin_area.html')
+    # queryset = Post.objects.filter().order_by(
+    #                             '-date_created_on')
 
+    model = Post
+    context_object_name = 'post'
+    template_name = 'admin_area.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post'] = Post.objects.all()
+        context['comment'] = Comment.objects.all()
+        return context
 
 
 class DetailView(generic.DetailView):

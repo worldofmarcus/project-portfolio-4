@@ -33,29 +33,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for post in object_list %}
+                    {% for review in post %}
                     <tr class="align-middle">
-                        <td>{{ post.id }}</td>
+                        <td>{{ review.id }}</td>
                         <td class="text-center">
-                            {% if 'default_image' in post.featured_image.url %}
+                            {% if 'default_image' in review.featured_image.url %}
                             <img class="image-table-admin rounded"
                                 src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
                             {% else %}
-                            <img class="image-table-admin rounded" src="{{ post.featured_image.url }}">
+                            <img class="image-table-admin rounded" src="{{ review.featured_image.url }}">
                             {% endif %}
                         </td>
-                        <td>{{ post.date_created_on }}</td>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.author.first_name }}</td>
-                        <td>{{ post.author.last_name }}</td>
+                        <td>{{ review.date_created_on }}</td>
+                        <td>{{ review.title }}</td>
+                        <td>{{ review.author.first_name }}</td>
+                        <td>{{ review.author.last_name }}</td>
                         <td>
-                            {% if post.status == 1 %}
+                            {% if review.status == 1 %}
                             Published
                             {% else %}
                             Draft
                             {% endif %}
                         </td>
-                        <td class="text-center">{% if post.approved == True %}
+                        <td class="text-center">{% if review.approved == True %}
                             <i class="fa-solid fa-check"></i>
                             {% else %}
                             <i class="fa-sharp fa-solid fa-xmark"></i>
@@ -64,14 +64,14 @@
                         <td class="text-center">
                             <form method="post">
                                 {% csrf_token %}
-                                {% if post.status == 1 %}
+                                {% if review.status == 1 %}
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unpublish</button>
                                 {% else %}
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Publish</button>
                                 {% endif %}
-                                {% if post.approved == True %}
+                                {% if review.approved == True %}
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unapprove</button>
                                 {% else %}
@@ -94,44 +94,55 @@
     <hr />
     <!-- Comments Table -->
     <div class="mt-3">
-        <h5 class="mt-4">Comments Area</h5>
+        <h5 class="mt-4">Comment Area</h5>
         <div class="table-responsive-md">
             <table class="table table-bordered">
                 <thead class="bg-dark text-light text-center align-middle">
                     <tr>
                         <th>#</th>
                         <th>Date Published</th>
+                        <th>Name</th>
+                        <th>User</th>
                         <th>Comment</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
                         <th>Approved</th>
                         <th>Action</th>
 
                     </tr>
                 </thead>
                 <tbody>
+                    {% for comment in comment %}
                     <tr class="align-middle">
-                        <td>1</td>
+                        <td>{{ comment.id }}</td>
 
-                        <td>2022-02-02</td>
-                        <td>This is my comment on this post!</td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>Yes</td>
+                        <td>{{ comment.date_created_on }}</td>
+                        <td>{{ comment.name }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ comment.body }}</td>
+                        <td class="text-center">{% if comment.approved == True %}
+                            <i class="fa-solid fa-check"></i>
+                            {% else %}
+                            <i class="fa-sharp fa-solid fa-xmark"></i>
+                            {% endif %}
+                        </td>
                         <td class="text-center">
                             <form method="post">
                                 {% csrf_token %}
+                                {% if comment.approved == True %}
                                 <button type="submit"
-                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Publish</button>
+                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unapprove</button>
+                                {% else %}
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Approve</button>
+                                {% endif %}
                                 <button type="submit" class="btn btn-danger btn-sm mt-1 mb-1">Delete</button>
                             </form>
                         </td>
                     </tr>
                 </tbody>
+                {% endfor %}
             </table>
         </div>
+
     </div>
 
     {% else%}
