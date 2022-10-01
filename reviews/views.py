@@ -20,7 +20,7 @@ class HomeView(generic.ListView):
     queryset = Post.objects.filter(status=1, approved=True).order_by(
                                    '-date_created_on')
     template_name = ('index.html')
-    paginate_by = 9
+    paginate_by = 6
 
 
 class AlbumView(generic.ListView):
