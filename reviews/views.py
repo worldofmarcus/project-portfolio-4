@@ -48,11 +48,9 @@ class ConcertView(generic.ListView):
     """
 
     model = Post
-    queryset = Post.objects.filter(status=1, approved=True,
-                                   category='Concert').order_by(
+    queryset = Post.objects.filter().order_by(
                                    '-date_created_on')
     template_name = ('concert_reviews.html')
-    paginate_by = 6
 
 
 class MemberReviewView(generic.ListView):
@@ -115,7 +113,11 @@ def comment_deleted(request):
 
 
 class AdminArea(generic.ListView):
-    model = Comment
+    model = Post
+    template_name = ('admin_area.html')
+    queryset = Post.objects.filter(status=1, approved=True,
+                                category='Concert').order_by(
+                                '-date_created_on')
     template_name = ('admin_area.html')
 
 
