@@ -118,17 +118,6 @@ class AdminArea(generic.ListView):
     model = Comment
     template_name = ('admin_area.html')
 
-    # def get_context_data(self, **kwargs):
-    #     data = super().get_context_data(**kwargs)
-    #     return data
-
-
-    def get_queryset(self):
-        # original qs
-        qs = super().get_queryset()
-        # filter by a variable captured from url, for example
-        print(qs)
-        return qs.filter()
 
 
 class DetailView(generic.DetailView):
