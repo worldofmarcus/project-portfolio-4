@@ -95,10 +95,12 @@
                 {% endwith %}
             </div>
         </div>
-        <hr class="mt-3">
+        <div class="review-detail-body mt-4 align-items-center">{{ post.body|safe }}
+            <hr />
+        </div>
         <div>
             <h3>Comment Section</h3>
-            <div class=" mt-5 text-center">
+            <div class="mt-5">
                 {% for comment in comments %}
                 <p class="comment-date-name">{{ comment.date_created_on }} by {{ user.first_name}}</p>
                 <p class="comment-body">{{ comment.body }}</p>
@@ -125,6 +127,10 @@
                 <p class="mt-3">Posting as: {{ user.first_name }}</p>
                 <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Submit</button>
             </form>
+            {% else %}
+            <div class="alert alert-success text-center" role="alert">
+                Log in to join the discussion!
+            </div>
             {% endif %}
             {% endif %}
         </div>
