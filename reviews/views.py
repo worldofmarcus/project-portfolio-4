@@ -114,11 +114,6 @@ def comment_deleted(request):
 
 
 class AdminArea(generic.TemplateView):
-    # model = Post
-    # template_name = ('admin_area.html')
-    # queryset = Post.objects.filter().order_by(
-    #                             '-date_created_on')
-
     model = Post
     context_object_name = 'post'
     template_name = 'admin_area.html'
@@ -127,6 +122,9 @@ class AdminArea(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
         context['comment'] = Comment.objects.all()
+        context['unapproved'] = Post.objects.filter(approved=False)
+        context['users'] = User.objects.all()
+
         return context
 
 

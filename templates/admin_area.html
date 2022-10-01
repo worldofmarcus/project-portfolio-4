@@ -6,6 +6,41 @@
 
 <div class="container">
 
+    <p>
+        {% with users.count as total_users %}
+        Total number of users at Review | Alliance:
+        {{ total_users }}
+        {% endwith %}
+    </p>
+
+    <p>
+        {% with post.count as total_reviews %}
+        Total number of reviews :
+        {{ total_reviews }}
+        {% endwith %}
+    </p>
+
+    <p>
+        {% with unapproved.count as total_unapproved %}
+        Number of reviews that need your approval:
+        {{ total_unapproved }}
+        {% endwith %}
+
+
+    </p>
+
+
+    <p>
+        {% with comment.count as total_comments %}
+        Number of comments:
+        {{ total_comments }}
+        {% endwith %}
+    </p>
+
+
+
+
+
     <h1 class="headline mt-4">Admin Area</h1>
     <p>
         <h2 class="intro-text">Welcome {{ user.first_name }}!</h2>
