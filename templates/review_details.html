@@ -7,7 +7,7 @@
 <div class="container">
 
     <div class="row align-items-center mt-4">
-        <div class="col-lg-6 col-md-12 align-items-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 align-items-center">
             {% if 'default_image' in post.featured_image.url %}
             <img class="card-img-top"
                 src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
@@ -100,7 +100,7 @@
         </div>
         <div>
             <h3>Comment Section</h3>
-            <div class="mt-5">
+            <div class="mt-5 text-center">
                 {% for comment in comments %}
                 <p class="comment-date-name">{{ comment.date_created_on }} by {{ user.first_name}}</p>
                 <p class="comment-body">{{ comment.body }}</p>
