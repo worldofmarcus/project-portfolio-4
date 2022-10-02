@@ -110,18 +110,22 @@
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unapprove</button>
                                 {% else %}
-                                <button type="submit"
-                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Approve</button>
+                                <button type="submit" class="btn btn-outline-secondary btn-sm mt-1 mb-1"
+                                    data-url="{% url 'delete_review' review.slug %}">Approve</button>
                                 {% endif %}
 
+                                {% if review.status == 1 %}
+                                <a href="{% url 'review_details' review.slug %}"
+                                    class="btn btn-outline-secondary btn-sm ">View
+                                </a>
+                                {% endif %}
+                                <a href="{% url 'delete_review' review.slug %}" class="btn btn-danger btn-sm ">Delete
+                                </a>
 
                             </form>
-                            <a href="{% url 'review_details' review.slug %}"
-                                class="btn btn-outline-secondary btn-sm ">View
-                            </a>
-                            <a href="{% url 'delete_review' review.slug %}" class="btn btn-danger btn-sm ">Delete
-                            </a>
-                            ´
+
+
+
 
                         </td>
                     </tr>

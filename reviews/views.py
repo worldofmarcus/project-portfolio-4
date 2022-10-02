@@ -8,7 +8,6 @@ from django.utils.text import slugify
 from .models import Post, Comment
 from .forms import CommentForm, CreateReviewForm
 
-
 class HomeView(generic.ListView):
     """
     This class filters out all the objects from the Post model with
@@ -124,9 +123,7 @@ class AdminArea(generic.TemplateView):
         context['comment'] = Comment.objects.all()
         context['unapproved'] = Post.objects.filter(approved=False)
         context['users'] = User.objects.all()
-
         return context
-
 
 class DetailView(generic.DetailView):
     """
