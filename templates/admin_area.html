@@ -49,7 +49,6 @@
                         <th>Status</th>
                         <th>Approved</th>
                         <th>Action</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -84,12 +83,12 @@
                         <td class="text-center">
                             <form method="post">
                                 {% csrf_token %}
-                                {% if review.status == 1 %}
-                                <button type="submit"
-                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unpublish</button>
-                                {% else %}
+                                {% if review.status == 0 %}
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Publish</button>
+                                {% else %}
+                                <button type="submit"
+                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unpublish</button>
                                 {% endif %}
                                 {% if review.approved == True %}
                                 <button type="submit"
@@ -105,7 +104,7 @@
                                 </a>
                                 {% endif %}
                                 <a href="{% url 'admin_delete_review' review.slug %}"
-                                    class="btn btn-danger btn-sm ">Delete
+                                    class="btn btn-danger btn-sm mt-1 mb-1">Delete
                                 </a>
 
                             </form>
