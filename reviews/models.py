@@ -105,7 +105,7 @@ class Post(models.Model):
         to add user readability.
         """
 
-        return self.title + ' || ' + str(self.author)
+        return self.title
 
     def number_of_likes(self):
         """
@@ -143,4 +143,4 @@ class Comment(models.Model):
         to add user readability.
         """
 
-        return self.body + ' || ' + str(self.name)
+        return self.body

@@ -117,13 +117,17 @@ class AdminArea(generic.TemplateView):
     context_object_name = 'post'
     template_name = 'admin_area.html'
 
+
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
         context['comment'] = Comment.objects.all()
         context['unapproved'] = Post.objects.filter(approved=False)
-        context['users'] = User.objects.all()
+        context['users'] = User.objects.filter(is_active=True)
         return context
+
+
 
 class DetailView(generic.DetailView):
     """
@@ -311,3 +315,20 @@ def admin_review_deleted(request):
     """
 
     return render(request, 'admin_review_deleted.html')
+
+class AdminDeleteComment(generic.DeleteView):
+    """
+    This class handles the deletion of a review.
+    """
+
+    model = Comment
+    template_name = 'admin_delete_comment.html'
+    success_url = '/comment/admin-delete-success/'
+
+
+def admin_comment_deleted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'admin_comment_deleted.html')
