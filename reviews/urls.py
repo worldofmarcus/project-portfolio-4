@@ -35,4 +35,8 @@ urlpatterns = [
           name='update_comment'),
      path('like/<slug:slug>', views.ReviewLike.as_view(),
           name='like_review'),
+     path('<slug:slug>/admin/delete/', views.AdminDeleteReview.as_view(),
+          name='admin_delete_review'),
+     path('review/admin-delete-success/', views.admin_review_deleted,
+          name='admin_review_deleted'),
 ]

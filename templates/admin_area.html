@@ -119,14 +119,10 @@
                                     class="btn btn-outline-secondary btn-sm ">View
                                 </a>
                                 {% endif %}
-                                <a href="{% url 'delete_review' review.slug %}" class="btn btn-danger btn-sm ">Delete
+                                <a href="{% url 'admin_delete_review' review.slug %}"
+                                    class="btn btn-danger btn-sm ">Delete
                                 </a>
-
                             </form>
-
-
-
-
                         </td>
                     </tr>
                 </tbody>

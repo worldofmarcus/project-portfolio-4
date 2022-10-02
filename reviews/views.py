@@ -294,3 +294,20 @@ class DeleteComment(generic.DeleteView):
     model = Comment
     template_name = 'delete_comment.html'
     success_url = '/comment/delete-success/'
+
+class AdminDeleteReview(generic.DeleteView):
+    """
+    This class handles the deletion of a review.
+    """
+
+    model = Post
+    template_name = 'admin_delete_review.html'
+    success_url = '/review/admin-delete-success/'
+
+
+def admin_review_deleted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'admin_review_deleted.html')
