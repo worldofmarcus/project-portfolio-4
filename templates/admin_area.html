@@ -113,10 +113,16 @@
                                 <button type="submit"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Approve</button>
                                 {% endif %}
-                                <button type="submit" class="btn btn-outline-secondary btn-sm mt-1 mb-1">View
-                                    Review</button>
-                                <button type="submit" class="btn btn-danger btn-sm mt-1 mb-1">Delete</button>
+
+
                             </form>
+                            <a href="{% url 'review_details' review.slug %}"
+                                class="btn btn-outline-secondary btn-sm ">View
+                            </a>
+                            <a href="{% url 'delete_review' review.slug %}" class="btn btn-danger btn-sm ">Delete
+                            </a>
+                            ´
+
                         </td>
                     </tr>
                 </tbody>
@@ -128,7 +134,7 @@
 
     <hr />
     <!-- Comments Table -->
-    <div class="mt-3">
+    <div class=" mt-3">
         <h5 class="mt-4">Comment Area</h5>
         <div class="table-responsive-md">
             <table class="table table-bordered">
@@ -183,12 +189,7 @@
     {% else%}
     <p class=" author card-text">You are not allowed here!</p>
     {% endif %}
-
-
-
 </div>
-
-
 
 
 {% endblock content %}
