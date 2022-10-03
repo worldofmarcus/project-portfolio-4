@@ -21,6 +21,10 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+ACCOUNT_FORMS = {
+'signup': 'reviews.forms.CustomSignupForm',
+}
+
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Quick-start development settings - unsuitable for production
