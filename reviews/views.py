@@ -122,7 +122,8 @@ class AdminArea(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
         context['comment'] = Comment.objects.all()
-        context['unapproved'] = Post.objects.filter(approved=False)
+        context['reviews_unapproved'] = Post.objects.filter(approved=False)
+        context['comments_unapproved'] = Comment.objects.filter(approved=False)
         context['users'] = User.objects.filter(is_active=True)
         return context
 
