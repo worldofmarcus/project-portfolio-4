@@ -23,6 +23,11 @@ h6 {
     text-align: center;
 }
 
+.form-inline {
+    display: inline;
+
+}
+
 body {
     background-color: #F1F1F1
 }

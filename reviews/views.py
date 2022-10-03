@@ -126,24 +126,40 @@ class AdminArea(generic.TemplateView):
         context['users'] = User.objects.filter(is_active=True)
         return context
 
-def admin_update_review(request, slug):
-    # approve = request.POST['unapprove']
-    # unapprove = request.POST['unapprove']
 
+def admin_update_status(request, slug):
+    post = Post.objects.get(slug=slug)
+
+    if post.status == 0:
+        publish = 1
+    else:
+        publish = 0
+
+    post.status = publish
+    post.save()
+    return HttpResponseRedirect(reverse('admin_area'))
+
+
+def admin_update_approval(request, slug):
     post = Post.objects.get(slug=slug)
     if post.approved == True:
         approval = False
     else:
         approval = True
 
-    if post.status == 1:
-        publish = 0
-    else:
-        publish = 1
-
     post.approved = approval
-    post.status = publish
     post.save()
+    return HttpResponseRedirect(reverse('admin_area'))
+
+def admin_update_comment(request, pk):
+    comment = Comment.objects.get(pk=pk)
+    if comment.approved == True:
+        approval = False
+    else:
+        approval = True
+
+    comment.approved = approval
+    comment.save()
     return HttpResponseRedirect(reverse('admin_area'))
 
 class DetailView(generic.DetailView):

@@ -43,7 +43,10 @@ urlpatterns = [
           name='admin_delete_comment'),
      path('comment/admin-delete-success/', views.admin_comment_deleted,
           name='admin_comment_deleted'),
-
-     path('<slug:slug>/admin/update_review/', views.admin_update_review,
-          name='admin_update_review'),
+     path('<slug:slug>/admin/update_approval/', views.admin_update_approval,
+          name='admin_update_approval'),
+     path('<slug:slug>/admin/update_status/', views.admin_update_status,
+          name='admin_update_status'),
+     path('<int:pk>/admin/update_comment/', views.admin_update_comment,
+          name='admin_update_comment'),
 ]
