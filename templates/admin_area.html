@@ -81,23 +81,22 @@
                             {% endif %}
                         </td>
                         <td class="text-center">
-                            <form method="post">
+                            <form method="post" action="{% url 'admin_update_review' review.slug %}">
                                 {% csrf_token %}
                                 {% if review.status == 0 %}
-                                <button type="submit"
+                                <button type="submit" name="publish"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Publish</button>
                                 {% else %}
-                                <button type="submit"
+                                <button type="submit" name="unpublish"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unpublish</button>
                                 {% endif %}
                                 {% if review.approved == True %}
-                                <button type="submit"
+                                <button type="submit" name="unapprove"
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unapprove</button>
                                 {% else %}
-                                <button type="submit" class="btn btn-outline-secondary btn-sm mt-1 mb-1"
-                                    data-url="{% url 'delete_review' review.slug %}">Approve</button>
+                                <button type="submit" name="approve"
+                                    class="btn btn-outline-secondary btn-sm mt-1 mb-1">Approve</button>
                                 {% endif %}
-
                                 {% if review.status == 1 %}
                                 <a href="{% url 'review_details' review.slug %}"
                                     class="btn btn-outline-secondary btn-sm ">View

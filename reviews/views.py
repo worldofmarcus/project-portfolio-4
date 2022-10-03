@@ -118,7 +118,6 @@ class AdminArea(generic.TemplateView):
     template_name = 'admin_area.html'
 
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
@@ -127,7 +126,25 @@ class AdminArea(generic.TemplateView):
         context['users'] = User.objects.filter(is_active=True)
         return context
 
+def admin_update_review(request, slug):
+    # approve = request.POST['unapprove']
+    # unapprove = request.POST['unapprove']
 
+    post = Post.objects.get(slug=slug)
+    if post.approved == True:
+        approval = False
+    else:
+        approval = True
+
+    if post.status == 1:
+        publish = 0
+    else:
+        publish = 1
+
+    post.approved = approval
+    post.status = publish
+    post.save()
+    return HttpResponseRedirect(reverse('admin_area'))
 
 class DetailView(generic.DetailView):
     """
@@ -299,6 +316,7 @@ class DeleteComment(generic.DeleteView):
     template_name = 'delete_comment.html'
     success_url = '/comment/delete-success/'
 
+
 class AdminDeleteReview(generic.DeleteView):
     """
     This class handles the deletion of a review.
@@ -315,6 +333,7 @@ def admin_review_deleted(request):
     """
 
     return render(request, 'admin_review_deleted.html')
+
 
 class AdminDeleteComment(generic.DeleteView):
     """

@@ -39,9 +39,11 @@ urlpatterns = [
           name='admin_delete_review'),
      path('review/admin-delete-success/', views.admin_review_deleted,
           name='admin_review_deleted'),
-
      path('<int:pk>/admin/delete-comment/', views.AdminDeleteComment.as_view(),
           name='admin_delete_comment'),
      path('comment/admin-delete-success/', views.admin_comment_deleted,
           name='admin_comment_deleted'),
+
+     path('<slug:slug>/admin/update_review/', views.admin_update_review,
+          name='admin_update_review'),
 ]
