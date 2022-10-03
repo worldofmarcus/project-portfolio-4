@@ -14,38 +14,40 @@
         <h5 class="mt-4">Summary</h5>
         <!-- Admin Summary Area -->
 
-        <div class="row">
+        <div class="container">
+            <div class="row justify-content-center">
 
-            <div class="col card border-0 mb-3 m-3 shadow bg-white rounded text-center">
-                <div class="card-body">
-                    <h6 class="card-title">Totals</h6>
-                    <p class="card-text">
-                        {% with users.count as total_users %}
-                        Total users: {{ total_users }}
-                        {% endwith %}
-                        <br>
-                        {% with post.count as total_reviews %}
-                        Total reviews: {{ total_reviews }}
-                        {% endwith %}
-                        <br>
-                        {% with comment.count as total_comments %}
-                        Total comments: {{ total_comments }}
-                        {% endwith %}
-                    </p>
+                <div class="col-sm-6 card border-0 mb-3 m-3 shadow bg-white rounded text-center">
+                    <div class="card-body">
+                        <h6 class="card-title">Totals</h6>
+                        <p class="card-text">
+                            {% with users.count as total_users %}
+                            Total users: {{ total_users }}
+                            {% endwith %}
+                            <br>
+                            {% with post.count as total_reviews %}
+                            Total reviews: {{ total_reviews }}
+                            {% endwith %}
+                            <br>
+                            {% with comment.count as total_comments %}
+                            Total comments: {{ total_comments }}
+                            {% endwith %}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col card border-0 mb-3 m-3 shadow bg-white rounded text-center">
-                <div class="card-body">
-                    <h6 class="card-title">Needs approval</h6>
-                    <p class="card-text">
-                        {% with reviews_unapproved.count as total_unapproved %}
-                        Reviews: {{ total_unapproved }}
-                        {% endwith %}
-                        <br>
-                        {% with comments_unapproved.count as total_unapproved %}
-                        Comments: {{ total_unapproved }}
-                        {% endwith %}
-                    </p>
+                <div class="col card border-0 mb-3 m-3 shadow bg-white rounded text-center">
+                    <div class="card-body">
+                        <h6 class="card-title">Needs approval</h6>
+                        <p class="card-text">
+                            {% with reviews_unapproved.count as total_unapproved %}
+                            Reviews: {{ total_unapproved }}
+                            {% endwith %}
+                            <br>
+                            {% with comments_unapproved.count as total_unapproved %}
+                            Comments: {{ total_unapproved }}
+                            {% endwith %}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,7 +142,7 @@
 
     </div>
     <!-- Comments Table -->
-    <div class=" mt-3">
+    <div class="mt-3">
         <h5 class="mt-4">Comment Area</h5>
         <div class="table-responsive-md">
             <table class="table table-bordered">
