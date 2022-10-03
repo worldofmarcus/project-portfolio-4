@@ -4,7 +4,6 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Category, Comment, Genre
 
-
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     """

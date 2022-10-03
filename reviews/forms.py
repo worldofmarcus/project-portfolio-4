@@ -17,10 +17,10 @@ class CustomSignupForm(SignupForm):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.presentation = self.cleaned_data['presentation']
-        user.featured_image = self.cleaned_data['featured_image']
+
+        # user.featured_image = self.cleaned_data['featured_image']
         user.save()
         return user
-
 
 
 class CommentForm(forms.ModelForm):

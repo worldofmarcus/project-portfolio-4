@@ -368,3 +368,14 @@ def admin_comment_deleted(request):
     """
 
     return render(request, 'admin_comment_deleted.html')
+
+class ViewProfile(generic.TemplateView):
+    model = User
+    context_object_name = 'profile'
+    template_name = 'profile_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = User.objects.get(username=self.request.user)
+
+        return context
