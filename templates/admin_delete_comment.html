@@ -11,9 +11,9 @@
         <div class="card-text col-md-8 mt-3 offset-md-2">
             <h3>Delete Comment</h3>
             <form method="post" style="margin-top: 1.3em;">
-                {{ form | crispy }}
+                {{ form|crispy }}
                 {% csrf_token %}
-                <strong>Are you sure about deleting the comment: {{comment.body}}?
+                <strong>Are you sure about deleting the comment: {{ comment.body }}?
                     <br>This action cannot be undone!</strong>
                 <br>
                 <button type="submit" class="btn btn-danger btn-sm mt-3 mb-3">Delete Comment</button>

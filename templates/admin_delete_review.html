@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 {% load crispy_forms_tags %}
-
-
 
 {% if user.is_superuser %}
 
@@ -11,7 +11,7 @@
         <div class="card-text col-md-8 mt-3 offset-md-2">
             <h3>Delete {{ post.artist }} | {{ post.title }}</h3>
             <form method="post" style="margin-top: 1.3em;">
-                {{ form | crispy }}
+                {{ form|crispy }}
                 {% csrf_token %}
                 <strong>Are you sure about deleting the review: {{ post.artist }} | {{ post.title }}?
                     <br>This action cannot be undone!</strong>
@@ -24,4 +24,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
