@@ -13,11 +13,9 @@
     <div class="mt-3">
         <h5 class="mt-4">Summary</h5>
         <!-- Admin Summary Area -->
-
         <div class="container">
             <div class="row justify-content-center">
-
-                <div class="col-sm-6 card border-0 mb-3 m-3 shadow bg-white rounded text-center">
+                <div class="card col-sm-6 border-0 mb-3 m-3 shadow bg-white rounded text-center">
                     <div class="card-body">
                         <h6 class="card-title">Totals</h6>
                         <p class="card-text">
@@ -54,7 +52,7 @@
         <!-- Reviews Table -->
         <div class="table-responsive-md">
             <h5 class="mt-4">Reviews Area</h5>
-            <table class="table table-bordered">
+            <table class="table table-bordered table-text">
                 <thead class="bg-dark text-light text-center align-middle">
                     <tr>
                         <th>#</th>
@@ -98,7 +96,6 @@
                             {% endif %}
                         </td>
                         <td class="text-center">
-
                             <form method="post" class="form-inline"
                                 action="{% url 'admin_update_status' review.slug %}">
                                 {% csrf_token %}
@@ -121,7 +118,6 @@
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Approve</button>
                                 {% endif %}
                             </form>
-
                             {% if review.status == 1 %}
                             <a href="{% url 'review_details' review.slug %}"
                                 class="btn btn-outline-secondary btn-sm ">View
@@ -130,22 +126,18 @@
                             <a href="{% url 'admin_delete_review' review.slug %}"
                                 class="btn btn-danger btn-sm mt-1 mb-1">Delete
                             </a>
-
-
-
                         </td>
                     </tr>
                 </tbody>
                 {% endfor %}
             </table>
         </div>
-
     </div>
     <!-- Comments Table -->
     <div class="mt-3">
         <h5 class="mt-4">Comment Area</h5>
         <div class="table-responsive-md">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-text">
                 <thead class="bg-dark text-light text-center align-middle">
                     <tr>
                         <th>#</th>
@@ -160,11 +152,11 @@
                 <tbody>
                     {% for comment in comment %}
                     <tr class="align-middle">
-                        <td>{{comment.id}}</td>
-                        <td>{{comment.date_created_on}}</td>
-                        <td>{{comment.post}}</td>
-                        <td>{{comment.author.first_name}}</td>
-                        <td>{{comment.body}}</td>
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.date_created_on }}</td>
+                        <td>{{ comment.post }}</td>
+                        <td>{{ comment.author.first_name }}</td>
+                        <td>{{ comment.body }}</td>
                         <td class="text-center">{% if comment.approved == True %}
                             <i class="fa-solid fa-check"></i>
                             {% else %}
@@ -189,16 +181,12 @@
                     </tr>
                 </tbody>
                 {% endfor %}
-
             </table>
         </div>
-
     </div>
-
     {% else%}
     <p class=" author card-text">You are not allowed here!</p>
     {% endif %}
 </div>
-
 
 {% endblock content %}

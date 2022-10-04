@@ -96,8 +96,15 @@ hr {
     font-family: 'Tinos', serif;
 }
 
+/* ==============
+   tables
+   ============== */
 
-
+.table-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
 
 .form-inline {
     display: inline;
