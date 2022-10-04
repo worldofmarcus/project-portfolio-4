@@ -64,12 +64,14 @@
                                 <li><a class="dropdown-item" href="{% url 'admin_area' %}">Admin Area</a></li>
                                 {% endif %}
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
-                                {% else %}
-                                <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
-                                {% endif %}
-                            </ul>
                         </li>
                     </ul>
+                    {% else %}
+                    <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
+                    {% endif %}
+
+
+
                 </div>
             </div>
 
