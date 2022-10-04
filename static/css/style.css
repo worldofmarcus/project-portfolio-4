@@ -1,3 +1,10 @@
+/*
+.checked {
+    text-align: center;
+    color: rgb(255, 0, 0)
+} */
+
+
 /* ==============
    google fonts
    ============== */
@@ -48,6 +55,10 @@ hr {
 
 .bold-text {
     font-weight: 700;
+}
+
+.btn-danger {
+    color: rgb(255, 255, 255)
 }
 
 /* ==============
@@ -121,18 +132,9 @@ hr {
     font-size: 1em;
 }
 
-.btn-danger {
-    color: rgb(255, 255, 255)
-}
-
-
-
-
-
-.checked {
-    text-align: center;
-    color: rgb(255, 0, 0)
-}
+/* ==================
+   review detail page
+   ================== */
 
 .review-detail-body {
     font-family: 'Tinos', serif !important;
@@ -143,16 +145,28 @@ hr {
     text-align: center;
 }
 
+.review-detail-heart-comments {
+    text-align: center;
+}
 
+.number-circle {
+
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    margin: auto;
+    text-align: center;
+}
 
 .btn-like {
     color: #E84610;
     border: none;
     background: transparent;
-}
-
-.review-detail-heart-comments {
-    text-align: center;
 }
 
 .heart-like {
@@ -172,7 +186,6 @@ hr {
     transform: scale(2.0);
 }
 
-
 .comment-date-name {
     font-family: 'Roboto', sans-serif;
     color: rgb(133, 125, 125);
@@ -186,23 +199,6 @@ hr {
     font-size: 1em;
 }
 
-
-
-.number-circle {
-
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    border: 8px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    font-family: 'Roboto', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    margin: auto;
-    text-align: center;
-}
-
-
 /* ==============
    footer
    ============== */
@@ -212,6 +208,10 @@ hr {
     font-size: 1em;
     color: rgb(133, 125, 125);
 }
+
+/* ==============
+   media queries
+   ============== */
 
 @media screen and (max-width: 375px) {
 
