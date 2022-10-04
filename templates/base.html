@@ -7,86 +7,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+    <!-- Static CSS Style Sheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Review | Alliance</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home'%}">Review |
-                Alliance</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home'%}">All</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'album_reviews'%}">Albums</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'concert_reviews'%}">Concerts</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{ user.first_name }} [Logged In]
-                            <!-- <i class="fa-solid fa-users fa-solid fa-user"></i> -->
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="{% url 'create_review' %}">Create New Review</a></li>
-                            <li><a class="dropdown-item" href="{% url 'member_reviews' %}">View My Reviews</a></li>
-                            <div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="{% url 'profile-page' %}">Show Profile Page</a></li>
-                            <div class="dropdown-divider"></div>
-                            {% if request.user.is_superuser %}
-                            <li><a class="dropdown-item" href="{% url 'admin_area' %}">Admin Area</a></li>
-                            {% endif %}
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
-
-                            {% else %}
-                            <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
-                            <div class="dropdown-divider"></div>
-                        </ul>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 mt-3">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home'%}">Review |
+                    Alliance</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home'%}">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'album_reviews'%}">Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'concert_reviews'%}">Concerts</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ user.first_name }} [Logged In]
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{% url 'create_review' %}">Create New Review</a></li>
+                                <li><a class="dropdown-item" href="{% url 'member_reviews' %}">View My Reviews</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="{% url 'profile-page' %}">Show Profile Page</a></li>
+                                <div class="dropdown-divider"></div>
+                                {% if request.user.is_superuser %}
+                                <li><a class="dropdown-item" href="{% url 'admin_area' %}">Admin Area</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                                {% else %}
+                                <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
+                                <div class="dropdown-divider"></div>
+                            </ul>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-                {% endfor %}
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mt-3">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
+    </header>
     <main class="flex-shrink-0">
         {% block content %}
-        <!-- All Content Goes here -->
+        <!-- Content -->
         {% endblock content %}
     </main>
-    <footer class="bg-dark text-center text-light about mt-auto">
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-light footer-text mt-auto">
         <div class="container p-4 pb-0">
             <!-- Information Section -->
             <div class="text-center p-3 bg-dark">
@@ -109,22 +112,17 @@
                 <a class="btn btn-outline-light btn-floating m-2" href="https://twitter.com/" target="_blank"
                     role="button"><i class="fab fa-twitter"></i></a>
             </section>
-            <!-- End Of Social Media Section -->
-
             <!-- Address & Copyright Section -->
             <p>Review Alliance, Street 22, 123 45 Stockholm, Sweden</p>
             <p class="text-muted">©2022 Copyright Review | Alliance</p>
-            <!-- End Of Address & Copyright Section -->
-
         </div>
-
     </footer>
-    <!-- Footer -->
-
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <!-- Static JavaScript -->
     <script src="{% static 'js/script.js' %}"></script>
-
-
-
 </body>
 
 </html>

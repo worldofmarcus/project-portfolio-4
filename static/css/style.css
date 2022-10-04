@@ -1,13 +1,16 @@
 /* ==============
-   global styles
+   google fonts
    ============== */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Tinos&display=swap');
 
-
 /* ==============
-      typography
-      ============== */
+   global styles
+   ============== */
+
+body {
+    background-color: #F1F1F1
+}
 
 h1,
 h2,
@@ -21,21 +24,33 @@ h6 {
     letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
-}
 
-.form-inline {
-    display: inline;
-
-}
-
-body {
-    background-color: #F1F1F1
 }
 
 a {
     text-decoration: none;
     color: rgb(133, 125, 125);
 }
+
+hr {
+    margin: 30px 0;
+    height: 1px;
+    border: none;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, rgb(0, 0, 0)));
+}
+
+.headline {
+    font-size: 1.5em;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+
+/* ==============
+   navigation
+   ============== */
 
 .navbar-brand {
     font-family: 'Roboto', sans-serif;
@@ -51,15 +66,46 @@ a {
     text-transform: uppercase;
 }
 
-/* .card-img-top-detail-view {
-    width: 100%;
-    height: 60vh;
-    object-fit: contain;
-} */
 
-.headline {
-    font-size: 1.5em;
+
+/* ==============
+   cards
+   ============== */
+
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-align: center;
 }
+
+.card-published-approved,
+.card-draft-approved {
+    font-size: 0.8em;
+    font-weight: 700;
+    color: rgb(0, 128, 0);
+}
+
+.card-awaiting-approval,
+.card-draft {
+    font-size: 0.8em;
+    font-weight: 700;
+    color: rgb(255, 0, 0);
+
+}
+
+.card-text-footer {
+    text-align: center;
+}
+
+
+
+
+.form-inline {
+    display: inline;
+}
+
+
+
 
 .intro-text {
     font-size: 1em;
@@ -71,11 +117,6 @@ a {
     height: 50px;
 }
 
-.card-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    text-align: center;
-}
 
 .form-text {
     font-family: 'Roboto', sans-serif;
@@ -86,9 +127,7 @@ a {
     color: rgb(255, 255, 255)
 }
 
-.card-text-footer {
-    text-align: center;
-}
+
 
 .fragment {
     font-family: 'Tinos', serif;
@@ -113,12 +152,7 @@ a {
     text-align: center;
 }
 
-hr {
-    margin: 30px 0;
-    height: 1px;
-    border: none;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, rgb(0, 0, 0)));
-}
+
 
 .btn-like {
     color: #E84610;
@@ -147,20 +181,9 @@ hr {
     transform: scale(2.0);
 }
 
-.card-awaiting-approval,
-.card-draft {
-    font-size: 0.8em;
-    font-weight: 700;
-    color: rgb(255, 0, 0);
 
-}
 
-.card-published-approved,
-.card-draft-approved {
-    font-size: 0.8em;
-    font-weight: 700;
-    color: rgb(0, 128, 0);
-}
+
 
 .comment-date-name {
     font-family: 'Roboto', sans-serif;
@@ -175,17 +198,7 @@ hr {
     font-size: 1em;
 }
 
-.about {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    color: rgb(133, 125, 125);
-}
 
-.address {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    color: rgb(133, 125, 125);
-}
 
 .number-circle {
 
@@ -201,11 +214,16 @@ hr {
     text-align: center;
 }
 
-.bold-text {
-    font-weight: 700;
+
+/* ==============
+   footer
+   ============== */
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: rgb(133, 125, 125);
 }
-
-
 
 @media screen and (max-width: 375px) {
 
