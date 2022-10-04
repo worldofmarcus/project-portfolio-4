@@ -9,7 +9,7 @@
    ============== */
 
 body {
-    background-color: rgb(255, 255, 255)
+    background-color: rgb(255, 255, 255);
 }
 
 h1,
@@ -51,14 +51,19 @@ hr {
 }
 
 .btn-danger {
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
 }
 
 .access-denied {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    color: rgb(255, 0, 0)
+    color: rgb(255, 0, 0);
+}
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 /* ==============
@@ -70,7 +75,7 @@ hr {
     font-weight: 700;
     font-size: 2.5em;
     text-transform: uppercase;
-    color: rgb(241, 241, 241)
+    color: rgb(241, 241, 241);
 }
 
 .navbar-nav {
@@ -126,7 +131,6 @@ hr {
     height: 50px;
 }
 
-
 .form-text {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -150,7 +154,6 @@ hr {
 }
 
 .number-circle {
-
     border-radius: 50%;
     width: 80px;
     height: 80px;

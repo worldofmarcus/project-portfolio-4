@@ -102,8 +102,10 @@
                 <p class="comment-body">{{ comment.body }}</p>
                 {% if user.is_authenticated %}
                 {% if user.id == comment.author.id %}
-                <a href="{% url 'update_comment' comment.pk %}" class="btn btn-outline-secondary btn-sm">Update</a>
-                <a href="{% url 'delete_comment' comment.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                <a href="{% url 'update_comment' comment.pk %}"
+                    class="btn btn-outline-secondary mt-1 mb-1 btn-sm">Update</a>
+                <a href="{% url 'delete_comment' comment.pk %}"
+                    class="btn btn-outline-secondary mt-1 mb-1 btn-danger btn-sm">Delete</a>
                 </p>
                 {% endif %}
                 {% endif %}
@@ -121,7 +123,7 @@
                 {{ comment_form|crispy }}
                 {% csrf_token %}
                 <p class="mt-3">Posting as: {{ user.first_name }}</p>
-                <button type="submit" class="btn btn-secondary btn-sm mt-3 mb-3">Submit</button>
+                <button type="submit" class="btn btn-outline-secondary mt-3 mb-3 btn-sm">Submit</button>
             </form>
             {% else %}
             <div class="alert alert-success text-center" role="alert">
