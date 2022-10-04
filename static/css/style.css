@@ -24,7 +24,6 @@ h6 {
     letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
-
 }
 
 a {
@@ -43,10 +42,13 @@ hr {
     font-size: 1.5em;
 }
 
+.headline-intro-text {
+    font-size: 1em;
+}
+
 .bold-text {
     font-weight: 700;
 }
-
 
 /* ==============
    navigation
@@ -65,8 +67,6 @@ hr {
     font-size: 1em;
     text-transform: uppercase;
 }
-
-
 
 /* ==============
    cards
@@ -90,11 +90,10 @@ hr {
     font-size: 0.8em;
     font-weight: 700;
     color: rgb(255, 0, 0);
-
 }
 
-.card-text-footer {
-    text-align: center;
+.fragment {
+    font-family: 'Tinos', serif;
 }
 
 
@@ -107,9 +106,7 @@ hr {
 
 
 
-.intro-text {
-    font-size: 1em;
-}
+
 
 .image-table-admin {
 
@@ -129,14 +126,7 @@ hr {
 
 
 
-.fragment {
-    font-family: 'Tinos', serif;
 
-}
-
-.author {
-    color: rgb(255, 0, 0)
-}
 
 .checked {
     text-align: center;
@@ -180,9 +170,6 @@ hr {
     -ms-transform: scale(2.0);
     transform: scale(2.0);
 }
-
-
-
 
 
 .comment-date-name {

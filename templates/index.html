@@ -39,11 +39,10 @@
                                     class="btn btn-outline-secondary btn-sm">Update</a>
                                 <a href="{% url 'delete_review' post.slug %}" class="btn btn-danger btn-sm">Delete</a>
                                 {% endif %}
-
                             </p>
                             <hr />
-                            <p class="card-text text-muted h6 card-text-footer">
-                                By <span class="author">{{ post.author.first_name }}</span> |
+                            <p class="card-text text-muted text-center">
+                                By {{ post.author.first_name }} |
                                 {{ post.date_created_on|date:"Y-m-d" }}
                         </div>
                     </div>
@@ -65,12 +64,10 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
     {% endif %}
-
 </div>
 
 {% endblock content %}
