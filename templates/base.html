@@ -53,16 +53,22 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="{% url 'create_review' %}">Create New Review</a></li>
                                 <li><a class="dropdown-item" href="{% url 'member_reviews' %}">View My Reviews</a></li>
-                                <div class="dropdown-divider"></div>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="{% url 'profile-page' %}">Show Profile Page</a></li>
-                                <div class="dropdown-divider"></div>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 {% if request.user.is_superuser %}
                                 <li><a class="dropdown-item" href="{% url 'admin_area' %}">Admin Area</a></li>
                                 {% endif %}
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
                                 {% else %}
                                 <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
-                                <div class="dropdown-divider"></div>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                             </ul>
                         </li>
                         {% endif %}
