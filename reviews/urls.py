@@ -50,5 +50,4 @@ urlpatterns = [
           name='admin_update_status'),
      path('<int:pk>/admin/update_comment/', views.admin_update_comment,
           name='admin_update_comment'),
-
 ]

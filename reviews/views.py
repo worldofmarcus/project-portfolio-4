@@ -118,7 +118,6 @@ class AdminArea(generic.TemplateView):
     context_object_name = 'post'
     template_name = 'admin_area.html'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
@@ -144,7 +143,7 @@ def admin_update_status(request, slug):
 
 def admin_update_approval(request, slug):
     post = Post.objects.get(slug=slug)
-    if post.approved == True:
+    if post.approved is True:
         approval = False
     else:
         approval = True
@@ -153,9 +152,10 @@ def admin_update_approval(request, slug):
     post.save()
     return HttpResponseRedirect(reverse('admin_area'))
 
+
 def admin_update_comment(request, pk):
     comment = Comment.objects.get(pk=pk)
-    if comment.approved == True:
+    if comment.approved is True:
         approval = False
     else:
         approval = True
@@ -163,6 +163,7 @@ def admin_update_comment(request, pk):
     comment.approved = approval
     comment.save()
     return HttpResponseRedirect(reverse('admin_area'))
+
 
 class DetailView(generic.DetailView):
     """
@@ -287,8 +288,7 @@ class UpdateComment(generic.UpdateView):
     template_name = 'update_comment.html'
 
     def get_success_url(self, *args):
-        return (self.request.path)
-
+        return self.request.path
 
     def form_valid(self, form):
         form.instance.approved = False
@@ -369,6 +369,7 @@ def admin_comment_deleted(request):
     """
 
     return render(request, 'admin_comment_deleted.html')
+
 
 class ViewProfile(generic.TemplateView):
     model = User

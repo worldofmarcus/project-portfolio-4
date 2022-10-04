@@ -6,6 +6,7 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Post
 
+
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='First Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
