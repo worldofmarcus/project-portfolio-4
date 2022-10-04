@@ -73,9 +73,11 @@
                         <td class="text-center">
                             {% if 'default_image' in review.featured_image.url %}
                             <img class="image-table-admin rounded"
-                                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
+                                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png"
+                                alt="Default placeholder image of review">
                             {% else %}
-                            <img class="image-table-admin rounded" src="{{ review.featured_image.url }}">
+                            <img class="image-table-admin rounded" src="{{ review.featured_image.url }}"
+                                alt="Featured image of review">
                             {% endif %}
                         </td>
                         <td>{{ review.date_created_on }}</td>

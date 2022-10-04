@@ -22,9 +22,11 @@
                             <div class="image-container">
                                 {% if 'default_image' in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
+                                    src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png"
+                                    alt="Default placeholder image of review">
                                 {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}"
+                                    alt="Featured image of review">
                                 {% endif %}
                             </div>
                             <p class="card-text bold-text mt-1 mb-1">{{ post.artist }} | {{ post.title }}</p>
