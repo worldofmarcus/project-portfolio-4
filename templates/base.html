@@ -65,16 +65,14 @@
                                 {% endif %}
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
                         </li>
+
+                        {% else %}
+                        <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
                     </ul>
-                    {% else %}
-                    <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
-                    {% endif %}
-
-
-
                 </div>
-            </div>
+                {% endif %}
 
+            </div>
         </nav>
         <div class="container">
             <div class="row">
