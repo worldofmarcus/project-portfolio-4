@@ -20,6 +20,8 @@
         <p class="mt-4">Posting as: {{ user.first_name }}</p>
         <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Submit</button>
     </form>
+    {% else %}
+    <p class="access-denied card-text">You are not allowed here!</p>
     {% endif %}
 </div>
 
