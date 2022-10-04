@@ -96,7 +96,7 @@
                             {% endif %}
                         </td>
                         <td class="text-center">
-                            <form method="post" class="form-inline"
+                            <form method="post" class="table-inline"
                                 action="{% url 'admin_update_status' review.slug %}">
                                 {% csrf_token %}
                                 {% if review.status == 0 %}
@@ -107,7 +107,7 @@
                                     class="btn btn-outline-secondary btn-sm mt-1 mb-1">Unpublish</button>
                                 {% endif %}
                             </form>
-                            <form method="post" class="form-inline"
+                            <form method="post" class="table-inline"
                                 action="{% url 'admin_update_approval' review.slug %}">
                                 {% csrf_token %}
                                 {% if review.approved == True %}
