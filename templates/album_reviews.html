@@ -2,17 +2,17 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container flex-grow-1">
     <div>
-        <h1 class="headline mt-4">Album Reviews</h1>
+        <h1 class="headline mt-4">All Album Reviews</h1>
         <p>
-            <h2 class="headline-intro-text">Reviews of the latest albums
+            <h2 class="headline-intro-text">Latest album reviews
                 written by our top critics! Enjoy!</h2>
         </p>
         <hr />
     </div>
     <div class="row">
-        <!-- Concert Reviews -->
+        <!-- All Reviews -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in object_list %}
@@ -39,11 +39,10 @@
                                     class="btn btn-outline-secondary btn-sm">Update</a>
                                 <a href="{% url 'delete_review' post.slug %}" class="btn btn-danger btn-sm">Delete</a>
                                 {% endif %}
-
                             </p>
                             <hr />
-                            <p class="card-text text-muted h6 card-text-footer">
-                                By <span class="author">{{ post.author.first_name }}</span> |
+                            <p class="card-text text-muted text-center">
+                                By {{ post.author.first_name }} |
                                 {{ post.date_created_on|date:"Y-m-d" }}
                         </div>
                     </div>
@@ -65,7 +64,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
