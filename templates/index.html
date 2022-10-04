@@ -9,7 +9,7 @@
             <h2 class="headline-intro-text">Latest reviews
                 written by our top critics! Enjoy!</h2>
         </p>
-        <hr />
+        <hr>
     </div>
     <div class="row">
         <!-- All Reviews -->
@@ -40,7 +40,7 @@
                                 <a href="{% url 'delete_review' post.slug %}" class="btn btn-danger btn-sm">Delete</a>
                                 {% endif %}
                             </p>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted text-center">
                                 By {{ post.author.first_name }} |
                                 {{ post.date_created_on|date:"Y-m-d" }}
@@ -50,7 +50,7 @@
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
-                <hr />
+                <hr>
                 {% endif %}
                 {% endfor %}
             </div>

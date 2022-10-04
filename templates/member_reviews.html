@@ -9,7 +9,7 @@
         <p>
             <h2 class="headline-intro-text">Here you can find all the reviews you have written!</h2>
         </p>
-        <hr />
+        <hr>
     </div>
     <div class="row">
         <!-- Member Reviews -->
@@ -52,7 +52,7 @@
                                 <span class="card-draft">Your review is in draft status</span>
                                 {% endif %}
                             </p>
-                            <hr />
+                            <hr>
                             <p class="h6 card-text text-muted card-text-footer">
                                 By <span class="author">{{ post.author.first_name }}</span> |
                                 {{ post.date_created_on|date:"Y-m-d" }}
@@ -62,7 +62,7 @@
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
-                <hr />
+                <hr>
                 {% endif %}
                 {% endfor %}
             </div>
