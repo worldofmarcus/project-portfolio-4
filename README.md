@@ -162,7 +162,7 @@ The navigation bar is very clean and straight forward. Depending if you  are log
 
 *Links that are visible to logged out user*
 
-* About - Includes information about Review | Alliance.
+* About - Includes information about Review | Alliance and presents the reviewers that are registered.
 * All - Lists all reviews on the site independent of category type of review.
 * Albums - Lists all album reviews.
 * Concerts - Lists all concert reviews.
@@ -171,15 +171,14 @@ The navigation bar is very clean and straight forward. Depending if you  are log
 *Links that are visible to logged out user*
 All of the links that is visible to a not logged in user plus the ones below.
 
-* Create New review
-* View My reviews
-* Show Profile Page
-* Log Out
+* Create New review - Lets the user create a new review.
+* View My reviews - Lists all reviews created by the logged in user.
+* Show Profile Page - Shows logged in users profile page.
+* Log Out - Logs out the user.
 
 *Link that is visible if user is administrator*
 All of the links above plus the one below.
-* Admin Area
-
+* Admin Area - Gives the administrator a view with information about i.e. logged in user, number of comments and number of posts. I this view the administrator also can publish / unpublish / approve / aunapprove reviews and approve / unapprove comments. The administrator can also remove / add genres in this view.
 
 <details><summary><b>To be updated</b></summary>
 
