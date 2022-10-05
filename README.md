@@ -72,7 +72,7 @@ I've been using the application [Trello](https://trello.com/) and the project bo
 ### Database Schema
 I have used a modelling tool called [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) to create the database schema. In short it shows the relationships between the different models in the database connected to the application. Graph Models exports a *.dot file which easily can be converted to a more 'easy to read' design with the help of the application [dreampuf](https://dreampuf.github.io/GraphvizOnline/).
 
-<details><summary><b>Database Schema/b></summary>
+<details><summary><b>Database Schema</b></summary>
 
 ![Database Schema](readme/assets/images/database_schema.png)
 </details><br/>
@@ -158,7 +158,28 @@ To be updated
 ## **Existing Features**
 
 ### **Navigation**
-To be updated
+The navigation bar is very clean and straight forward. Depending if you  are logged in or not different menus is visible for the site user. An extra menu item is visible if you are logged in as an administrator.
+
+*Links that are visible to logged out user*
+
+* About - Includes information about Review | Alliance.
+* All - Lists all reviews on the site independent of category type of review.
+* Albums - Lists all album reviews.
+* Concerts - Lists all concert reviews.
+* Login / Sign Up - Gives the user the opportunity to log in or sign up if not ready a registered user at Review | Alliance.
+
+*Links that are visible to logged out user*
+All of the links that is visible to a not logged in user plus the ones below.
+
+* Create New review
+* View My reviews
+* Show Profile Page
+* Log Out
+
+*Link that is visible if user is administrator*
+All of the links above plus the one below.
+* Admin Area
+
 
 <details><summary><b>To be updated</b></summary>
 
@@ -181,14 +202,6 @@ To be updated
 ### **Update Review**
 ### **Sign Out**
 ### **Footer**
-
-
-
-
-
-
-
-
 
 
 ### Features Left to Implement
