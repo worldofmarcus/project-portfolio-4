@@ -1,20 +1,23 @@
 # **Review | Alliance**
-Review | Alliance is a resource for finding more about albums and concerts by the artists that you love! The site offers top reviews of albums and concerts by both *Review | Alliance approved staff* and *Review | Alliance users*.
+Review | Alliance is a resource for finding more about albums and concerts by the artists that you love! The site offers top reviews of albums and concerts by both *Review | Alliance approved staff* and *Review | Alliance users*. To create a more interactive and lively site all visitors can create their own user to start writing reviews and comment on other reviewers content. All comments and reviews need approval by Review | Alliance staff members to secure a digital hangout where everyone can feel safe from abuse, inappropriate language, etc. The approvals are being made from an admin dashboard that only is accessed by staff members with the correct access status. From a visual point of view the site has a clean look that makes navigation easier for the users.
 
 This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
 [View live website here](https://project-portfolio-4.herokuapp.com/)
 
-![Review | Alliance responsive design](to be updated)
+![Review | Alliance responsive design](readme/assets/images/responsive.png)
 
 # Table of Content
 
 * [**Project**](<#project>)
+    * [Objective](<#objective>)
     * [Site Users Goal](<#site-users-goal>)
-    * [User Stories](<#user-stories>)
     * [Site Owners Goal](<#site-owners-goal>)
+    * [Project Management](<#project-management>)
 
 * [**User Experience (UX)**](<#user-experience-ux>)
+    * [Wireframes](<#wireframes>)
+    * [User Stories](<#user-stories>)
     * [Site Structure](<#site-structure>)
     * [Flow chart](<#flow-chart>)
     * [Data Model](<#data-model>)
@@ -46,15 +49,25 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
 
 # **Project**
 
+## Objective
+I absolutely love music, both listening to it at home but going to live concerts as well. Therefore I have decided to do a review site that is as authentic and useful as possible. I also want to demonstrate my knowledge within the area of HTML, CSS, JavaScript, Python and the Django Framework.
+
 ## Site Users Goal
 The user of 'Record | Alliance' loves music, to interact with others and to contribute with their knowledge to like minded.
 
 ## Site Owners Goal
 The goal of the site owner is to deliver a site where the users in an intuitive way can read about the latest albums and concerts and contribute with their own reviews.
 
+## Project Management
+I've been using the application [Trello](https://trello.com/) to keep my project together. It has been working really well and has helped me structure up my work a lot.
+
+![Trello Image](readme/assets/images/trello.png)
+
 [Back to top](<#table-of-content>)
 
 # **User Experience (UX)**
+
+## Wireframes
 The wireframes for the site were created in the software [Balsamiq](https://balsamiq.com). The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's worth mentioning that there are some visual differences compared to the wireframes, the reason being design choices that was made during the creation process.
 
 ![Wireframes](to be updated)
@@ -62,12 +75,50 @@ The wireframes for the site were created in the software [Balsamiq](https://bals
 ## User Stories
 Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the [Testing](<#testing>) section.
 
+### Site User
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site User | I can view a list of the music reviews so that I can select one to read | &check; |
+| As a Site User | I can view a list of the concert reviews so that I can select one to read | &check; |
+| As a Site User | I can click on a specific review so that I can read it in detail | &check; |
+| As a Site User | I can like and unlike a review so that it is possible for me to interact with the review | &check; |
+| As a Site User | I can view the number of likes on each review so that I can see how popular a specific review is | &check; |
+| As a Site User | I can contact Review Alliance in an easy way so that I can interact with them if I have a need for it | &check; |
+| As a Site User | I can navigate easy on the site through paginated list of posts so that I feel comfortable using the site | &check; |
+| As a Site User | I can view comments on a specific review so that I can read the conversations between different users on the site | &check; |
+| As a Site User | I can sign up an account so that I can like and comment on reviews, create a profile page, create own reviews and edit / remove my reviews | &check; |
+| As a Site User | I can create a profile page so that other reviewers can read about who I am | &cross; |
+| As a Site User | I can comment on a review so that I can be involved in the conversation | &check; |
+| As a Site User | I can edit my comment so that I can change the content if needed | &check; |
+| As a Site User | I can remove my review so that I have full control of my reviews | &check; |
+| As a Site User | I can choose to see my own reviews so that I can find them easily | &check; |
+| As a Site User | I can create a new review so that I can contribute to with new content to Review Alliance | &check; |
+| As a Site User | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
+| As a Site User | I can create draft reviews so that I can finish writing the content later | &check; |
+| As a Site User | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
+
+### Site Admin
+
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
+| As a Site Admin | I can create, read, update and delete reviews so that I can manage my review content | &check; |
+| As a Site Admin | I can approve reviews so that I can secure high quality of the content | &check; |
+| As a Site Admin | I can approve and disapprove comments so that I can secure a safe environment for the Site Users | &check; |
+| As a Site Admin | I can create draft reviews so that I can finish writing the content later | &check; |
+| As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts | &check; |
+| As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
+
+[Back to top](<#table-of-content>)
+
 ![User Stories](readme/assets/images/user_stories.png)
+
 
 ## Site Structure
 
-To be updated. Read more about the different choices in the [Features](<#features>) section.
+The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Dependeing on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administratorThe site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
 
+Read more about the different choices in the [Features](<#features>) section.
 
 ## Data Schema
 To be updated
