@@ -59,11 +59,23 @@ The user of 'Record | Alliance' loves music, to interact with others and to cont
 The goal of the site owner is to deliver a site where the users in an intuitive way can read about the latest albums and concerts and contribute with their own reviews.
 
 ## Project Management
-I've been using the application [Trello](https://trello.com/) to keep my project together. It has been working really well and has helped me structure up my work a lot.
+
+### Trello & Github Board
+I've been using the application [Trello](https://trello.com/) and the project board in GitHub to keep my project together. It has been working really well and has helped me structure up my work a lot. Trello was used on a more general plan and GitHub was used to plan and organize my user stories.
 
 ![Trello Image](readme/assets/images/trello.png)
 
+![User Stories](readme/assets/images/user_stories.png)
+
 [Back to top](<#table-of-content>)
+
+### Database Schema
+I have used a modelling tool called [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) to create the database schema. In short it shows the relationships between the different models in the database connected to the application. Graph Models exports a *.dot file which easily can be converted to a more 'easy to read' design with the help of the application [dreampuf](https://dreampuf.github.io/GraphvizOnline/).
+
+<details><summary><b>Database Schema/b></summary>
+
+![Database Schema](readme/assets/images/database_schema.png)
+</details><br/>
 
 # **User Experience (UX)**
 
@@ -111,23 +123,11 @@ Below the user stories for the project are listed to clarify why particular feat
 
 [Back to top](<#table-of-content>)
 
-![User Stories](readme/assets/images/user_stories.png)
-
-
 ## Site Structure
 
 The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Dependeing on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administratorThe site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
 
 Read more about the different choices in the [Features](<#features>) section.
-
-## Data Schema
-To be updated
-
-
-<details><summary><b>To be updated</b></summary>
-
-![Google Sheet](to be updated)
-</details><br/>
 
 [Back to top](<#table-of-content>)
 
@@ -157,13 +157,38 @@ To be updated
 
 ## **Existing Features**
 
-### To be updated
+### **Navigation**
 To be updated
 
 <details><summary><b>To be updated</b></summary>
 
 ![Main Menu](to be updated)
 </details><br/>
+
+### **About**
+### **Allt**
+### **Albums**
+### **Concerts**
+### **Review Detail View**
+### **Member Reviews**
+### **Create Review**
+### **Profile Page**
+### **Admin Area**
+### **Sign Up**
+### **Sign In**
+### **Sign Out**
+### **Update Comment**
+### **Update Review**
+### **Sign Out**
+### **Footer**
+
+
+
+
+
+
+
+
 
 
 ### Features Left to Implement
