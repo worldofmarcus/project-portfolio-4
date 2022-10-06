@@ -75,7 +75,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="review_posts")
     featured_image = CloudinaryField('image', default='default_image')
-    fragment = models.TextField(blank=True)
+    fragment = models.TextField()
     body = models.TextField()
     likes = models.ManyToManyField(User, related_name='review_likes',
                                    blank=True)
