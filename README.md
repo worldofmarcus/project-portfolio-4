@@ -233,8 +233,6 @@ This page lists all the reviews that has been made at Review | Alliance. If the 
 ![All Reviews - User Logged In](readme/assets/images/all_reviews_logged_in.png)
 </details><br/>
 
-
-
 ### **Albums**
 This page lists all the album reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'album'
 
@@ -242,16 +240,52 @@ This page lists all the album reviews that has been made at Review | Alliance. I
 This page lists all the concert reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'concert'
 
 ### **Review Detail View**
+The review detail shows the details about the review that the user has chosen in the all, albums or concert view. Depending on if the user is logged in the view looks a little bit different. If the user is logged in they get the possibility to like the review and also update and delete it if they have written it. A logged in user can also leave a comment (and update / delete their own comment as well).
+
+<details><summary><b>Review Detail View - User Logged Out</b></summary>
+
+![Review Detail View - User Logged Out](readme/assets/images/review_detail_logged_out.png)
+![Review Detail View Comment - User Logged Out](readme/assets/images/review_detail_comment_logged_out.png)
+</details><br/>
+
+<details><summary><b>Review Detail View - User Logged In</b></summary>
+
+![Review Detail View - User Logged In](readme/assets/images/review_detail_logged_in.png)
+![Review Detail View Comment - User Logged In](readme/assets/images/review_detail_comment_logged_in.png)
+</details><br/>
 
 ### **Member Reviews**
+The Member Review Page lists the reviews that the logged in user has written. The user can update and delete their review on this page and also gets information about the status of the review (if it's in draft mode, approved, etc.).
+
+<details><summary><b>Member Reviews</b></summary>
+
+![Member Reviews](readme/assets/images/member_reviews.png)
+</details><br/>
+
 ### **Create Review**
+On this page the registered and logged in user can create their own review. When they have sent it in Review | Alliance needs to approve it, until it's approved it will not be visible for the public.
+
+<details><summary><b>Create Review</b></summary>
+
+![Create Review](readme/assets/images/create_review.png)
+</details><br/>
+
+### **Update Review**
+On this page the registered and logged in user can update their own review. When they have updated it in Review | Alliance needs to re-approve it, until it's re-approved it will not be visible for the public.
+
+<details><summary><b>Update Review</b></summary>
+
+![Update Review](readme/assets/images/update_review.png)
+</details><br/>
+
+
 ### **Profile Page**
 ### **Admin Area**
 ### **Sign Up**
 ### **Sign In**
 ### **Sign Out**
 ### **Update Comment**
-### **Update Review**
+
 ### **Sign Out**
 ### **Footer**
 
