@@ -278,9 +278,23 @@ On this page the registered and logged in user can update their own review. When
 ![Update Review](readme/assets/images/update_review.png)
 </details><br/>
 
-
 ### **Profile Page**
+On this page the user can view and update their own profile page.
+
+<details><summary><b>Profile Page - To Be Updated</b></summary>
+
+![Profile Page](To Be Updated)
+</details><br/>
+
 ### **Admin Area**
+On this page the administrator (or other superuser decided by Review | Alliance) can *approve* / *unapprove* / *publish* / *unpublish* and *delete* reviews and comments. General information about *number of users*, *number of comments *number of reviews*, *unapproved comments / reviews* is also being showed on the page.
+
+<details><summary><b>Admin Area - To Be Updated</b></summary>
+
+![Admin Area(To Be Updated)
+</details><br/>
+
+
 ### **Sign Up**
 ### **Sign In**
 ### **Sign Out**
