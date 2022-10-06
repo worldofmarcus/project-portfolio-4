@@ -448,15 +448,75 @@ To be updated
 
 ## Additional Testing
 
+### Manual Testing
+
+In addition to tests stated above I have performed a series of manual tests. Below the list of tests that has been conducted can be found.
+
+| Status | **Main Website - User Logged Out**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page that needs authentication loads a forbidden page
+| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the Home button on the nav bar loads the home page and lists all reviews
+| &check; | Clicking the All button on the nav bar lists all reviews
+| &check; | Clicking the Albums button on the nav bar lists all album reviews
+| &check; | Clicking the Concert button on the nav bar lists all concert reviews
+| &check; | Clicking the Log In / Sign Up loads the sign up page
+| &check; | 6 Reviews are rendered for the user on all / albums / concert page before pagination kicks in
+| &check; | Clicking the Read More button on the a review card loads the review detail page
+| &check; | In the details view the user cannot create a comment
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the YouTube link in the footer area opens YouTube in a new window
+| &check; | Clicking the LinkedInlink in the footer area opens LinkedIN in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+
+| Status | **Main Website - User Logged In**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page that needs authentication loads a forbidden page
+| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the Home button on the nav bar loads the home page and lists all reviews
+| &check; | Clicking the All button on the nav bar lists all reviews
+| &check; | Clicking the Albums button on the nav bar lists all album reviews
+| &check; | Clicking the Concert button on the nav bar lists all concert reviews
+| &check; | 6 Reviews are rendered for the user on all / albums / concert page before pagination kicks in
+| &check; | Clicking the Read More button on the a review card loads the review detail page
+| &check; | In the detail view the logged in user can comment a review
+| &check; | In the detail view the logged in user can update/delete the comments written by themselves
+| &check; | Clicking the update button loads the update comment page
+| &check; | Clicking the delete button loads the delete comment page
+| &check; | In the detail view the logged in user can like/unlike reviews
+| &check; | In the detail view the logged in user can update/delete the reviews written by themselves
+| &check; | Clicking the update button in the detail view loads the update review page
+| &check; | Clicking the delete button in the detail view loads the delete review page
+| &check; | Clicking the My Reviews button in the logged in user menu lists the logged in users reviews
+| &check; | Clicking the update button in the My Reviews view loads the update review page
+| &check; | Clicking the delete button in the My Reviews view loads the delete review page
+| &check; | In the My Reviews view the information about the review status is correct
+| &check; | In the logged in user menu the Admin Area is not visible
+| &check; | Clicking the Show Profile Page button in the logged in user menu loads the My Profile page
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the YouTube link in the footer area opens YouTube in a new window
+| &check; | Clicking the LinkedInlink in the footer area opens LinkedIN in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+
+| Status | **Main Website - Admin Logged In**
+|:-------:|:--------|
+| &check; | Clicking the Admin Area button in the logged in user menu loads the Admin Area Page
+| &check; | In the review section. Clicking the approve / unapprove / publish / unpublish toggles the approve and status signs
+| &check; | The view button is only visible if a review is published
+| &check; | In the comment section. Clicking the approve / unapprove toggles the approve and status signs
+| &cross; | When clicking delete / add genre the appropiate page loads.
+
+
+### Automated Testing
+
 ### Responsiveness Test
 To be updated
 
 [Back to top](<#table-of-content>)
 
 ### Browser Compatibility
-To be updated
-
-
 * Google Chrome Version (103.0.5060.114)
 * Mozilla Firefox (version 102.0.1)
 * Min (version 1.25.1)
