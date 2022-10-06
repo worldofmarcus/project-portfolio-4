@@ -63,9 +63,12 @@ The goal of the site owner is to deliver a site where the users in an intuitive 
 ### Trello & Github Board
 I've been using the application [Trello](https://trello.com/) and the project board in GitHub to keep my project together. It has been working really well and has helped me structure up my work a lot. Trello was used on a more general plan and GitHub was used to plan and organize my user stories.
 
+<details><summary><b>Trello & Github Board</b></summary>
+
 ![Trello Image](readme/assets/images/trello.png)
 
 ![User Stories](readme/assets/images/user_stories.png)
+</details><br/>
 
 [Back to top](<#table-of-content>)
 
