@@ -221,7 +221,7 @@ In the about section the user can read about both who  Review | Alliance are but
 </details><br/>
 
 ### **All**
-This page lists all the reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written.
+This page lists all the reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. The page shows 6 cards on bigger screens before a pagination mechanism kicks in. On smaller screens the cards are stacked vertically.
 
 <details><summary><b>All Reviews - User Logged Out</b></summary>
 
@@ -234,10 +234,10 @@ This page lists all the reviews that has been made at Review | Alliance. If the 
 </details><br/>
 
 ### **Albums**
-This page lists all the album reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'album'
+This page lists all the album reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'album'.
 
 ### **Concerts**
-This page lists all the concert reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'concert'
+This page lists all the concert reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'concert'.
 
 ### **Review Detail View**
 The review detail shows the details about the review that the user has chosen in the all, albums or concert view. Depending on if the user is logged in the view looks a little bit different. If the user is logged in they get the possibility to like the review and also update and delete it if they have written it. A logged in user can also leave a comment (and update / delete their own comment as well).
@@ -252,6 +252,14 @@ The review detail shows the details about the review that the user has chosen in
 
 ![Review Detail View - User Logged In](readme/assets/images/review_detail_logged_in.png)
 ![Review Detail View Comment - User Logged In](readme/assets/images/review_detail_comment_logged_in.png)
+</details><br/>
+
+### **Update / Delete Comment**
+If the user is logged in and has written a comment there is a possibility to edit and delete the comment. When the comment has been updated it needs to be re-approved by Review | Alliance.
+
+<details><summary><b>Update Comment</b></summary>
+
+![Update Comment](readme/assets/images/update_comment.png)
 </details><br/>
 
 ### **Member Reviews**
@@ -294,15 +302,46 @@ On this page the administrator (or other superuser decided by Review | Alliance)
 ![Admin Area(To Be Updated)
 </details><br/>
 
-
 ### **Sign Up**
+If the site visitor has no registered user at Review | Alliance they can sign up on this. They can also add a presentation and upload a featured image that will be used on the users profile page.
+
+<details><summary><b>Sign Up</b></summary>
+
+![Sign Up](readme/assets/images/sign_up.png)
+</details><br/>
+
 ### **Sign In**
-### **Sign Out**
-### **Update Comment**
+On this page the user can sign in to Review | Alliance
+
+<details><summary><b>Sign In</b></summary>
+
+![Sign In](readme/assets/images/sign_in.png)
+</details><br/>
 
 ### **Sign Out**
+When the user clicks sign out in the menu bar a confirmation page is being showed so that the user don't accidently sign out.
+
+<details><summary><b>Sign Out</b></summary>
+
+![Member Reviews](readme/assets/images/sign_out.png)
+</details><br/>
+
 ### **Footer**
+The footer area includes short information about Review | Alliance, contact information and links to relevant social media.
 
+<details><summary><b>Footer</b></summary>
+
+![Footer](readme/assets/images/footer.png)
+</details><br/>
+
+### **Flash Messages and confirmation pages to the user **
+The sites incorporates flash messages and confirmation pages when an action has been performed (i.e. delete/update actions). Examples of this in the screenshots below.
+
+<details><summary><b>Confirmation Messages</b></summary>
+
+![Review Created Success](readme/assets/images/review_created_success.png)
+![Review Deleted Success](readme/assets/images/review_deleted_success.png)
+</details><br/>
 
 ### Features Left to Implement
 
@@ -315,9 +354,14 @@ On this page the administrator (or other superuser decided by Review | Alliance)
 ## Languages
 
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the application.
+* [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
+* [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
 
 ## Frameworks, Libraries & Software
-
+* [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites
+* [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
+* [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
 * [Microsoft Excel](https://www.microsoft.com/sv-se/microsoft-365/excel) - Used to create testing scenarios.
 * [Github](https://github.com/) - Used to host and edit the website.
 * [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
@@ -325,6 +369,17 @@ On this page the administrator (or other superuser decided by Review | Alliance)
 * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
 * [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check.
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Used to validate the sites accessibility.
+* [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) - Used to create a *.dot file of all models in the project.
+* [dreampuf](https://dreampuf.github.io/GraphvizOnline/) - Creates visually appealing database diagrams of *.dot files.
+* [Favicon](https://favicon.io/) - Used to create the favicon.
+* [VSCode](https://code.visualstudio.com/) - Used to create and edit the site.
+* [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
+* [Trello](https://trello.com/en-GB) - A project management tool to organize the project.
+* [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
+* [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+* [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+* [PEP8 Validation](http://pep8online.com/) - Used to validate Python code
+* [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 
 ## Python Packages
 * [GSpread](https://pypi.org/project/gspread/) - A Python API for Google Sheets that makes it possible to transfer data between the application and the Google Sheet.
