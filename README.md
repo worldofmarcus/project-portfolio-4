@@ -508,6 +508,29 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | In the comment section. Clicking the approve / unapprove toggles the approve and status signs
 | &cross; | When clicking delete / add genre the appropiate page loads.
 
+ Status | **Create A Review - User Logged In**
+|:-------:|:--------|
+| &check; | Title field is required
+| &check; | Title field does not accept empty field
+| &check; | Title field does not accept just spaces
+| &check; | Artist field is required
+| &check; | Artist field does not accept empty field
+| &check; | Artist field does not accept just spaces
+| &check; | Featured Image is not required
+| &check; | Fragment field is required
+| &check; | Fragment field does not accept empty field
+| &check; | Body field is required
+| &check; | Body field does not accept empty field
+| &check; | Category field defaults to Uncategorized
+| &check; | Fragment field is required
+| &check; | Fragment field does not accept empty field
+| &check; | Record Label is not required
+| &check; | Venue is not required
+| &check; | Genre field defaults to Uncategorized
+| &check; | Rating field defaults to 3
+| &check; | Status field defaults to Draft
+| &check; | Posting as shows name of logged in user
+| &check; | Review Success Page is displayed when the user submits the review and the form validation is ok.
 
 ### Automated Testing
 
