@@ -168,7 +168,19 @@ The navigation bar is very clean and straight forward. Depending if you  are log
 * Concerts - Lists all concert reviews.
 * Login / Sign Up - Gives the user the opportunity to log in or sign up if not ready a registered user at Review | Alliance.
 
-*Links that are visible to logged out user*
+<details><summary><b>Navigation Large - User Not Logged In</b></summary>
+
+![Navigation Large - User Not Logged In](readme/assets/images/navbar_large_not_logged_in.png)
+</details><br/>
+
+
+<details><summary><b>Navigation Small - User Not Logged In</b></summary>
+
+![Navigation Small - User Not Logged In](readme/assets/images/navbar_small_not_logged_in.png)
+</details><br/>
+
+
+*Links that are visible to logged in user*
 All of the links that is visible to a not logged in user plus the ones below.
 
 * Create New review - Lets the user create a new review.
@@ -176,20 +188,61 @@ All of the links that is visible to a not logged in user plus the ones below.
 * Show Profile Page - Shows logged in users profile page.
 * Log Out - Logs out the user.
 
+<details><summary><b>Navigation Large - User Logged In</b></summary>
+
+![Navigation Large - User Logged In](readme/assets/images/navbar_large_logged_in.png)
+</details><br/>
+
+<details><summary><b>Navigation Small - User Logged In</b></summary>
+
+![Navigation Small - User Logged In](readme/assets/images/navbar_small_logged_in.png)
+</details><br/>
+
 *Link that is visible if user is administrator*
 All of the links above plus the one below.
-* Admin Area - Gives the administrator a view with information about i.e. logged in user, number of comments and number of posts. I this view the administrator also can publish / unpublish / approve / aunapprove reviews and approve / unapprove comments. The administrator can also remove / add genres in this view.
+* Admin Area - Gives the administrator a view with information about i.e. total number of users, number of comments and number of posts. I this view the administrator also can publish / unpublish / approve / aunapprove reviews and approve / unapprove comments. The administrator can also remove / add genres in this view.
 
-<details><summary><b>To be updated</b></summary>
+<details><summary><b>Navigation Large - Admin Logged In</b></summary>
 
-![Main Menu](to be updated)
+![Navigation Large - Admin Logged In](readme/assets/images/navbar_large_admin_logged_in.png)
+</details><br/>
+
+<details><summary><b>Navigation Small - Admin Logged In</b></summary>
+
+![Navigation Small - Admin Logged In](readme/assets/images/navbar_small_admin_logged_in.png)
 </details><br/>
 
 ### **About**
-### **Allt**
+In the about section the user can read about both who  Review | Alliance are but also about all reviewers that are registered on the site.
+
+<details><summary><b>About Section - To be updated</b></summary>
+
+![About](To be updated)
+</details><br/>
+
+### **All**
+This page lists all the reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written.
+
+<details><summary><b>All Reviews - User Logged Out</b></summary>
+
+![All Reviews - User Logged Out](readme/assets/images/all_reviews_logged_out.png)
+</details><br/>
+
+<details><summary><b>All Reviews - User Logged In</b></summary>
+
+![All Reviews - User Logged In](readme/assets/images/all_reviews_logged_in.png)
+</details><br/>
+
+
+
 ### **Albums**
+This page lists all the album reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'album'
+
 ### **Concerts**
+This page lists all the concert reviews that has been made at Review | Alliance. If the user is not logged in there is only a "read more" option visible for the user on each review card. If the user is logged in an *update* and *delete* option gets visible on the reviews that the user has written. No screenshots for this view due to the fact it's the same concept as in the all reviews section except that the review cards are filtered on the category 'concert'
+
 ### **Review Detail View**
+
 ### **Member Reviews**
 ### **Create Review**
 ### **Profile Page**
