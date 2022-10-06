@@ -263,7 +263,12 @@ If the user is logged in and has written a comment there is a possibility to edi
 </details><br/>
 
 ### **Member Reviews**
-The Member Review Page lists the reviews that the logged in user has written. The user can update and delete their review on this page and also gets information about the status of the review (if it's in draft mode, approved, etc.).
+The Member Review Page lists the reviews that the logged in user has written. The user can update and delete their review on this page and also gets information about the status of the review. There are 4 different statuses:
+
+* Your review is awaiting approval - Review has been submitted with the status 'published' and awaits approval
+* Your review is in draft status but is approved - The review is in draft status but has been approved
+* Your review is published and approved - The review is published and approved
+* Your review is in draft status - The review has been submitted with the status 'draft'
 
 <details><summary><b>Member Reviews</b></summary>
 
@@ -482,6 +487,7 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | 6 Reviews are rendered for the user on all / albums / concert page before pagination kicks in
 | &check; | Clicking the Read More button on the a review card loads the review detail page
 | &check; | In the detail view the logged in user can comment a review
+| &check; | When user submits a comment a message with approval information is being showed on the page
 | &check; | In the detail view the logged in user can update/delete the comments written by themselves
 | &check; | Clicking the update button loads the update comment page
 | &check; | Clicking the delete button loads the delete comment page
@@ -506,7 +512,12 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | In the review section. Clicking the approve / unapprove / publish / unpublish toggles the approve and status signs
 | &check; | The view button is only visible if a review is published
 | &check; | In the comment section. Clicking the approve / unapprove toggles the approve and status signs
-| &cross; | When clicking delete / add genre the appropiate page loads.
+| &cross; | When clicking delete / add genre the appropiate page loads and shows success page after submit
+| &check; | Total Users shows correct number of total users
+| &check; | Total Reviews shows the correct number of total reviews
+| &check; | Total Comments shows the correct number of total comments
+| &check; | Reviews that need approval shows the correct numer of reviews that need approval
+| &check; | Comments that need approval shows the correct numer of comments that need approval
 
  Status | **Create A Review - User Logged In**
 |:-------:|:--------|
@@ -532,10 +543,38 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | Posting as shows name of logged in user
 | &check; | Review Success Page is displayed when the user submits the review and the form validation is ok.
 
+Status | **Create A New User - User Logged Out**
+|:-------:|:--------|
+| &check; | TO BE UPDATED!
+
 ### Automated Testing
+Some automated testing has been done during this project. I currently have X number of tests which provide XX% coverage. See screenshot below. Automated tests can be run by typing the command - *python3 manage.py test*
+
+<details><summary><b>Automated Testing - To Be Updated</b></summary>
+
+![Automated Testing](To Be Updated)
+</details><br/>
 
 ### Responsiveness Test
-To be updated
+The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+| Desktop    | Display <1280px       | Display >1280px    |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Images     | pass                  | pass               |
+| Links      | pass                  | pass               |
+
+| Tablet     | Samsung Galaxy Tab 10 | Amazon Kindle Fire | iPad Mini | iPad Pro |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+| Phone      | Galaxy S5/S6/S7       | iPhone 6/7/8       | iPhone 12pro         |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images.    | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
 
 [Back to top](<#table-of-content>)
 
