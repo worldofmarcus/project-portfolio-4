@@ -30,13 +30,24 @@
                                 <img class="image-table-admin rounded" src="{{ profile.featured_image.url }}"
                                     alt="Featured image of reviewer">
                             </td>
-                            <td>{{ profile.first_name }}</td>
-                            <td>{{ user.first_name }}</td>
-                            <td>{{ user.last_name }}</td>
-                            <td>{{ user.presentation }}</td>
+                            <td>{{ profile.user }}</td>
+                            {% if profile.first_name is blank %}
+                            <td>The user has not added a first name
+                                {% else %}
+                                {{ profile.first_name }}
+                                {% endif %}
+                            </td>
+                            {% if profile.first_name is blank %}
+                            <td>The user has not added a last name
+                                {% else %}
+                                {{ profile.first_name }}
+                                {% endif %}
+                            </td>
+                            <td>{{ profile.presentation }}</td>
                         </tr>
                     </tbody>
                     {% endfor %}
+
                 </table>
             </div>
         </div>

@@ -153,6 +153,8 @@ class UserProfile(models.Model):
     This class creates the user model.
     """
 
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
     presentation = models.TextField()
     featured_image = CloudinaryField('image', default='default_image')

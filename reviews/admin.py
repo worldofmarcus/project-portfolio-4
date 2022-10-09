@@ -13,7 +13,7 @@ class UserAdmin(admin.ModelAdmin):
     publish in the action dropdown list.
     """
 
-    list_display = ('user', 'featured_image', 'presentation',)
+    list_display = ('user', 'first_name', 'last_name', 'featured_image', 'presentation',)
 
 
 @admin.register(Post)
