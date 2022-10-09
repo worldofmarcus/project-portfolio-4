@@ -2,7 +2,18 @@
 
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Category, Comment, Genre
+from .models import Post, Category, Comment, Genre, UserProfile
+
+
+@admin.register(UserProfile)
+class UserAdmin(admin.ModelAdmin):
+    """
+    This class adds fields from the post model to the admin
+    area and also add functionality like approve review and
+    publish in the action dropdown list.
+    """
+
+    list_display = ('user', 'featured_image', 'presentation',)
 
 
 @admin.register(Post)

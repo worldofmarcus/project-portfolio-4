@@ -366,7 +366,7 @@ The sites incorporates flash messages and confirmation pages when an action has 
 * [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
 
-## Frameworks, Libraries & Software
+## Frameworks & Software
 * [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites
 * [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
 * [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.

@@ -5,7 +5,7 @@ from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-from .models import Post, Comment
+from .models import Post, Comment, UserProfile
 from .forms import CommentForm, CreateReviewForm
 
 
@@ -73,13 +73,20 @@ class MemberReviewView(generic.ListView):
                                    '-date_created_on')
 
 
-def about(request):
+class About(generic.TemplateView):
     """
     A basic function that just returns about.html to be rendered.
     """
 
-    return render(request, 'about.html')
+    model = User
+    context_object_name = 'user'
+    template_name = 'about.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = User.objects.filter(is_active=True)
+        context['profile'] = UserProfile.objects.all()
+        return context
 
 def review_submitted(request):
     """

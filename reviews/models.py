@@ -2,7 +2,9 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 from cloudinary.models import CloudinaryField
+
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 RATING_CHOICES = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
@@ -144,3 +146,19 @@ class Comment(models.Model):
         """
 
         return self.body
+
+
+class UserProfile(models.Model):
+    """
+    This class creates the user model.
+    """
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+    presentation = models.TextField()
+    featured_image = CloudinaryField('image', default='default_image')
+
+
+def create_profile(instance, created, **kwargs):
+    if created: UserProfile.objects.create(user=instance)
+
+post_save.connect(create_profile, sender=User)

@@ -22,7 +22,7 @@ urlpatterns = [
           name='review_delete_success'),
      path('comment/delete-success/', views.comment_deleted,
           name='comment_delete_success/'),
-     path('about/', views.about, name='about'),
+     path('about/', views.About.as_view(), name='about'),
      path('admin-area/', views.AdminArea.as_view(), name='admin_area'),
      path('<slug:slug>/', views.DetailView.as_view(),
           name='review_details'),

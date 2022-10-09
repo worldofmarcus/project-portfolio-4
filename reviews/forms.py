@@ -1,25 +1,20 @@
 """Import relevant modules for the application"""
 
 from datetime import datetime
-from allauth.account.forms import SignupForm
 from django import forms
+from allauth.account.forms import SignupForm
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Post
 
-
 class CustomSignupForm(SignupForm):
+
     first_name = forms.CharField(max_length=30, label='First Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
-    presentation = forms.CharField(widget=forms.Textarea)
-    featured_image = forms.FileField(required=False)
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
-        user.presentation = self.cleaned_data['presentation']
-
-        # user.featured_image = self.cleaned_data['featured_image']
         user.save()
         return user
 
