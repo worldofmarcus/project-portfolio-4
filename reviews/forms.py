@@ -3,7 +3,7 @@
 from datetime import datetime
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .models import Comment, Post
+from .models import Comment, Post, UserProfile, User
 
 
 class CommentForm(forms.ModelForm):
@@ -52,3 +52,19 @@ class CreateReviewForm(forms.ModelForm):
             'release_live_date': 'Release Date / Live Date',
             'featured_image': 'Image [600x600 pixels 1:1]'
         }
+
+
+class UpdateProfileForm(forms.ModelForm):
+    """
+    This class creates the new profile form.
+    """
+    class Meta:
+        """
+        This meta class adds the fields to the form
+        based on the post model. It also adds a number
+        of widgets to customize and add functionality
+        to the form.
+        """
+
+        model = UserProfile
+        fields = ('first_name', 'last_name', 'presentation', 'featured_image',)

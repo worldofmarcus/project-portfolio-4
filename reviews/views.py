@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from .models import Post, Comment, UserProfile
-from .forms import CommentForm, CreateReviewForm
+from .forms import CommentForm, CreateReviewForm, UpdateProfileForm
 
 
 class HomeView(generic.ListView):
@@ -78,13 +78,12 @@ class About(generic.TemplateView):
     A basic function that just returns about.html to be rendered.
     """
 
-    model = User
+    model = UserProfile
     context_object_name = 'user'
     template_name = 'about.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['user'] = User.objects.filter(is_active=True)
         context['profile'] = UserProfile.objects.all()
         return context
 
@@ -378,13 +377,25 @@ def admin_comment_deleted(request):
     return render(request, 'admin_comment_deleted.html')
 
 
-class ViewProfile(generic.TemplateView):
-    model = User
-    context_object_name = 'profile'
+class UpdateProfile(generic.UpdateView):
+    """
+    This class handles the creation of new profiles. A help method
+    has also been implemented to add author and slug to the Post
+    table.
+    """
+
+    model = UserProfile
+    form_class = UpdateProfileForm
     template_name = 'profile_page.html'
+    success_url = '/profile/submit-success/'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['user'] = User.objects.get(username=self.request.user)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
-        return context
+def profile_submitted(request):
+    """
+    A basic function that just returns about.html to be rendered.
+    """
+
+    return render(request, 'profile_submitted.html')

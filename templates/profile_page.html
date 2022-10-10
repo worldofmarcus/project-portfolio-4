@@ -2,10 +2,31 @@
 
 {% block content %}
 
-<h1>My profile page</h1>
-Under construction
-{{ user.first_name }}
-{{ user.presentation }}
-{{ user.featured_image }}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <div>
+        <h1 class="headline mt-4">My Profile Page</h1>
+        <div>
+            <h2 class="headline-intro-text">Please use the form below to update your profile information.</h2>
+        </div>
+        <hr>
+        {{ user.profile.first_name }}
+        {% if user.profile.featured_image %}
+        <img src="{{ user.profile.featured_image.url}}" alt="{{ user.profile.first_name }}'s profile pic">
+        {% endif %}
+    </div>
+    <form method="post" class="form-text" enctype="multipart/form-data" style="margin-top: 1.3em;">
+        {{ form|crispy }}
+        {% csrf_token %}
+        <p class="mt-4">Posting as: {{ user.profile.first_name }}</p>
+        <button type="submit" class="btn btn-outline-secondary btn-sm mt-3 mb-3">Submit</button>
+    </form>
+    {% else %}
+    <p class="access-denied card-text">You are not allowed here!</p>
+    {% endif %}
+</div>
 
 {% endblock content %}

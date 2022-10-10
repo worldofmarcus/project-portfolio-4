@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
      path('', views.HomeView.as_view(), name='home'),
-     path('profile/', views.ViewProfile.as_view(), name='profile-page'),
+     path('<int:pk>/profile/', views.UpdateProfile.as_view(), name='profile-page'),
      path('concert-reviews/', views.ConcertView.as_view(),
           name='concert_reviews'),
      path('album-reviews/', views.AlbumView.as_view(),
@@ -50,4 +50,6 @@ urlpatterns = [
           name='admin_update_status'),
      path('<int:pk>/admin/update_comment/', views.admin_update_comment,
           name='admin_update_comment'),
+     path('profile/submit-success/', views.profile_submitted,
+          name='profile-submitted'),
 ]

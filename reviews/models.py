@@ -3,6 +3,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
 
 
@@ -155,12 +156,24 @@ class UserProfile(models.Model):
 
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     presentation = models.TextField(max_length=500)
     featured_image = CloudinaryField('image', default='default_image')
 
 
-def create_profile(instance, created, **kwargs):
-    if created: UserProfile.objects.create(user=instance)
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
 
-post_save.connect(create_profile, sender=User)
+    if created:
+        UserProfile.objects.create(user=instance)
+    # Existing users: just save the profile
+    # instance.UserProfile.save()
+
+
+# def create_profile(instance, created, **kwargs):
+#     if created: UserProfile.objects.create(user=instance)
+
+# post_save.connect(create_profile, sender=User)
