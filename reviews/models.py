@@ -169,11 +169,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
     if created:
         UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
-    # instance.UserProfile.save()
-
-
-# def create_profile(instance, created, **kwargs):
-#     if created: UserProfile.objects.create(user=instance)
-
-# post_save.connect(create_profile, sender=User)
