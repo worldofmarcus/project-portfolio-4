@@ -4,54 +4,60 @@
 
 <div class="container">
     <h1 class="headline mt-4">About Review | Alliance</h1>
-    <div>
-        We love music and that's why we created this
+
+    <div class="row">
+        <!-- About Review | Alliance -->
+        <div class="col-md-8 mt-3 offset-md-2 card-text">
+            Here at Review | Alliance we love writing about music! Our goal is to bring our site visitors the 100%
+            honest truth about what is worth listening to and what is worth seeing! For us it is important to lift up
+            the
+            underground scene, independent artists and smaller venues that are so easy to forget. If you want to be
+            reviewed, please contact us through social media (see links in the footer). Anyhow, Review | Alliance
+            started
+            the journey 2020 and then consisted of Marcus and Ulrika but today we are quite a big family with a lot of
+            reviewers. Do you want to join our family? Don't hesitate to sign up! But without further ado, now it's time
+            for
+            you to meet the Review Alliance family!
+        </div>
     </div>
     <hr>
-    <div class="mt-3">
-        <!-- Comments Table -->
-        <div class="mt-3">
-
-            <div class="table-responsive-md">
-                <table class="table table-bordered table-text">
-                    <thead class="bg-dark text-light text-center align-middle">
-                        <tr>
-                            <th>Featured Image</th>
-                            <th>User Name</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Presentation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for profile in profile %}
-                        <tr class="align-middle">
-                            <td>
-                                <img class="image-table-admin rounded" src="{{ profile.featured_image.url }}"
-                                    alt="Featured image of reviewer">
-                            </td>
-                            <td>{{ profile.user }}</td>
-                            {% if profile.first_name is blank %}
-                            <td>The user has not added a first name
-                                {% else %}
-                                {{ profile.first_name }}
-                                {% endif %}
-                            </td>
-                            {% if profile.first_name is blank %}
-                            <td>The user has not added a last name
-                                {% else %}
-                                {{ profile.first_name }}
-                                {% endif %}
-                            </td>
-                            <td>{{ profile.presentation }}</td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
-
-                </table>
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            {% for profile in profile %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card mb-4 border-0 shadow p-3 bg-white rounded">
+                    <div class="card-body">
+                        <div class="image-container">
+                            {% if 'default_image' in profile.featured_image.url %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1665383449/wx04lgmvq0ad7zymwhmb.webp"
+                                alt="Default placeholder image of reviewer">
+                            {% else %}
+                            <img class="card-img-top" src="{{ profile.featured_image.url }}"
+                                alt="Featured image of reviewer">
+                            {% endif %}
+                        </div>
+                        <p class="card-text bold-text mt-1 mb-1">
+                            {% if not profile.first_name %}
+                            {{ profile.user }}
+                            {% else %}
+                            {{ profile.first_name }} {{ profile.last_name}}
+                            {% endif %}
+                        </p>
+                        <p class="card-text">
+                            {{ profile.presentation }}
+                        </p>
+                        <hr>
+                    </div>
+                </div>
             </div>
+            {% if forloop.counter|divisibleby:3 %}
         </div>
-
+        <div class="row">
+            <hr>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 
