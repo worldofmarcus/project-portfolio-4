@@ -353,7 +353,7 @@ class AdminDeleteReview(generic.DeleteView):
 
 def admin_review_deleted(request):
     """
-    A basic function that just returns about.html to be rendered.
+    A basic function that just returns admin_review.html to be rendered.
     """
 
     return render(request, 'admin_review_deleted.html')
@@ -371,7 +371,7 @@ class AdminDeleteComment(generic.DeleteView):
 
 def admin_comment_deleted(request):
     """
-    A basic function that just returns about.html to be rendered.
+    A basic function that just returns admin_comment_deleted.html to be rendered.
     """
 
     return render(request, 'admin_comment_deleted.html')
@@ -395,7 +395,7 @@ class UpdateProfile(generic.UpdateView):
 
 def profile_submitted(request):
     """
-    A basic function that just returns about.html to be rendered.
+    A basic function that just returns profile_submitted.html to be rendered.
     """
 
     return render(request, 'profile_submitted.html')
