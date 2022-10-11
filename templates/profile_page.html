@@ -14,11 +14,11 @@
         </div>
         <hr>
         {% if 'default_image' in user.profile.featured_image.url %}
-        <img class="card-img-top"
+        <img class="card-img-top "
             src="https://res.cloudinary.com/worldofmarcus/image/upload/v1665383449/wx04lgmvq0ad7zymwhmb.webp"
             alt="Default placeholder image of reviewer">
         {% else %}
-        <img class="card-img-top" src="{{ user.profile.featured_image.url }}"
+        <img class="card-img-top profile-image" src="{{ user.profile.featured_image.url }}"
             alt="Featured image of {{ user.profile.first_name }}">
         {% endif %}
     </div>
