@@ -421,7 +421,6 @@ The libraries uses in this project are located in the requirements.txt file and 
 * As a Site User | I can view a list of the music reviews so that I can select one to read
     * At the top of the site there is a navigation bar with a link that lists all reviews when the user clicks on it.
 
-
 * As a Site User | I can view a list of the concert reviews so that I can select one to read
    * At the top of the site there is a navigation bar with a link that lists all concert reviews when the user clicks on it.
 
@@ -468,16 +467,31 @@ The libraries uses in this project are located in the requirements.txt file and 
     * When the user is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
 
 * As a Site User | I can create draft reviews so that I can finish writing the content later
+    * When a logged in user creates a review they have the possibility to set the status on the review either on published or draft.
 
 * As a Site User | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page
+    * When the user sign in, sign out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
 
 * As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information
+   * When the admin is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
+
 * As a Site Admin | I can create, read, update and delete reviews so that I can manage my review content
+    * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can read, update and delete reviews. Creation of reviews can be made the same way as any logged in user. Updating reviews can only be made if the administrator has written the original review.
+
 * As a Site Admin | I can approve reviews so that I can secure high quality of the content
+    * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can approve / unapprove / publish / unpublish reviews.
+
 * As a Site Admin | I can approve and disapprove comments so that I can secure a safe environment for the Site Users
+    * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can approve / unapprove comments.
+
 * As a Site Admin | I can create draft reviews so that I can finish writing the content later
+    * When a user is logged in as an administrator they have the possibility to create a review they and set the status to published or draft.
+
 * As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts
+    * In the admin area there is an summary area in the top with general information about the site (i.e. number of users, number of reviews / comments that need approval)
+
 * As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page
+    * When the admin sign in, sign out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
 
 ## Code Validation
 To be updated
