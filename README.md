@@ -416,6 +416,69 @@ The libraries uses in this project are located in the requirements.txt file and 
 
 # Testing
 
+## Testing User Stories
+
+* As a Site User | I can view a list of the music reviews so that I can select one to read
+    * At the top of the site there is a navigation bar with a link that lists all reviews when the user clicks on it.
+
+
+* As a Site User | I can view a list of the concert reviews so that I can select one to read
+   * At the top of the site there is a navigation bar with a link that lists all concert reviews when the user clicks on it.
+
+* As a Site User | I can click on a specific review so that I can read it in detail
+   * At the top of the site there is a navigation bar with a link that lists all album reviews when the user clicks on it.
+
+* As a Site User | I can like and unlike a review so that it is possible for me to interact with the review
+    * When the user is logged it is possible to click on a heart on the review detail page to like / unlike a review.
+
+* As a Site User | I can view the number of likes on each review so that I can see how popular a specific review is
+    * On the review detail page the user can see how many likes the specific review has.
+
+* As a Site User | I can contact Review Alliance in an easy way so that I can interact with them if I have a need for it
+    * In the footer there is clear information about how to contact Review | Alliance.
+
+* As a Site User | I can navigate easy on the site through paginated list of posts so that I feel comfortable using the site
+    * On the review pages the pagination is activated when there are more than 6 reviews on a page.
+
+* As a Site User | I can view comments on a specific review so that I can read the conversations between different users on the site
+    * When the user clicks on a specific review the comment section can, in an easily way, be viewed.
+
+* As a Site User | I can sign up an account so that I can like and comment on reviews, create a profile page, create own reviews and edit / remove my reviews
+    * In the navigation bar the user can click the Login / Sign up link to either login or sign up for a new account. When this is done the user can interact on the page as stated in the user story).
+
+* As a Site User | I can create a profile page so that other reviewers can read about who I am
+    * If a user is registered and logged in there is a 'Show Profile'-page in the navigation menu where the user can fill in profile details. The profile is shown for the site users in the about section.
+
+* As a Site User | I can comment on a review so that I can be involved in the conversation
+    * When the user is logged in they can write a comment on a specific review on the review detail page.
+
+* As a Site User | I can edit my comment so that I can change the content if needed
+    * When the user is logged in an edit button appears on the all comments that the specific user has written. When the user clicks the edit button they can change the content in the comment.
+
+* As a Site User | I can remove my review so that I have full control of my reviews
+    * When the user is logged in a delete button appears on the all comments that the specific user has written. When the user clicks the delete button they get the option to delete the comment.
+
+* As a Site User | I can choose to see my own reviews so that I can find them easily
+    * When a user is logged in they can choose to view their own reviews through the link 'My Reviews'.
+
+* As a Site User | I can create a new review so that I can contribute to with new content to Review Alliance
+    * When a user is logged in they can create a new review through the 'Create New Review'-link in the navigation bar.
+
+* As a Site User | I can log out from the site so that I can feel safe that nobody can access my information
+    * When the user is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
+
+* As a Site User | I can create draft reviews so that I can finish writing the content later
+
+* As a Site User | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page
+
+* As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information
+* As a Site Admin | I can create, read, update and delete reviews so that I can manage my review content
+* As a Site Admin | I can approve reviews so that I can secure high quality of the content
+* As a Site Admin | I can approve and disapprove comments so that I can secure a safe environment for the Site Users
+* As a Site Admin | I can create draft reviews so that I can finish writing the content later
+* As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts
+* As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page
+
 ## Code Validation
 To be updated
 
