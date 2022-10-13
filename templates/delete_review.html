@@ -16,6 +16,7 @@
                 <strong>Are you sure about deleting the review: {{ post.artist }} | {{ post.title }}?
                     <br>This action cannot be undone!</strong>
                 <br>
+                <a href="{% url 'member_reviews' %}" class="btn btn-outline-secondary btn-sm">Cancel</a>
                 <button type="submit" class="btn btn-danger btn-sm mt-3 mb-3">Delete Review</button>
             </form>
             {% else %}
