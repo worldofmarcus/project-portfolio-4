@@ -962,7 +962,7 @@ The live link to the 'Review | Alliance' site on Heroku an be found [here](https
 
 ## How To Fork The Repository On GitHub
 
-It is possible to do a copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
+It is possible to do a independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
 
 1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
 
@@ -973,9 +973,9 @@ It is possible to do a copy of a GitHub Repository by forking the GitHub account
 
 [Back to top](<#table-of-content>)
 
-## Create A Local Clone of A Project
+## Cloning And Setting Up This Project
 
-To create a local clone of your repository, follow these steps:
+To clone and set up this project you need to follow the steps below.
 
 1. When you are in the repository, find the code tab and click it.
 2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
@@ -984,7 +984,21 @@ To create a local clone of your repository, follow these steps:
 
 <details><summary><b>Github Create Local Clone</b></summary>
 
-![Clone](readme/assets/images/github_local_clone.png)
+![Clone](readme/assets/images/github_clone_01.png)
+</details><br />
+
+5. To be able to get the project to work you need to install the requirements. This can be done by using the command below:
+
+* ```pip3 install -r requirements.txt``` - This command downloads and install all required dependencies that is stated in the requirements file.
+
+6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+
+* ```python3 manage.py migrate``` - This will do the necessary migrations.
+* ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
+
+<details><summary><b>Setup env.py</b></summary>
+
+![Clone](readme/assets/images/github_clone_02.png)
 </details><br />
 
 [Back to top](<#table-of-content>)
