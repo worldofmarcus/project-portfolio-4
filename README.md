@@ -105,7 +105,7 @@ Below the user stories for the project are listed to clarify why particular feat
 | As a Site User | I can navigate easy on the site through paginated list of posts so that I feel comfortable using the site | &check; |
 | As a Site User | I can view comments on a specific review so that I can read the conversations between different users on the site | &check; |
 | As a Site User | I can sign up an account so that I can like and comment on reviews, create a profile page, create own reviews and edit / remove my reviews | &check; |
-| As a Site User | I can create a profile page so that other reviewers can read about who I am | &cross; |
+| As a Site User | I can create a profile page so that other reviewers can read about who I am | &check; |
 | As a Site User | I can comment on a review so that I can be involved in the conversation | &check; |
 | As a Site User | I can edit my comment so that I can change the content if needed | &check; |
 | As a Site User | I can remove my review so that I have full control of my reviews | &check; |
@@ -131,7 +131,7 @@ Below the user stories for the project are listed to clarify why particular feat
 
 ## Site Structure
 
-The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Dependeing on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administratorThe site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
+The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administratorThe site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
 
 Read more about the different choices in the [Features](<#features>) section.
 
@@ -179,12 +179,10 @@ The navigation bar is very clean and straight forward. Depending if you  are log
 ![Navigation Large - User Not Logged In](readme/assets/images/navbar_large_not_logged_in.png)
 </details><br/>
 
-
 <details><summary><b>Navigation Small - User Not Logged In</b></summary>
 
 ![Navigation Small - User Not Logged In](readme/assets/images/navbar_small_not_logged_in.png)
 </details><br/>
-
 
 *Links that are visible to logged in user*
 All of the links that is visible to a not logged in user plus the ones below.
@@ -219,11 +217,11 @@ All of the links above plus the one below.
 </details><br/>
 
 ### **About**
-In the about section the user can read about both who  Review | Alliance are but also about all reviewers that are registered on the site.
+In the about section the user can read about both who Review | Alliance are but also about all reviewers that are registered on the site.
 
-<details><summary><b>About Section - To be updated</b></summary>
+<details><summary><b>About Section</b></summary>
 
-![About](To be updated)
+![About](readme/assets/images/about.png)
 </details><br/>
 
 ### **All**
@@ -298,19 +296,19 @@ On this page the registered and logged in user can update their own review. When
 </details><br/>
 
 ### **Profile Page**
-On this page the user can view and update their own profile page.
+On this page the user can view and update their own profile page. The profile is visible in the about section.
 
-<details><summary><b>Profile Page - To Be Updated</b></summary>
+<details><summary><b>Profile Page</b></summary>
 
-![Profile Page](To Be Updated)
+![Profile Page](readme/assets/images/update_profile.png)
 </details><br/>
 
 ### **Admin Area**
-On this page the administrator (or other superuser decided by Review | Alliance) can *approve* / *unapprove* / *publish* / *unpublish* and *delete* reviews and comments. General information about *number of users*, *number of comments *number of reviews*, *unapproved comments / reviews* is also being showed on the page.
+On this page the administrator (or other superuser decided by Review | Alliance) can *approve* / *unapprove* / *publish* / *unpublish* and *delete* reviews and comments. General information about *number of users*, *number of comments*, *number of reviews*, *unapproved comments / reviews* is also being showed on the page.
 
-<details><summary><b>Admin Area - To Be Updated</b></summary>
+<details><summary><b>Admin Area</b></summary>
 
-![Admin Area(To Be Updated)
+![Admin Area](readme/assets/images/admin_area.png)
 </details><br/>
 
 ### **Sign Up**
@@ -345,7 +343,7 @@ The footer area includes short information about Review | Alliance, contact info
 ![Footer](readme/assets/images/footer.png)
 </details><br/>
 
-### **Flash Messages and confirmation pages to the user **
+### **Flash Messages and confirmation pages to the user**
 The sites incorporates flash messages and confirmation pages when an action has been performed (i.e. delete/update actions). Examples of this in the screenshots below.
 
 <details><summary><b>Confirmation Messages</b></summary>
@@ -356,7 +354,13 @@ The sites incorporates flash messages and confirmation pages when an action has 
 
 ### Features Left to Implement
 
-* To be updated
+* Add more automated testing
+* Add 'current page is active' in navbar
+* Search reviews functionality from the navbar
+* Information in the about section how many reviews each reviewer has made
+* Add / remove genre and category in admin section
+* Add image resize functionality
+* Remove admin approval of comments
 
 [Back to top](<#table-of-content>)
 
@@ -628,7 +632,24 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 
 Status | **Create A New User - User Logged Out**
 |:-------:|:--------|
-| &check; | TO BE UPDATED!
+| &check; | Username field is required
+| &check; | Username field does not accept empty field
+| &check; | Email field does not accept just spaces
+| &check; | Email field is optional
+| &check; | Password field does not accept empty field
+| &check; | Success flash message is displayed when the user submits the create a new user form
+| &check; | Default biography is visible in about page (with i.e default featured image)
+
+Status | **Create A Profile Page - User Logged In**
+|:-------:|:--------|
+| &check; | Default featured image is visible the first time a user opens the 'my profile' page
+| &check; | First Name field is required
+| &check; | First Name field does not accept empty field
+| &check; | First Name field does not accept just spaces
+| &check; | Last Name field is required
+| &check; | Last Name field does not accept empty field
+| &check; | Last Name field does not accept just spaces
+| &check; | Update profile success Page is displayed when the user submits the profile form
 
 ### Automated Testing
 Some automated testing has been done during this project. I currently have X number of tests which provide XX% coverage. See screenshot below. Automated tests can be run by typing the command - *python3 manage.py test*
@@ -673,7 +694,6 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 ### Lighthouse
 To be updated
 
-
 <details><summary><b>Lighthouse Result Result</b></summary>
 
 ![Lighthouse Form Confirmation Page Result](readme/assets/images/lighthouse.png)
@@ -690,30 +710,30 @@ To be updated
 [Back to top](<#table-of-content>)
 
 ### Peer Review
-To be updated
-
-
-<details><summary><b>Test Scenarios</b></summary>
-
-![Test Scenarios](readme/assets/images/testing_scenarios.png)
-</details><br/>
-
-<details><summary><b>User Stories</b></summary>
-
-![User Stories](readme/assets/images/testing_user_stories.png)
-</details><br/>
+Additional testing of the application was conducted by people outside of the software development field. Some smaller spelling and grammar errors were found and corrected. No issues connected to design or handling of the site.
 
 ## Known bugs
+No known bugs besides those in the unfixed bugs section.
 
 ### Fixed Bugs
+**2022-10-10**
+When updating a review or comment the approved variable did not get updated to 'False'. This is is now handled and fixed.
 
-**2022-xx-xx**
-* Bug: To be updated
+**2022-10-11**
+When updating a review the slug did not change. I chose to fix this bug so that the slug updates when a review is updated but one 'school' within this area says that a slug never should be changed (due to problems with urls / linking in the future). This functionality is an easy fix to remove if necessary but I chose to keep it for now.
+
+**2022-10-14**
+* Bug: When the Markup Validation was done there was initially quite a lot of errors. The debugging process was very straight forward and the errors could easily be fixed.
+
+<details><summary><b>HTML Validation</b></summary>
+
+![HTML Validation](readme/assets/images/html_validation_error.png)
+</details><br />
 
 ### Unfixed Bugs
 
-**2022-xx-xx**
-* Bug: To be updated
+**2022-10-14**
+* Bug: Summernot is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size, font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. this bug is still unfixed and I haven't found a solution to it yet.
 
 
 [Back to top](<#table-of-content>)
