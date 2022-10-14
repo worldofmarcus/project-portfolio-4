@@ -75,6 +75,14 @@ I've been using the application [Trello](https://trello.com/) and the project bo
 ### Database Schema
 I have used a modelling tool called [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) to create the database schema. In short it shows the relationships between the different models in the database connected to the application. Graph Models exports a *.dot file which easily can be converted to a more 'easy to read' design with the help of the application [dreampuf](https://dreampuf.github.io/GraphvizOnline/).
 
+Models used (besides standard user model) in this project are:
+
+* **Category** - Handles categories. I made a specific model to be able to add more dynamics (create / remove categories going forward in the admin backend instead of 'hard code' it in the code).
+* **Genre** - Handles genre. I made a specific model to be able to add more dynamics (create / remove genres going forward in the admin backend instead of 'hard code' it in the code).
+* **Post** - Handles all the reviews
+* **Comment** - Handles all the comments
+* **UserProfile** - Handles the user profile information (first name, last name, presentation and featured image for the specific user/reviewer). There is a one-to-one relation to the user model to connect it to the standard user model.
+
 <details><summary><b>Database Schema</b></summary>
 
 ![Database Schema](readme/assets/images/database_schema.png)
@@ -269,10 +277,10 @@ If the user is logged in and has written a comment there is a possibility to edi
 ### **Member Reviews**
 The Member Review Page lists the reviews that the logged in user has written. The user can update and delete their review on this page and also gets information about the status of the review. There are 4 different statuses:
 
-* Your review is awaiting approval - Review has been submitted with the status 'published' and awaits approval
-* Your review is in draft status but is approved - The review is in draft status but has been approved
-* Your review is published and approved - The review is published and approved
-* Your review is in draft status - The review has been submitted with the status 'draft'
+* *Your review is awaiting approval* - Review has been submitted with the status 'published' and awaits approval
+* *Your review is in draft status but is approved* - The review is in draft status but has been approved
+* *Your review is published and approved* - The review is published and approved
+* *Your review is in draft status* - The review has been submitted with the status 'draft'
 
 <details><summary><b>Member Reviews</b></summary>
 
@@ -384,6 +392,7 @@ The sites incorporates flash messages and confirmation pages when an action has 
 * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
 * [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check.
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Used to validate the sites accessibility.
+* [a11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - Used to test color contrast on the site
 * [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) - Used to create a *.dot file of all models in the project.
 * [dreampuf](https://dreampuf.github.io/GraphvizOnline/) - Creates visually appealing database diagrams of *.dot files.
 * [Favicon](https://favicon.io/) - Used to create the favicon.
@@ -400,7 +409,7 @@ The sites incorporates flash messages and confirmation pages when an action has 
 
 [Back to top](<#table-of-content>)
 
-The libraries uses in this project are located in the requirements.txt file and have been documented below
+The libraries used in this project are located in the requirements.txt file and have been documented below
 
 * [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
 * [cloudinary](https://pypi.org/project/cloudinary/) - The Cloudinary Python SDK allows you to quickly and easily integrate your application with Cloudinary. Effortlessly optimize, transform, upload and manage your cloud's assets.
@@ -498,7 +507,7 @@ The libraries uses in this project are located in the requirements.txt file and 
     * In the admin area there is an summary area in the top with general information about the site (i.e. number of users, number of reviews / comments that need approval)
 
 * As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page
-    * When the admin sign in, sign out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
+    * When the admin signs in, signs out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
 
 ## Code Validation
 To be updated
