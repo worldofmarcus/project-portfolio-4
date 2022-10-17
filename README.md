@@ -149,7 +149,7 @@ Read more about the different choices in the [Features](<#features>) section.
 
 * ### Color Scheme
 
-The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on most of the text elements), Cultured (body background) and White (used i.e. as card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
+The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on some of the text elements), Cultured (body background) and White (used i.e. as card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
 
 ![Color Palette image](readme/assets/images/coolors_palette.png)
 
@@ -510,10 +510,10 @@ The libraries used in this project are located in the requirements.txt file and 
     * When the admin signs in, signs out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
 
 ## Code Validation
-The code on the 'Review | Alliance' site has been tested through W3C Markup Validatiaon Service, W3C CSS Validatiaaon Service and JSHint. Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). One error appeared as well in the W3C CSS Validation but that was connected to Font Awesome and not to the site code itself (see bugs section).
+The code on the 'Review | Alliance' site has been tested through W3C Markup Validation Service, W3C CSS Validation Service and JSHint. Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). One error appeared as well in the W3C CSS Validation but that was connected to Font Awesome and not to the site code itself (see bugs section).
 
 ### Markup Validation
-After fixing the inital errors that W3C Markup Validaton Service reported, no errors were returned.
+After fixing the inital errors that W3C Markup Validation Service reported, no errors were returned.
 
 <details><summary><b>HTML Validation Result</b></summary>
 
@@ -543,7 +543,14 @@ To be updated
 [Back to top](<#table-of-content>)
 
 ### JavaScript Validation
-To be updated
+The JSHint validator results can be seen below:
+
+No errors were returned when passing through JSHint (script.js) but the test reported one undefined variable connected to Bootstrap which is no problem.
+
+<details><summary><b>PEP Validation Result</b></summary>
+
+![PEP Validation](readme/assets/images/js_hint_validation.png)
+</details><br/>
 
 [Back to top](<#table-of-content>)
 
@@ -661,11 +668,11 @@ Status | **Create A Profile Page - User Logged In**
 | &check; | Update profile success Page is displayed when the user submits the profile form
 
 ### Automated Testing
-Some automated testing has been done during this project. I currently have X number of tests which provide XX% coverage. See screenshot below. Automated tests can be run by typing the command - *python3 manage.py test*
+Some automated testing has been done during this project. Due to prioritization of other tasks I only could provide 34% coverage. See screenshot below. Automated tests can be run by typing the command - *python3 manage.py test*
 
-<details><summary><b>Automated Testing - To Be Updated</b></summary>
+<details><summary><b>Automated Testing</b></summary>
 
-![Automated Testing](To Be Updated)
+![Automated Testing](readme/assets/images/test_coverage_report.png)
 </details><br/>
 
 ### Responsiveness Test
@@ -709,12 +716,21 @@ To be updated
 </details><br/>
 
 ### WAVE
-To be updated
+[WAVE](https://wave.webaim.org/) was used to check accessibility. 0 errors and 1 alerts was found. The alert was connected to page lacking a h1 (which is not a problem because the game has a headline image).
 
 <details><summary><b>WAVE Result</b></summary>
 
 ![WAVE Result](readme/assets/images/wave_result.png)
 </details><br/>
+
+### a11y Color Contrast Accessibility Validator
+[a11y](https://color.a11y.com/Contrast/) was used to check the color contrast accessibility. 0 errors was found.
+
+<details><summary><b>a11y Result</b></summary>
+
+![a11y Result](readme/assets/images/a11y_contrast_test.png)
+</details><br/>
+
 
 [Back to top](<#table-of-content>)
 
