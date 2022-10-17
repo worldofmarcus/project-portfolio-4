@@ -87,6 +87,7 @@ class About(generic.TemplateView):
         context['profile'] = UserProfile.objects.all()
         return context
 
+
 def review_submitted(request):
     """
     A basic function that just returns about.html to be rendered.
@@ -371,7 +372,8 @@ class AdminDeleteComment(generic.DeleteView):
 
 def admin_comment_deleted(request):
     """
-    A basic function that just returns admin_comment_deleted.html to be rendered.
+    A basic function that just returns admin_comment_deleted.html
+    to be rendered.
     """
 
     return render(request, 'admin_comment_deleted.html')
@@ -392,6 +394,7 @@ class UpdateProfile(generic.UpdateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
 
 def profile_submitted(request):
     """

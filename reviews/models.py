@@ -156,7 +156,8 @@ class UserProfile(models.Model):
 
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                related_name='profile')
     presentation = models.TextField(max_length=500)
     featured_image = CloudinaryField('image', default='default_image')
 

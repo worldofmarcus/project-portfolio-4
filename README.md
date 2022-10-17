@@ -533,12 +533,14 @@ When validating my own code the W3C CSS Validator reports no errors.
 [Back to top](<#table-of-content>)
 
 ### PEP Validation
-To be updated
+At the time of this project the website pep8online.com is currently down. Usually I'm using that site to validate my Python code. I have therefore followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. I have tested the following Python files:
 
-<details><summary><b>PEP Validation Result</b></summary>
-
-![PEP Validation](readme/assets/images/pep_validation_ok.png)
-</details><br/>
+* admin.py - No errors or warnings reported
+* forms.py - No errors or warnings reported
+* models.py - No errors or warnings reported
+* test_forms.py - No errors or warnings reported
+* urls.py - No errors or warnings reported
+* views.py - No errors or warnings reported
 
 [Back to top](<#table-of-content>)
 
@@ -547,9 +549,9 @@ The JSHint validator results can be seen below:
 
 No errors were returned when passing through JSHint (script.js) but the test reported one undefined variable connected to Bootstrap which is no problem.
 
-<details><summary><b>PEP Validation Result</b></summary>
+<details><summary><b>JSHint Validation Result</b></summary>
 
-![PEP Validation](readme/assets/images/js_hint_validation.png)
+![JSHint Validation](readme/assets/images/js_hint_validation.png)
 </details><br/>
 
 [Back to top](<#table-of-content>)
@@ -708,20 +710,27 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 [Back to top](<#table-of-content>)
 
 ### Lighthouse
-Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the index page, the admin area and the about page. The testing showed the following:
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the index page, review details page, the admin area and the about page. The testing showed the following:
 
-* Index page - Performance: 75, Accessability: 100, Best Practises: 100, SEO: 92
-* Admin Area - Performance: 85, Accessability: 97, Best Practises: 100, SEO: 100
-* About page - Performance: 73, Accessability: 100, Best Practises: 100, SEO: 100
+* Index Page - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 92
+* Review Details Page - Performance: 81, Accessibility: 98, Best Practises: 100, SEO: 92
+* Admin Area - Performance: 85, Accessibility: 97, Best Practises: 100, SEO: 100
+* About page - Performance: 73, Accessibility: 98, Best Practises: 100, SEO: 100
 
-In general this is OK results. The performance is affected in a negative way by external scripts (connected to i.e. Bootstrap) and the lower result on SEO on the Index page is connected to the 'read more' links that is not an optimal description from a SEO point of view.
+In general this is OK results. The performance is affected in a negative way by external scripts (connected to i.e. Bootstrap) and the lower result on SEO on the Index page and Review Details Page is connected to the 'read more' links that is not a 100% optimal description from a SEO point of view. The lower accessibility result on is connected to the heading elements not being in sequentially-descending order, but this is an active design choice and not a big issue (but I thought it would be proper to highlight it here so that it's clear I'm aware of it).
 
 <details><summary><b>Lighthouse Index Result</b></summary>
 
-![Lighthouse Index Result](readme/assets/images/lighthouse_index.png)
+![Lighthouse Index Result](readme/assets/images/lighthouse_review_details_page.png)
 </details><br/>
 
-<details><summary><b>Lighthouse Admin Area Result</b></summary>
+<details><summary><b>Lighthouse Review Details Page Result</b></summary>
+
+![Lighthouse Review Details Page](readme/assets/images/lighthouse_review_details.png)
+</details><br/>
+
+<details><summary><b>Lighthouse About Page Result</b></summary>
+
 
 ![Lighthouse Admin Area Result](readme/assets/images/lighthouse_admin_area.png)
 </details><br/>
