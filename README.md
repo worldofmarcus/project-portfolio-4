@@ -510,24 +510,24 @@ The libraries used in this project are located in the requirements.txt file and 
     * When the admin signs in, signs out, create / update / deletes reviews and comments they always get a confirmation message to secure visual feedback.
 
 ## Code Validation
-To be updated
+The code on the 'Review | Alliance' site has been tested through W3C Markup Validatiaon Service, W3C CSS Validatiaaon Service and JSHint. Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). One error appeared as well in the W3C CSS Validation but that was connected to Font Awesome and not to the site code itself (see bugs section).
 
 ### Markup Validation
-To be updated
+After fixing the inital errors that W3C Markup Validaton Service reported, no errors were returned.
 
 <details><summary><b>HTML Validation Result</b></summary>
 
-![HTML Result Home Page](readme/assets/images/html_validation.png)
+![HTML Result Home Page](readme/assets/images/html_validation_no_error.png)
 </details><br/>
 
 [Back to top](<#table-of-content>)
 
 ### CSS Validaton
-To be updated
+When validating my own code the W3C CSS Validator reports no errors.
 
 <details><summary><b>CSS Validation Result</b></summary>
 
-![CSS Result](readme/assets/images/css_validation.png)
+![CSS Result](readme/assets/images/css_validation_no_error.png)
 </details><br/>
 
 [Back to top](<#table-of-content>)
@@ -739,10 +739,18 @@ When updating a review the slug did not change. I chose to fix this bug so that 
 ![HTML Validation](readme/assets/images/html_validation_error.png)
 </details><br />
 
+**2022-10-17**
+* Bug: When the CSS Validation an error apperars that is connected to Font Awesome. When I validate my own CSS code there are no errors at all. So this might be a Font Awesome bug that is out of my control. But I thought it would be proper to highlight the error here in the bugs section.
+
+<details><summary><b>CSS Validation</b></summary>
+
+![HTML Validation](readme/assets/images/css_validation_error.png)
+</details><br />
+
 ### Unfixed Bugs
 
 **2022-10-14**
-* Bug: Summernot is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size, font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. this bug is still unfixed and I haven't found a solution to it yet.
+* Bug: Summernote is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size, font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. this bug is still unfixed and I haven't found a solution to it yet.
 
 
 [Back to top](<#table-of-content>)
