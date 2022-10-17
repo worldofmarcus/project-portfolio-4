@@ -708,15 +708,32 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 [Back to top](<#table-of-content>)
 
 ### Lighthouse
-To be updated
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the index page, the admin area and the about page. The testing showed the following:
 
-<details><summary><b>Lighthouse Result Result</b></summary>
+* Index page - Performance: 75, Accessability: 100, Best Practises: 100, SEO: 92
+* Admin Area - Performance: 85, Accessability: 97, Best Practises: 100, SEO: 100
+* About page - Performance: 73, Accessability: 100, Best Practises: 100, SEO: 100
 
-![Lighthouse Form Confirmation Page Result](readme/assets/images/lighthouse.png)
+In general this is OK results. The performance is affected in a negative way by external scripts (connected to i.e. Bootstrap) and the lower result on SEO on the Index page is connected to the 'read more' links that is not an optimal description from a SEO point of view.
+
+<details><summary><b>Lighthouse Index Result</b></summary>
+
+![Lighthouse Index Result](readme/assets/images/lighthouse_index.png)
 </details><br/>
 
+<details><summary><b>Lighthouse Admin Area Result</b></summary>
+
+![Lighthouse Admin Area Result](readme/assets/images/lighthouse_admin_area.png)
+</details><br/>
+
+<details><summary><b>Lighthouse About Page Result</b></summary>
+
+![Lighthouse About Page Result](readme/assets/images/lighthouse_about.png)
+</details><br/>
+
+
 ### WAVE
-[WAVE](https://wave.webaim.org/) was used to check accessibility. 0 errors and 1 alerts was found. The alert was connected to page lacking a h1 (which is not a problem because the game has a headline image).
+[WAVE](https://wave.webaim.org/) was used to check accessibility. 0 errors was found.
 
 <details><summary><b>WAVE Result</b></summary>
 
@@ -730,7 +747,6 @@ To be updated
 
 ![a11y Result](readme/assets/images/a11y_contrast_test.png)
 </details><br/>
-
 
 [Back to top](<#table-of-content>)
 
@@ -768,6 +784,13 @@ When updating a review the slug did not change. I chose to fix this bug so that 
 **2022-10-14**
 * Bug: Summernote is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size, font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. this bug is still unfixed and I haven't found a solution to it yet.
 
+**2022-10-15**
+* Bug: 2 warning / issues reported in the Google Chrome DevTools console. The first one is connected to a navigator.userAgent issue and the second to usage of a deprecated feature. I have done some digging and it seems that these issues have been reported within different forums on the web. I have checked other browsers (i.e. Firefox, Min and Edge) and the issue does not show up there.
+
+<details><summary><b>Warnings from Google Chrome DevTools</b></summary>
+
+![HTML Validation](readme/assets/images/google_chrome_warning.png)
+</details><br />
 
 [Back to top](<#table-of-content>)
 

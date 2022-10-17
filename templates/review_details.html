@@ -9,9 +9,10 @@
         <div class="col-lg-6 col-md-6 col-sm-12 align-items-center">
             {% if 'default_image' in post.featured_image.url %}
             <img class="card-img-top"
-                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png">
+                src="https://res.cloudinary.com/worldofmarcus/image/upload/v1664265037/mukybfipd5kv6etq9nmo.png"
+                alt="Default placeholder image of review">
             {% else %}
-            <img class="card-img-top" src="{{ post.featured_image.url }}">
+            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image of review">
             {% endif %}
         </div>
         <div class="col align-items-center">
