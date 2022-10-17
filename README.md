@@ -1,5 +1,5 @@
 # **Review | Alliance**
-Review | Alliance is a resource for finding more about albums and concerts by the artists that you love! The site offers top reviews of albums and concerts by both *Review | Alliance approved staff* and *Review | Alliance users*. To create a more interactive and lively site all visitors can create their own user to start writing reviews and comment on other reviewers content. All comments and reviews need approval by Review | Alliance staff members to secure a digital hangout where everyone can feel safe from abuse, inappropriate language, etc. The approvals are being made from an admin dashboard that only is accessed by staff members with the correct access status. From a visual point of view the site has a clean look that makes navigation easier for the users.
+Review | Alliance is a resource for finding more about albums and concerts by the artists that you love! The site offers top reviews of albums and concerts by both *Review | Alliance approved staff* and *Review | Alliance users*. To create a more interactive and lively site all visitors can create their own user to start writing reviews and comment on other reviewers content. All comments and reviews need approval by Review | Alliance staff members to secure a digital hangout where everyone can feel safe from abuse, inappropriate language, etc. The approvals are being made from an admin dashboard that only is accessed by staff members with the correct access status. From a visual point of view the site has a clean look that makes navigation easy for the users.
 
 This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
@@ -78,7 +78,7 @@ I have used a modelling tool called [Graph Models](https://django-extensions.rea
 Models used (besides standard user model) in this project are:
 
 * **Category** - Handles categories. I made a specific model to be able to add more dynamics (create / remove categories going forward in the admin backend instead of 'hard code' it in the code).
-* **Genre** - Handles genre. I made a specific model to be able to add more dynamics (create / remove genres going forward in the admin backend instead of 'hard code' it in the code).
+* **Genre** - Handles genres. I made a specific model to be able to add more dynamics (create / remove genres going forward in the admin backend instead of 'hard code' it in the code).
 * **Post** - Handles all the reviews
 * **Comment** - Handles all the comments
 * **UserProfile** - Handles the user profile information (first name, last name, presentation and featured image for the specific user/reviewer). There is a one-to-one relation to the user model to connect it to the standard user model.
@@ -139,7 +139,7 @@ Below the user stories for the project are listed to clarify why particular feat
 
 ## Site Structure
 
-The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administratorThe site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
+The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administrator an *admin area* is available. The site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
 
 Read more about the different choices in the [Features](<#features>) section.
 
@@ -149,12 +149,12 @@ Read more about the different choices in the [Features](<#features>) section.
 
 * ### Color Scheme
 
-The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on some of the text elements), Cultured (body background) and White (used i.e. as card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
+The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on some of the text elements), Cultured (used very rarely in this project) and White (used i.e. as background and card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
 
 ![Color Palette image](readme/assets/images/coolors_palette.png)
 
 * ### Typography
-The fonts used for the game are 'Roboto' and 'Tinos'. Fallback font for both of them is sans-serif.
+The fonts used for the site are 'Roboto' and 'Tinos'. Fallback font for both of them is sans-serif.
 
 * 'Roboto' is used on all headlines including the brand logo. It's a very clean font that works really well for headlines and logos. It's easy to read and matches the minimalistic style that I wanted the site to 'breath'.
 
@@ -167,14 +167,14 @@ The fonts used for the game are 'Roboto' and 'Tinos'. Fallback font for both of 
 [Back to top](<#table-of-content>)
 
 # **Features**
-To be updated
+The features on site are listed below.
 
 ## **Existing Features**
 
 ### **Navigation**
-The navigation bar is very clean and straight forward. Depending if you  are logged in or not different menus is visible for the site user. An extra menu item is visible if you are logged in as an administrator.
+The navigation bar is very clean and straight forward. Depending if you  are logged in or not different menus are visible for the site user. An extra menu item is visible if you are logged in as an administrator.
 
-*Links that are visible to logged out user*
+*Links that are visible to logged out users*
 
 * About - Includes information about Review | Alliance and presents the reviewers that are registered.
 * All - Lists all reviews on the site independent of category type of review.
@@ -192,11 +192,12 @@ The navigation bar is very clean and straight forward. Depending if you  are log
 ![Navigation Small - User Not Logged In](readme/assets/images/navbar_small_not_logged_in.png)
 </details><br/>
 
-*Links that are visible to logged in user*
-All of the links that is visible to a not logged in user plus the ones below.
+*Links that are visible to logged in users*
 
-* Create New review - Lets the user create a new review.
-* View My reviews - Lists all reviews created by the logged in user.
+All of the links that are visible to a not logged in user plus the ones below.
+
+* Create New Review - Lets the user create a new review.
+* View My Reviews - Lists all reviews created by the logged in user.
 * Show Profile Page - Shows logged in users profile page.
 * Log Out - Logs out the user.
 
@@ -211,8 +212,9 @@ All of the links that is visible to a not logged in user plus the ones below.
 </details><br/>
 
 *Link that is visible if user is administrator*
+
 All of the links above plus the one below.
-* Admin Area - Gives the administrator a view with information about i.e. total number of users, number of comments and number of posts. I this view the administrator also can publish / unpublish / approve / aunapprove reviews and approve / unapprove comments. The administrator can also remove / add genres in this view.
+* Admin Area - Gives the administrator a view with information about i.e. total number of users, number of comments and number of posts. In this view the administrator also can publish / unpublish / approve / unapprove reviews and approve / unapprove comments.
 
 <details><summary><b>Navigation Large - Admin Logged In</b></summary>
 
@@ -320,7 +322,7 @@ On this page the administrator (or other superuser decided by Review | Alliance)
 </details><br/>
 
 ### **Sign Up**
-If the site visitor has no registered user at Review | Alliance they can sign up on this. They can also add a presentation and upload a featured image that will be used on the users profile page.
+If the site visitor has no registered user at Review | Alliance they can sign up. They can also add a presentation and upload a featured image that will be used on the users profile page.
 
 <details><summary><b>Sign Up</b></summary>
 
@@ -533,7 +535,7 @@ When validating my own code the W3C CSS Validator reports no errors.
 [Back to top](<#table-of-content>)
 
 ### PEP Validation
-At the time of this project the website pep8online.com is currently down. Usually I'm using that site to validate my Python code. I have therefore followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. I have tested the following Python files:
+At the time of this project the website [pep8online](http://pep8online.com/) is currently down. Usually I'm using that site to validate my Python code. Due to the site being offline I have followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. I have tested the following Python files:
 
 * admin.py - No errors or warnings reported
 * forms.py - No errors or warnings reported
@@ -695,7 +697,7 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 | Phone      | Galaxy S5/S6/S7       | iPhone 6/7/8       | iPhone 12pro         |
 |------------|-----------------------|--------------------|----------------------|
 | Render     | pass                  | pass               | pass      | pass     |
-| Images.    | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
 | Links      | pass                  | pass               | pass      | pass     |
 
 [Back to top](<#table-of-content>)
@@ -710,14 +712,14 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 [Back to top](<#table-of-content>)
 
 ### Lighthouse
-Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the index page, review details page, the admin area and the about page. The testing showed the following:
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *index page*, *review details page*, *the admin area* and *the about page*. The testing showed the following:
 
 * Index Page - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 92
 * Review Details Page - Performance: 81, Accessibility: 98, Best Practises: 100, SEO: 92
 * Admin Area - Performance: 85, Accessibility: 97, Best Practises: 100, SEO: 100
 * About page - Performance: 73, Accessibility: 98, Best Practises: 100, SEO: 100
 
-In general this is OK results. The performance is affected in a negative way by external scripts (connected to i.e. Bootstrap) and the lower result on SEO on the Index page and Review Details Page is connected to the 'read more' links that is not a 100% optimal description from a SEO point of view. The lower accessibility result on is connected to the heading elements not being in sequentially-descending order, but this is an active design choice and not a big issue (but I thought it would be proper to highlight it here so that it's clear I'm aware of it).
+In general this is OK results. The performance is affected in a negative way by external scripts (connected to i.e. Bootstrap) and the lower result on SEO on the Index page and Admin Area Page is i.e. connected to the 'read more' links that is not a 100% optimal description from a SEO point of view. The lower accessibility result on the review details page is connected to the heading elements not being in sequentially-descending order, but this is an active design choice and not a big issue (but I thought it would be proper to highlight it here so that it's clear I'm aware of it).
 
 <details><summary><b>Lighthouse Index Result</b></summary>
 
@@ -729,7 +731,7 @@ In general this is OK results. The performance is affected in a negative way by 
 ![Lighthouse Review Details Page](readme/assets/images/lighthouse_review_details.png)
 </details><br/>
 
-<details><summary><b>Lighthouse About Page Result</b></summary>
+<details><summary><b>Lighthouse Admin Area Result</b></summary>
 
 
 ![Lighthouse Admin Area Result](readme/assets/images/lighthouse_admin_area.png)
@@ -742,7 +744,7 @@ In general this is OK results. The performance is affected in a negative way by 
 
 
 ### WAVE
-[WAVE](https://wave.webaim.org/) was used to check accessibility. 0 errors was found.
+[WAVE](https://wave.webaim.org/) was used to check accessibility. 0 errors were found.
 
 <details><summary><b>WAVE Result</b></summary>
 
@@ -750,7 +752,7 @@ In general this is OK results. The performance is affected in a negative way by 
 </details><br/>
 
 ### a11y Color Contrast Accessibility Validator
-[a11y](https://color.a11y.com/Contrast/) was used to check the color contrast accessibility. 0 errors was found.
+[a11y](https://color.a11y.com/Contrast/) was used to check the color contrast accessibility. 0 errors were found.
 
 <details><summary><b>a11y Result</b></summary>
 
@@ -767,10 +769,10 @@ No known bugs besides those in the unfixed bugs section.
 
 ### Fixed Bugs
 **2022-10-10**
-When updating a review or comment the approved variable did not get updated to 'False'. This is is now handled and fixed.
+* Bug: When updating a review or comment the approved variable did not get updated to 'False'. This is is now handled and fixed.
 
 **2022-10-11**
-When updating a review the slug did not change. I chose to fix this bug so that the slug updates when a review is updated but one 'school' within this area says that a slug never should be changed (due to problems with urls / linking in the future). This functionality is an easy fix to remove if necessary but I chose to keep it for now.
+* Bug: When updating a review the slug did not change. I chose to fix this bug so that the slug updates when a review is updated but one 'school' within this area says that a slug never should be changed (due to problems with urls / linking in the future). This functionality is an easy fix to remove if necessary but I chose to keep it for now.
 
 **2022-10-14**
 * Bug: When the Markup Validation was done there was initially quite a lot of errors. The debugging process was very straight forward and the errors could easily be fixed.
@@ -781,17 +783,17 @@ When updating a review the slug did not change. I chose to fix this bug so that 
 </details><br />
 
 **2022-10-17**
-* Bug: When the CSS Validation an error apperars that is connected to Font Awesome. When I validate my own CSS code there are no errors at all. So this might be a Font Awesome bug that is out of my control. But I thought it would be proper to highlight the error here in the bugs section.
+* Bug: The CSS Validation reported an error that is connected to Font Awesome. When I validate my own CSS code there are no errors at all. So this might be a Font Awesome bug that is out of my control. But I thought it would be proper to highlight the error here in the bugs section.
 
 <details><summary><b>CSS Validation</b></summary>
 
-![HTML Validation](readme/assets/images/css_validation_error.png)
+![CSS Validation](readme/assets/images/css_validaton_error.png)
 </details><br />
 
 ### Unfixed Bugs
 
 **2022-10-14**
-* Bug: Summernote is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size, font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. this bug is still unfixed and I haven't found a solution to it yet.
+* Bug: Summernote is not working 100% properly. I have debugged and sweeped the Internet for solutions. The issue is that when a user creates a review it's not possible to overide the choices the user makes when writing the review (i.e. font-size and font). I tried to handle this by setting rules of what tools to show in the Summernote editor without success. One workaround could of course be to remove the Summernote functionality but I did not want to do that in this project at least. This bug is still unfixed and I haven't found a solution to it yet.
 
 **2022-10-15**
 * Bug: 2 warning / issues reported in the Google Chrome DevTools console. The first one is connected to a navigator.userAgent issue and the second to usage of a deprecated feature. I have done some digging and it seems that these issues have been reported within different forums on the web. I have checked other browsers (i.e. Firefox, Min and Edge) and the issue does not show up there.
