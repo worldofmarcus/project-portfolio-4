@@ -63,7 +63,7 @@
             </p>
             {% endif %}
             <p>
-                <h6>Reviewed by {{ post.author.first_name }}: {{ post.date_created_on|date:"Y-m-d" }}</h6>
+                <h6>Reviewed by {{ post.author }}: {{ post.date_created_on|date:"Y-m-d" }}</h6>
             </p>
             {% if user.is_authenticated %}
             <form class="review-detail-heart-comments" action="{% url 'like_review' post.slug %}" method="POST">
