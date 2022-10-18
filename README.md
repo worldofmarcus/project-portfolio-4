@@ -847,7 +847,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 * ```pip3 install 'dj_database_url psycopg2```
 * ```pip3 install 'dj3-cloudinary-storage```
 
-<details><summary><b>Heroku Deployment - Step 3</b></summary>
+<details><summary><b>Heroku Deployment - Step 4</b></summary>
 
 ![Heroku Deployment Step 4](readme/assets/images/heroku_04.png)
 </details><br />
@@ -856,7 +856,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 * ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
 
-<details><summary><b>Heroku Deployment - Step 3</b></summary>
+<details><summary><b>Heroku Deployment - Step 5</b></summary>
 
 ![Heroku Deployment Step 5](readme/assets/images/heroku_05.png)
 </details><br />
@@ -895,7 +895,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 * Head on to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
 
-10. In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+* In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
 
 <details><summary><b>Heroku Step 09</b></summary>
 
