@@ -8,9 +8,8 @@ from .models import Post, Category, Comment, Genre, UserProfile
 @admin.register(UserProfile)
 class UserAdmin(admin.ModelAdmin):
     """
-    This class adds fields from the post model to the admin
-    area and also add functionality like approve review and
-    publish in the action dropdown list.
+    This class adds fields from the UserProfile model to the admin
+    area.
     """
 
     list_display = ('user', 'first_name', 'last_name',
@@ -40,6 +39,14 @@ class PostAdmin(SummernoteModelAdmin):
 
         queryset.update(approved=True)
 
+    def unapprove(self, request, queryset):
+        """
+        This help method updates the approved field to
+        False
+        """
+
+        queryset.update(approved=False)
+
     def publish(self, request, queryset):
         """
         This help method updates the status field to 1
@@ -53,13 +60,6 @@ class PostAdmin(SummernoteModelAdmin):
         """
 
         queryset.update(status=0)
-
-    def unapprove(self, request, queryset):
-        """
-        This help method updates the status field to 0
-        """
-
-        queryset.update(approved=False)
 
 
 @admin.register(Category)
