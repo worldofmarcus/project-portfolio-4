@@ -732,12 +732,12 @@ In general this is OK results. The performance is affected in a negative way by 
 
 <details><summary><b>Lighthouse Index Result</b></summary>
 
-![Lighthouse Index Result](readme/assets/images/lighthouse_review_details_page.png)
+![Lighthouse Index Result](readme/assets/images/lighthouse_index.png)
 </details><br/>
 
 <details><summary><b>Lighthouse Review Details Page Result</b></summary>
 
-![Lighthouse Review Details Page](readme/assets/images/lighthouse_review_details.png)
+![Lighthouse Review Details Page](readme/assets/images/lighthouse_review_details_page.png)
 </details><br/>
 
 <details><summary><b>Lighthouse Admin Area Result</b></summary>
@@ -913,7 +913,8 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 <details><summary><b>Heroku Step 11</b></summary>
 
-![Heroku Step 11](readme/assets/images/heroku_11.png)
+![Heroku Step 11](readme/assets/images/heroku_11_1.png)
+![Heroku Step 11](readme/assets/images/heroku_11_2.png)
 </details><br />
 
 12. Go to the settings tab and click on the reveal Config Vars button. Copy the text from DATABASE_URL (because we are going to need it in the next step).
@@ -1049,7 +1050,7 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 
 <details><summary><b>Heroku Step 31</b></summary>
 
-![Heroku Step 31](readme/assets/images/heroku_step_31.png)
+![Heroku Step 31](readme/assets/images/heroku_31.png)
 </details><br />
 
 The live link to the 'Review | Alliance' site on Heroku an be found [here](https://project-portfolio-4.herokuapp.com/). And the Github repository can be found [here](https://github.com/worldofmarcus/project-portfolio-4).
