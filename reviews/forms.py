@@ -25,6 +25,7 @@ class CreateReviewForm(forms.ModelForm):
     """
     This class creates the review form.
     """
+
     class Meta:
         """
         This meta class adds the fields to the form
@@ -67,12 +68,11 @@ class UpdateProfileForm(forms.ModelForm):
     """
     This class creates the new profile form.
     """
+
     class Meta:
         """
         This meta class adds the fields to the form
-        based on the post model. It also adds a number
-        of widgets to customize and add functionality
-        to the form.
+        based on the UserProfile model.
         """
 
         model = UserProfile

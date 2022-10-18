@@ -19,7 +19,7 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     """
-    This class adds fields from the post model to the admin
+    This class adds fields from the Post model to the admin
     area and also add functionality like approve review and
     publish in the action dropdown list.
     """
@@ -65,7 +65,7 @@ class PostAdmin(SummernoteModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
-    This class adds fields from the category model to the admin
+    This class adds fields from the Category model to the admin
     area and also add list functionality.
     """
 
@@ -76,7 +76,7 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """
-    This class adds fields from the comment model to the admin
+    This class adds fields from the Comment model to the admin
     area and also add functionality like approve comments in the
     action dropdown list.
     """
