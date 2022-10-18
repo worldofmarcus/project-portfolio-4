@@ -122,6 +122,7 @@ class AdminArea(generic.TemplateView):
         context['reviews_unapproved'] = Post.objects.filter(approved=False)
         context['comments_unapproved'] = Comment.objects.filter(approved=False)
         context['users'] = User.objects.filter(is_active=True)
+        context['profile'] = UserProfile.objects.all()
         return context
 
 

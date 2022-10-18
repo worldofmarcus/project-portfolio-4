@@ -82,8 +82,8 @@
                         </td>
                         <td>{{ review.date_created_on }}</td>
                         <td>{{ review.title }}</td>
-                        <td>{{ review.author.first_name }}</td>
-                        <td>{{ review.author.last_name }}</td>
+                        <td>{{ review.author.profile.first_name }}</td>
+                        <td>{{ review.author.profile.last_name }}</td>
                         <td>
                             {% if review.status == 1 %}
                             Published
@@ -157,7 +157,7 @@
                         <td>{{ comment.id }}</td>
                         <td>{{ comment.date_created_on }}</td>
                         <td>{{ comment.post }}</td>
-                        <td>{{ comment.author.first_name }}</td>
+                        <td>{{ comment.author }}</td>
                         <td>{{ comment.body }}</td>
                         <td class="text-center">{% if comment.approved == True %}
                             <i class="fa-solid fa-check"></i>
