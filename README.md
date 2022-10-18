@@ -387,7 +387,7 @@ The sites incorporates flash messages and confirmation pages when an action has 
 
 ## Languages
 
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the application.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
 * [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
 * [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
@@ -413,7 +413,7 @@ The sites incorporates flash messages and confirmation pages when an action has 
 * [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
 * [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
 * [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
-* [PEP8 Validation](http://pep8online.com/) - Used to validate Python code
+* [PEP8 Validation](http://pep8online.com/) - At the time for deploying this project the PEP8 Online Validaton service was offline, therefore not used.
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 
 ## Libraries
@@ -544,7 +544,7 @@ When validating my own code the W3C CSS Validator reports no errors.
 [Back to top](<#table-of-content>)
 
 ### PEP Validation
-At the time of this project the website [pep8online](http://pep8online.com/) is currently down. Usually I'm using that site to validate my Python code. Due to the site being offline I have followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. I have tested the following Python files:
+At the time of this project the website [pep8online](http://pep8online.com/) is currently offline. Usually I'm using that site to validate my Python code. Due to the site being offline I have followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. I have tested the following Python files:
 
 * admin.py - No errors or warnings reported
 * forms.py - No errors or warnings reported
@@ -712,11 +712,11 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 [Back to top](<#table-of-content>)
 
 ### Browser Compatibility
-* Google Chrome Version (103.0.5060.114)
-* Mozilla Firefox (version 102.0.1)
-* Min (version 1.25.1)
-* Apple Safari (version 15.5)
-* Microsoft Edge (version 103.0.1264.62)
+* Google Chrome Version (106.0.5249.119)
+* Mozilla Firefox (version 105.0.3)
+* Min (version 1.26.0)
+* Apple Safari (version 16.0)
+* Microsoft Edge (version 106.0.1370.47)
 
 [Back to top](<#table-of-content>)
 
