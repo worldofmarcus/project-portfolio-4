@@ -57,7 +57,7 @@ class ConcertView(generic.ListView):
 class MemberReviewView(generic.ListView):
     """
     This class filters out all the objects from the Post model where
-    the author is the same as the logged in user. No other filtering
+    the author is equal to the logged in user. No other filtering
     is being done because the user should see all reviews even if
     they are not approved or published. To achieve this a help method
     is being used (def_queryset). The result is being ordered by date
@@ -69,13 +69,19 @@ class MemberReviewView(generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
+        """
+        Help method to filter out author that is logged in user and order it
+        by date.
+        """
+
         return Post.objects.filter(author=self.request.user.id).order_by(
                                    '-date_created_on')
 
 
 class About(generic.TemplateView):
     """
-    A basic function that just returns about.html to be rendered.
+    This class creates a context with all objects from the UserProfile
+    model.
     """
 
     model = UserProfile
@@ -83,49 +89,33 @@ class About(generic.TemplateView):
     template_name = 'about.html'
 
     def get_context_data(self, **kwargs):
+        """
+        Help method to filter out all objects from the UserProfile
+        model.
+        """
+
         context = super().get_context_data(**kwargs)
         context['profile'] = UserProfile.objects.all()
         return context
 
 
-def review_submitted(request):
-    """
-    A basic function that just returns about.html to be rendered.
-    """
-
-    return render(request, 'review_submitted.html')
-
-
-def review_updated(request):
-    """
-    A basic function that just returns about.html to be rendered.
-    """
-
-    return render(request, 'review_updated.html')
-
-
-def review_deleted(request):
-    """
-    A basic function that just returns about.html to be rendered.
-    """
-
-    return render(request, 'review_deleted.html')
-
-
-def comment_deleted(request):
-    """
-    A basic function that just returns about.html to be rendered.
-    """
-
-    return render(request, 'comment_deleted.html')
-
-
 class AdminArea(generic.TemplateView):
+    """
+    This class creates a context based on the models Post, Comment and User.
+    This makes all the data in the models accessible in the admin area.
+    The queries are being done in the help method get_context_data and are
+    based on different filters to get the correct data.
+    """
+
     model = Post
     context_object_name = 'post'
     template_name = 'admin_area.html'
 
     def get_context_data(self, **kwargs):
+        """
+        Help method to create contexts and return them to the AdminArea.
+        """
+
         context = super().get_context_data(**kwargs)
         context['post'] = Post.objects.all()
         context['comment'] = Comment.objects.all()
@@ -136,6 +126,11 @@ class AdminArea(generic.TemplateView):
 
 
 def admin_update_status(request, slug):
+    """
+    This function updates the publish / unpublish value connected
+    to the reviews in the admin area.
+    """
+
     post = Post.objects.get(slug=slug)
 
     if post.status == 0:
@@ -149,6 +144,11 @@ def admin_update_status(request, slug):
 
 
 def admin_update_approval(request, slug):
+    """
+    This function updates the approve / unapprove value connected
+    to the reviews in the admin area.
+    """
+
     post = Post.objects.get(slug=slug)
     if post.approved is True:
         approval = False
@@ -161,6 +161,11 @@ def admin_update_approval(request, slug):
 
 
 def admin_update_comment(request, pk):
+    """
+    This function updates the approve / unapprove value connected
+    to the comments in the admin area.
+    """
+
     comment = Comment.objects.get(pk=pk)
     if comment.approved is True:
         approval = False
@@ -189,6 +194,7 @@ class DetailView(generic.DetailView):
         a comment is liked. It then renders the content to
         review_details.html.
         """
+
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by(
@@ -212,10 +218,10 @@ class DetailView(generic.DetailView):
         """
         This function handles the post comment part of the detail
         view. It requests the user email and username from the
-        user model and then saves the comment so that it is
+        User model and then saves the comment so that it is
         connected to the specific user.
-
         """
+
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by(
@@ -246,7 +252,7 @@ class CreateReview(generic.CreateView):
     """
     This class handles the creation of new reviews. A help method
     has also been implemented to add author and slug to the Post
-    table.
+    model.
     """
 
     model = Post
@@ -255,6 +261,10 @@ class CreateReview(generic.CreateView):
     success_url = '/review/submit-success/'
 
     def form_valid(self, form):
+        """
+        Help method to add author and slug to the Post model.
+        """
+
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
@@ -276,6 +286,10 @@ class UpdateReview(generic.UpdateView):
     success_url = '/review/update-success/'
 
     def form_valid(self, form):
+        """
+        Help method to add author and slug to the Post model.
+        """
+
         form.instance.approved = False
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
@@ -295,9 +309,17 @@ class UpdateComment(generic.UpdateView):
     template_name = 'update_comment.html'
 
     def get_success_url(self, *args):
+        """
+        Help method to get success url
+        """
+
         return self.request.path
 
     def form_valid(self, form):
+        """
+        Help method to change the comment to not approved.
+        """
+
         form.instance.approved = False
         return super().form_valid(form)
 
@@ -370,19 +392,10 @@ class AdminDeleteComment(generic.DeleteView):
     success_url = '/comment/admin-delete-success/'
 
 
-def admin_comment_deleted(request):
-    """
-    A basic function that just returns admin_comment_deleted.html
-    to be rendered.
-    """
-
-    return render(request, 'admin_comment_deleted.html')
-
-
 class UpdateProfile(generic.UpdateView):
     """
-    This class handles the creation of new profiles. A help method
-    has also been implemented to add author and slug to the Post
+    This class handles the creation / updating of profiles. A help method
+    has also been implemented to do a user check and validate form.
     table.
     """
 
@@ -392,8 +405,43 @@ class UpdateProfile(generic.UpdateView):
     success_url = '/profile/submit-success/'
 
     def form_valid(self, form):
+        """
+        A help method to do a user check and validate form.
+        """
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+def review_submitted(request):
+    """
+    A basic function that just returns review_submitted.html to be rendered.
+    """
+
+    return render(request, 'review_submitted.html')
+
+
+def review_updated(request):
+    """
+    A basic function that just returns review_updated.html to be rendered.
+    """
+
+    return render(request, 'review_updated.html')
+
+
+def review_deleted(request):
+    """
+    A basic function that just returns review_deleted.html to be rendered.
+    """
+
+    return render(request, 'review_deleted.html')
+
+
+def comment_deleted(request):
+    """
+    A basic function that just returns comment_deleted.html to be rendered.
+    """
+
+    return render(request, 'comment_deleted.html')
 
 
 def profile_submitted(request):
@@ -402,3 +450,12 @@ def profile_submitted(request):
     """
 
     return render(request, 'profile_submitted.html')
+
+
+def admin_comment_deleted(request):
+    """
+    A basic function that just returns admin_comment_deleted.html
+    to be rendered.
+    """
+
+    return render(request, 'admin_comment_deleted.html')
