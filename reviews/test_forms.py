@@ -3,6 +3,10 @@ from .forms import CommentForm
 
 
 class TestCommentForm(TestCase):
+    """
+    This function tests if the comment body
+    field is required.
+    """
 
     def test_comment_body_is_required(self):
         form = CommentForm({'body': ''})
