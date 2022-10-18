@@ -19,30 +19,39 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
     * [Wireframes](<#wireframes>)
     * [User Stories](<#user-stories>)
     * [Site Structure](<#site-structure>)
-    * [Flow chart](<#flow-chart>)
-    * [Data Model](<#data-model>)
     * [Design Choices](<#design-choices>)
 
-* [**Features**](<#features>)
-    * [List Collection](<#list-collection>)
-    * [Search Item In Collection](<#search-item-in-collection>)
-    * [Add Item To Collection](<#add-item-to-collection>)
-    * [Edit Item In Collection](<#edit-item-in-collection>)
-    * [Remove Item From Collection](<#remove-item-in-collection>)
-    * [Sort Collection](<#sort-item-in-collection>)
-    * [Show Total value of collection](<#show-total-value-of-collection>)
+* [**Existing Features**](<#existing-features>)
+    * [Navigation](<#navigation>)
+    * [About](<#about>)
+    * [All](<#all>)
+    * [Albums](<#albums>)
+    * [Concerts](<#concerts>)
+    * [Review Detail View](<#review-detail-view>)
+    * [Update / Delete Comment](<#update-and-delete-comment>)
+    * [Member Reviews](<#member-reviews>)
+    * [Create Review](<#create-review>)
+    * [Update Review](<#update-review>)
+    * [Profile Page](<#profile-page>)
+    * [Admin Area](<#admin-area>)
+    * [Sign Up](<#sign-up>)
+    * [Sign In](<#sign-in>)
+    * [Sign Out](<#sign-out>)
+    * [Footer](<#footer>)
+    * [Flash Messages](<#flash-messages-and-confirmation-pages-to-the-user>)
 
 * [**Features Left To Implement**](<#features-left-to-implement>)
 
 * [**Technologies Used**](<#technologies-used>)
     * [Languages](<#languages>)
-    * [Frameworks, Librarys & Software](<#frameworks-libraries--software>)
-    * [Python Packages](<#python-packages>)
+    * [Frameworks & Software](<#frameworks--software>)
+    * [Libraries](<#libraries>)
 
 * [**Testing**](<#testing>)
-  * [Code Validation](<#code-validation>)
-  * [Additional Testing](<#additional-testing>)
-  * [Known Bugs](<#known-bugs>)
+    * [Testing User Stories](<#testing-user-stories>)
+    * [Code Validation](<#code-validation>)
+    * [Additional Testing](<#additional-testing>)
+    * [Known Bugs](<#known-bugs>)
 * [Deployment](<#deployment>)
 * [Credits](<#credits>)
 * [Acknowledgements](<#acknowledgements>)
@@ -167,7 +176,7 @@ The fonts used for the site are 'Roboto' and 'Tinos'. Fallback font for both of 
 [Back to top](<#table-of-content>)
 
 # **Features**
-The features on site are listed below.
+The features of the site are listed below.
 
 ## **Existing Features**
 
@@ -268,7 +277,7 @@ The review detail shows the details about the review that the user has chosen in
 ![Review Detail View Comment - User Logged In](readme/assets/images/review_detail_comment_logged_in.png)
 </details><br/>
 
-### **Update / Delete Comment**
+### **Update And Delete Comment**
 If the user is logged in and has written a comment there is a possibility to edit and delete the comment. When the comment has been updated it needs to be re-approved by Review | Alliance.
 
 <details><summary><b>Update Comment</b></summary>
@@ -765,7 +774,7 @@ In general this is OK results. The performance is affected in a negative way by 
 Additional testing of the application was conducted by people outside of the software development field. Some smaller spelling and grammar errors were found and corrected. No issues connected to design or handling of the site.
 
 ## Known bugs
-No known bugs besides those in the unfixed bugs section.
+No known bugs besides those in the fixed / unfixed bugs section.
 
 ### Fixed Bugs
 **2022-10-10**
