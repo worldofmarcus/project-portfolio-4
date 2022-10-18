@@ -47,11 +47,9 @@ class CreateReviewForm(forms.ModelForm):
                                 'max': datetime.now().date()}),
                         'record_label': forms.TextInput(
                             attrs={
-                                'placeholder': 'If you are reviewing a \
-                                    concert, leave this field blank.'}),
+                                'placeholder': 'Leave blank if concert'}),
                         'venue': forms.TextInput(
-                            attrs={'placeholder': 'If you are reviewing an \
-                                album, leave this field blank.'}),
+                            attrs={'placeholder': 'Leave blank if album'}),
                         'category': forms.Select(
                             attrs={'class': 'form-select'}),
                         'genre': forms.Select(attrs={'class': 'form-select'}),
