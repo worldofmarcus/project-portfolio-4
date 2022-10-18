@@ -13,7 +13,7 @@ RATING_CHOICES = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
 
 class Category(models.Model):
     """
-    This class creates the category model.
+    This class creates the Category model.
     """
 
     name = models.CharField(max_length=255, unique=True)
@@ -36,7 +36,7 @@ class Category(models.Model):
 
 class Genre(models.Model):
     """
-    This class creates the genre model.
+    This class creates the Genre model.
     """
 
     name = models.CharField(max_length=255, unique=True)
@@ -69,7 +69,7 @@ for item in GENRE_CHOICES:
 
 class Post(models.Model):
     """
-    This class creates the post model.
+    This class creates the Post model.
     """
 
     title = models.CharField(max_length=255, unique=True)
@@ -104,7 +104,7 @@ class Post(models.Model):
 
     def __str__(self):
         """
-        This function returns the title and the name of the author
+        This function returns the title
         to add user readability.
         """
 
@@ -120,7 +120,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    This class creates the comment model.
+    This class creates the Comment model.
     """
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -142,7 +142,7 @@ class Comment(models.Model):
 
     def __str__(self):
         """
-        This function returns the body and the name of the author
+        This function returns the body
         to add user readability.
         """
 
@@ -151,7 +151,7 @@ class Comment(models.Model):
 
 class UserProfile(models.Model):
     """
-    This class creates the user model.
+    This class creates the UserProfile model.
     """
 
     first_name = models.CharField(max_length=255)
@@ -165,7 +165,8 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Create or update the user profile
+    This function checks if the user profile should be created or
+    updated.
     """
 
     if created:
